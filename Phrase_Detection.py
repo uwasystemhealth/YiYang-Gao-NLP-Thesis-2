@@ -12,19 +12,54 @@ sentences = Sentences_Parser_3('./Input_Output_Folder/Phrase_Detection/3/Normali
 #sentences = Sentences_Parser_3('./Input_Output_Folder/Phrase_Detection/Normalized_Text_Stage_2_filtered_bigram.txt')
 
 stopwords = [
-              'Sunday' ,'Friday' ,'Monday' ,'monday' , 'tuesday' , 'wednessday' ,'thursday' , 'friday' , 'saturday' ,'sunday' ,
-              'janurary' , 'february' , 'march' ,'april' , 'may' ,'june' , 'july' , 'auguster' , 'september' , 'october' ,'november' , 'december'
-              'between', 'but', 'again', 'there', 'about' ,'during',
-              'very', 'having', 'with', 'they', 'own', 'an', 'some',
-              'for', 'its', 'such', 'into', 'of', 'most', 'itself',
-              'other', 's', 'or', 'as', 'from', 'him',
-              'each', 'the', 'themselves', 'until', 'below','we', 'these',
-              'your', 'his', 'through', 'nor', 'me', 'more', 'this', 'should', 'while', 'above', 'both',
-              'up', 'to', 'ours', 'had', 'she', 'all', 'no', 'when', 'at', 'any', 'before', 'them', 'same',
-              'and', 'been', 'have', 'in', 'will', 'on', 'does','yourselves', 'then', 'that', 'because',
-              'what', 'over', 'why', 'so', 'can', 'did', 'not', 'now', 'under', 'he', 'you', 'has',
-              'just', 'where', 'too', 'only', 'myself', 'which', 'those', 'i', 'after', 'few', 'whom', 't', 'being', 'if',
-              'theirs', 'my', 'against', 'a', 'by', 'doing', 'it', 'how', 'further', 'here', 'than'
+            'Sunday' ,'Friday' ,'Monday' ,'monday' , 'tuesday' , 'wednessday' ,'thursday' , 'friday' , 'saturday' ,'sunday' ,
+
+            'janurary' , 'february' , 'march' ,'april' , 'may' ,'june' , 'july' , 'auguster' , 'september' , 'october' ,'november' , 'december'
+
+            ,'an', 'the', 'a'
+
+            'between', 'through','below' ,'under', 'above' , 'into','before', 'after'
+
+            'for','of', 'at' , 'up', 'as', 'from', 'about', 'with', 'to' , 'in' , 'on', 'and', 'over' , 'by'
+
+            , 'no', 'nor', 'not'
+
+            , 'can'
+
+            ,'but', 'again', 'or' ,'then', 'so'
+
+            , 'there' , 'this', 'these', 'that', 'those','here'
+
+            ,'very','most','any','some' , 'more', 'than'  , 'all', 'only', 'few'
+
+            ,'during', 'while'
+
+            ,'having' , 'has','had', 'have'
+            , 'does'  , 'doing'
+            , 'own'
+            , 'being'
+            , 'will'
+            , 'should'
+            , 'been'
+            ,'such',
+
+              'other', 's',
+              'each', 'until'
+              , 'both'
+            , 'same' , 'because', 'did', 'now',
+              'just', 'too', 't', 'if'
+            ,'against', 'further'
+
+
+            , 'where' , 'which'     , 'whom'       , 'what', 'why' , 'when', 'how'
+
+            , 'it'    , 'its'       ,'itself'
+            , 'i'     , 'my'    , 'myself'    , 'me'
+            , 'theirs', 'they'      , 'themselves' , 'them'
+            , 'your'  ,'yourselves' , 'you'
+            , 'him'   , 'he'        , 'his'
+            , 'she'
+            , 'we'    , 'ours'
             ]
 
 
@@ -173,6 +208,7 @@ bigram_stopwords = [
                 ,'tight'
                 ,'bad' , 'badly' , 'new'
                 ,'faulty'
+                ,'correctly'
                 ,'unservicable'
                 , 'additional'
                 ,'small'
@@ -501,7 +537,7 @@ def print_stop_words_bigram(sentences):
 
     bigram_stop_word_list_2 = Utility.bigram_stopwords_2                                                # this list is teh big list without verb , adj and past tenses
 
-    with open('./Input_Output_Folder/Phrase_Detection/3/down_bigrams.txt', "w") as bigram_2_file:
+    with open('./Input_Output_Folder/Phrase_Detection/3/be_bigrams.txt', "w") as bigram_2_file:
         c = 1
         for key in phrases.vocab.keys():
             if key not in stopwords:
@@ -509,10 +545,10 @@ def print_stop_words_bigram(sentences):
                 a = key.decode()
                 a = a.split("#")
                 if len(a) > 1 :
-                    if 'down' not in a:
+                    if 'be' not in a:
                         flag = False
 
-                    if a[1] != 'down':
+                    if a[0] != 'be':
                         flag = False
 
                     for w in a:

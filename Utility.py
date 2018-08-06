@@ -25,8 +25,8 @@ stopwords = [ 'Sunday' ,'Friday' ,'Monday' ,'monday' , 'tuesday' , 'wednessday' 
 bigram_stopwords_2 = [
 
                 #speacial list
-                'cannot'
-                ,'ref'
+                #'cannot',
+                'ref'
 
 
                 #position
