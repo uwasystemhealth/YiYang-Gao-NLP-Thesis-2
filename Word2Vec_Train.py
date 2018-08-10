@@ -12,10 +12,10 @@ def write_vacab_to_txt(words):
 
 if __name__ == "__main__":
     #sentences = Sentences_Parser('../Data_Set/')  # a memory-friendly iterator
-    sentences = Sentences_Parser_3("./Input_Output_Folder/Phrase_Detection/2/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt")
-    window_size = 2
-    min_count = 2
-    iteration_number = 2500
+    sentences = Sentences_Parser_3("./Input_Output_Folder/Phrase_Detection/5/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_transformed.txt")
+    window_size = 3
+    min_count = 5
+    iteration_number = 10000
     vector_size = 200
     threads_number = 8
     skim_gram = 1
@@ -33,7 +33,7 @@ if __name__ == "__main__":
                         ,hs=hierarchical_softmax
                         ,negative = negatice_sampleing
                     )
-    model.save('./Input_Output_Folder/Word2Vec_Model/mymodel_normalized_stage_2_bigram_stage_1_filtered_bigram_2500_min_count_2')
+    model.save('./Input_Output_Folder/Word2Vec_Model/mymodel_normalized_stage_2_bigram_stage_1_filtered_bigram_transformed_10000_min_count_5')
 
 
     #model = gensim.models.Word2Vec.load('./Data/mymodel_unknown_replaced_lemmatized_10000')

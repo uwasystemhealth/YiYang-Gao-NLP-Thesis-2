@@ -6,28 +6,121 @@ from gensim.corpora import Dictionary
 from gensim.matutils import corpus2csc
 import numpy as np
 
-stopwords = [ 'Sunday' ,'Friday' ,'Monday' ,'monday' , 'tuesday' , 'wednessday' ,'thursday' , 'friday' , 'saturday' ,'sunday' ,
-              'janurary' , 'february' , 'march' ,'april' , 'may' ,'june' , 'july' , 'auguster' , 'september' , 'october' ,'november' , 'december'
-              
-              'between', 'but', 'again', 'there', 'about' ,'during',
-              'very', 'having', 'with', 'they', 'own', 'an', 'some',
-              'for', 'its', 'such', 'into', 'of', 'most', 'itself',
-              'other', 's', 'or', 'as', 'from', 'him',
-              'each', 'the', 'themselves', 'until', 'below','we', 'these',
-              'your', 'his', 'through', 'nor', 'me', 'more', 'this', 'should', 'while', 'above', 'both',
-              'up', 'to', 'ours', 'had', 'she', 'all', 'no', 'when', 'at', 'any', 'before', 'them', 'same',
-              'and', 'been', 'have', 'in', 'will', 'on', 'does','yourselves', 'then', 'that', 'because',
-              'what', 'over', 'why', 'so', 'can', 'did', 'not', 'now', 'under', 'he', 'you', 'has',
-              'just', 'where', 'too', 'only', 'myself', 'which', 'those', 'i', 'after', 'few', 'whom', 't', 'being', 'if',
-              'theirs', 'my', 'against', 'a', 'by', 'doing', 'it', 'how', 'further', 'here', 'than'
-              ]
+stopwords = [
+            'Sunday' ,'Friday' ,'Monday' ,'monday' , 'tuesday' , 'wednessday' ,'thursday' , 'friday' , 'saturday' ,'sunday' ,
+
+            'janurary' , 'february' , 'march' ,'april' , 'may' ,'june' , 'july' , 'auguster' , 'september' , 'october' ,'november' , 'december'
+
+            ,'an', 'the', 'a'
+
+            'between', 'through','below' ,'under', 'above' , 'into','before', 'after' , 'onto' ,'into'
+
+            ,'for','of', 'at' , 'up', 'as', 'from', 'about', 'with', 'to' , 'in' , 'on', 'and', 'over' , 'by'
+
+            , 'no', 'nor', 'not'
+
+            , 'can'
+
+            ,'but', 'again', 'or' ,'then', 'so'
+
+            , 'there' , 'this', 'these', 'that', 'those','here'
+
+            ,'very','most','any','some' , 'more', 'than'  , 'all', 'only', 'few'
+
+            ,'during', 'while'
+
+            , 'having' , 'has','had', 'have'
+            , 'does'   , 'doing'
+            , 'own'
+            , 'being'
+            , 'will'
+            , 'should'
+            , 'been'
+            , 'such'
+            , 'other'
+            , 's'
+            , 'each'
+            , 'until'
+            , 'both'
+            , 'same' , 'because', 'did', 'now'
+            , 'just', 'too', 't', 'if'
+            , 'against', 'further'
+
+
+            , 'where' , 'which'     , 'whom'       , 'what', 'why' , 'when', 'how'
+
+            , 'it'    , 'its'       ,'itself'
+            , 'i'     , 'my'    , 'myself'    , 'me'
+            , 'theirs', 'they'      , 'themselves' , 'them'
+            , 'your'  ,'yourselves' , 'you'
+            , 'him'   , 'he'        , 'his'
+            , 'she'
+            , 'we'    , 'ours'
+            ]
+
+
+bigram_stopwords_3 = [
+    'ref'
+    , 'right', 'left'
+    , 'right-hand-side', 'left-hand-side'
+    , 'right-front', 'left-front'
+    , 'right-hand', 'left-hand'
+    , 'right-rear', 'left-rear'
+    , 'right-hand-rear', 'left-hand-rear'
+    , 'right-hand-front', 'left-hand-front'
+    , 'rear'
+    , 'front'
+
+    , 'hour', 'hr', 'hourly'
+    , 'weekly', 'wkly', 'week'
+    , 'fortnightly'
+    , 'date', 'monthly'
+    , 'day', 'daily'
+    , 'month'
+    # noun
+    , 'vendor_name', 'verndo_name', 'mindrill', 'hastings', 'deering', 'Volvo'  # vendor name
+    , 'equipment'
+    , 'equipment_id'
+    , 'electrician'
+    , 'white'
+    , 'black'
+    , 'yellow'
+    , '_number_c', '_number_', 'number'
+    , 'meeting'
+
+    , 'service'  # !!!!!
+    , 'fault'  # !!!!!
+    , 'failure'  # !!!!!
+    , 'report'
+    , 'NA'
+    , 'date_time', 'wednesday'
+
+    , 'problem'
+    , 'issue'
+    , 'complaint'
+
+    , 'five', 'three', 'four', 'six', 'zero', 'one', 'two', 'seven'
+
+    , 'volt'
+    , 'vims'
+    , '_number_b'
+    , 'crack'
+    , 'per'
+    , 'warranty'
+    , 'wk'
+    , 'Mir'
+    , 'kg'  # for kilogram
+]
 
 bigram_stopwords_2 = [
 
                 #speacial list
-                #'cannot',
-                'ref'
-
+                'cannot'
+                ,'ref'
+                # preposition
+                ,'not' , 'is' , 'are'
+                ,'around' ,'on' , 'in' , 'and', 'near' ,'between' , 'out'
+                , 'at', 'as', 'to' , 'behind' , 'inside' , 'outside'
 
                 #position
                 , 'right', 'left'
@@ -39,7 +132,7 @@ bigram_stopwords_2 = [
                 , 'right-hand-front', 'left-hand-front'
                 , 'rear'
                 , 'front'
-
+                ,'bottom'
 
                 #time
 
@@ -49,42 +142,235 @@ bigram_stopwords_2 = [
                 ,'date'   ,'monthly'
                 ,'day'    ,'daily'
                 ,'month'
+                ,'year'
+
+                # verb
+                ,'fabricate'
+                ,'adjust'
+                , 'change' , 'changed'
+                , 'check'  ,  'investigate'
+
+                ,'reweld' ,'weld'
+                ,'refuelling'
+                ,'recharge'
+                ,'resample'
+                ,'retorque'
+                ,'repower'
+                ,'reroute'
+                ,'restock'
+                ,'reskin'
+                ,'retighten'
+                ,'revisit'
+                ,'rekit'
+                ,'regas'
+                ,'rebuild'
+                ,'rebush'
+                ,'reclaim'
+                ,'rectify'
+                ,'refill'
+                ,'relocate'
+
+                ,'shut' ,'shutting'
+                , 'need' , 'see'
+                ,'reseal'
+                ,'reshim'
+                ,'install'
+                ,'fit'   ,'refit' ,'fitted'
+                ,'remove'
+
+                ,'changeout'
+                ,'carryout'
+                ,'inspection'
+                ,'performd'
+                ,'t_c'
+
+                ,'request'
+                ,'require', 'required' , 'requires'
+                ,'fix'
+                ,'repair' , 'repaired'
+                ,'replace', 'replaced'
+                ,'reset'
+                ,'inspect' , 'inspected'
+                ,'be'
+
+                ,'making'
+                ,'take'
+                ,'running'
+                ,'getting' , 'get'
+                ,'going'   , 'go'
+                ,'diagnose', 'diagnosed'
+                ,'trouble-shoot' , 'troubleshoot'
+                ,'calibrate'
+                ,'send'
+                ,'coming' , 'come'
+                ,'fell' , 'fallen'
+                ,'modify'
+                ,'add'
+                ,'update' , 'updated'
+                ,'ensure'
+                ,'keep'
+                ,'flush'
+                ,'upgrade'
+                ,'cut'
+                ,'tighten'
+                ,'overhaul'
+                ,'hire'
+                ,'stay'
+                ,'purge' , 'purged'
+                ,'prep'                 #equipment isolate prep for work --> prep is a verb for prepare
+                ,'perform'
+                ,'tidy'
+
+
+                ,'burning'
+                ,'overcharging'
+                ,'activating'               #alarm activating
+                ,'using'
+                ,'falling'
+                ,'turning'
+                ,'taking'
+                ,'lacking'
+                ,'working'
+                ,'staying'
+                ,'flashing'
+                ,'squealing'
+                ,'sounding'
+                ,'losing'
+                ,'creeping'
+                ,'blowing'
+                ,'weeping'
+                ,'leaking'
+                ,'missing'
+                ,'dragging'             #condition for brake
+                ,'entering'
+                ,'flickering'
+                ,'flicking'
+                ,'tripping'
+                ,'faulting'             #system faulting
+                ,'sticking'             #valve is sticking
+                ,'banging'
+                ,'surging'                 #surging a condition for engine
+                ,'hunting'              # a condition for engine
+                ,'housekeeping'             # e,g substation housekeeping
+                ,'fluctuating'
+
+                ,'jammed'
+                , 'collapsed'  # batery collpsed
+                , 'cracked'
+                , 'bogged'
+                , 'stopped'
+                , 'rusted'
+                , 'damaged'
+                ,'gone'             ,'went'                #gone off
+                ,'loose'
+                ,'broken'
+                ,'blown'
+                ,'blocked'
+                ,'plugged'
+                ,'activated'
+                ,'tripped'
+                ,'worn'
+                ,'bent'
+                ,'attached'
+                ,'ripped'
+                ,'mounted'
+                ,'flogged'
+                ,'turned'
+                ,'stuck'
+                ,'discharged'
+                ,'reported'             #operator reported
+                ,'failed'
+                ,'flashed'
+                ,'unplanned'
+
+                #adj
+                ,'offline'
+                ,'runout'       #!!!!!!!!!!!!! a spercific condition for tyre
+                ,'dull'          #light dull
+                ,'various'
+                ,'poor'
+                ,'harsh'                        #harsh shifting ---> a confition for tranmission boxes
+                ,'tight'
+                ,'bad' , 'badly' , 'new'
+                ,'faulty'
+                ,'correctly'
+                ,'unservicable'
+                , 'additional' , 'extra'
+                ,'small'
+                ,'high'
+                ,'low'
+                ,'lower'
+                ,'outer' , 'inner'
+                ,'external' ,'internal'
+                ,'active'
+                ,'aux' , 'auxiliary'
+                ,'weak'
+                ,'slow'
+                ,'spare'
+                ,'lost'         ,'loosing'
+                ,'excessive'
+                ,'primary'
+                ,'overheating'
+                ,'noisy'
+                ,'scratchy'
+                ,'flat'                             #for battery and tyre
+                ,'hard'                             # for hard to see
+                ,'burnt'
+                ,'busted'
+                ,'scheduled'
+                ,'rubbed'
+
+                # past tense verbs
 
 
 
                 #noun
-                ,'vendor_name' , 'verndo_name' ,'mindrill' , 'hastings' ,'deering'  ,'Volvo'                      #vendor name
-                ,'equipment'
-                ,'equipment_id'
-                ,'electrician'
-                ,'white'
-                ,'black'
-                ,'yellow'
-                ,'_number_c' , '_number_','number'
-                ,'meeting'
 
-                ,'service'                                      #!!!!!
+                , 'meeting'
+                , 'service'                                      #!!!!!
+                , 'schedule'
+                , 'test'
+                , 'maintenance'
+
                 ,'fault'                                        #!!!!!
                 ,'failure'                                      #!!!!!
                 ,'report'
-                ,'NA'
-                ,'date_time'    ,'wednesday'
-
                 ,'problem'
                 ,'issue'
                 ,'complaint'
+                ,'damage'
+                ,'drag'
+                ,'err' ,'error'
+                ,'warning'
+                ,'leak'    ,'oil-leak' ,'air-leak'
+                ,'leakage'
+                ,'fail'
+                ,'usage'
+
+
 
                 ,'five' ,'three' ,     'four'    ,'six'       ,'zero' ,'one' ,'two' ,'seven'
-
-                ,'volt'
+                ,'volt' ,'watt' ,'kilowatt'
                 , 'vims'
-                , '_number_b'
+                , '_number_b' , '_number_rd'
+                , 'NA'
+                , 'date_time', 'wednesday'
                 ,'crack'
                 ,'per'
                 ,'warranty'
                 ,'wk'
                 ,'Mir'
                 ,'kg'           #for kilogram
+                , 'vendor_name', 'verndo_name', 'mindrill', 'hastings', 'deering', 'Volvo'  # vendor name
+                , 'equipment'
+                , 'equipment_id'
+                , 'electrician'
+                , 'white', 'black', 'yellow', 'blue'
+                ,'kowa'
+                ,'kom'
+
+                , '_number_c', '_number_', 'number'
+                ,'southern'
                 ]
 
 

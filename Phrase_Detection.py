@@ -519,7 +519,7 @@ def print_stop_words_bigram(sentences):
     """read in the files where filtered bigrams has been applied to. Generate teh bigrams that contains the stop words only  """
 
     stopwords_2 = stopwords
-    remvoed_from_stopwords = ['up' ,'in' ,'not']
+    remvoed_from_stopwords = ['up' ,'in' ,'not',]
     for w in remvoed_from_stopwords:
         stopwords_2.remove(w)
 
@@ -537,7 +537,7 @@ def print_stop_words_bigram(sentences):
 
     bigram_stop_word_list_2 = Utility.bigram_stopwords_2                                                # this list is teh big list without verb , adj and past tenses
 
-    with open('./Input_Output_Folder/Phrase_Detection/3/be_bigrams.txt', "w") as bigram_2_file:
+    with open('./Input_Output_Folder/Phrase_Detection/3/out_bigrams.txt', "w") as bigram_2_file:
         c = 1
         for key in phrases.vocab.keys():
             if key not in stopwords:
@@ -545,10 +545,10 @@ def print_stop_words_bigram(sentences):
                 a = key.decode()
                 a = a.split("#")
                 if len(a) > 1 :
-                    if 'be' not in a:
+                    if 'out' not in a:
                         flag = False
 
-                    if a[0] != 'be':
+                    if a[1] != 'out':
                         flag = False
 
                     for w in a:
