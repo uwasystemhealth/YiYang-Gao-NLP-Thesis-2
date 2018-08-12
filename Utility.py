@@ -30,7 +30,7 @@ stopwords = [
             ,'during', 'while'
 
             , 'having' , 'has','had', 'have'
-            , 'does'   , 'doing'
+            , 'does'   , 'doing', 'did'
             , 'own'
             , 'being'
             , 'will'
@@ -42,7 +42,7 @@ stopwords = [
             , 'each'
             , 'until'
             , 'both'
-            , 'same' , 'because', 'did', 'now'
+            , 'same' , 'because', 'now'
             , 'just', 'too', 't', 'if'
             , 'against', 'further'
 

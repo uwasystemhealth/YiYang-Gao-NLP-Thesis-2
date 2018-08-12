@@ -1,123 +1,113 @@
-
+import os
 import nltk
 import copy
 import gensim
-
-model = gensim.models.Word2Vec.load('./Data/mymodel_20_1000')
-a = model.wv.vocab
-X = model[a]
-
-stopwords = [ 'monday' , 'tuesday' , 'wednessday' ,'thursday' , 'friday' , 'saturday' ,'sunday' ,
-              'janurary' , 'february' , 'march' ,'april' , 'may' ,'june' , 'july' , 'auguster' , 'september' , 'october' ,'november' , 'december'
-              'between', 'but', 'again', 'there', 'about' ,'during',
-              'very', 'having', 'with', 'they', 'own', 'an', 'some',
-              'for', 'its', 'such', 'into', 'of', 'most', 'itself',
-              'other', 's', 'or', 'as', 'from', 'him',
-              'each', 'the', 'themselves', 'until', 'below','we', 'these',
-              'your', 'his', 'through', 'nor', 'me', 'more', 'this', 'should', 'while', 'above', 'both',
-              'up', 'to', 'ours', 'had', 'she', 'all', 'no', 'when', 'at', 'any', 'before', 'them', 'same',
-              'and', 'been', 'have', 'in', 'will', 'on', 'does','yourselves', 'then', 'that', 'because',
-              'what', 'over', 'why', 'so', 'can', 'did', 'not', 'now', 'under', 'he', 'you', 'has',
-              'just', 'where', 'too', 'only', 'myself', 'which', 'those', 'i', 'after', 'few', 'whom', 't', 'being', 'if',
-              'theirs', 'my', 'against', 'a', 'by', 'doing', 'it', 'how', 'further', 'here', 'than'
-              ]
+import Phrase_Detection_2
+import operator
+from sklearn.manifold import TSNE
+from matplotlib import pyplot as plt
 
 
+trial_number = 1
+save_folder_name = "./Input_Output_Folder/K_Means_Clustering/" + str(trial_number)
+if not os.path.isdir(save_folder_name):
+    os.makedirs(save_folder_name)
 
 
-def write_vacab_to_txt(words):
-    with open("../Ignored_Files/vacab_2.txt", "w") as vacab_file:
-        i = 1
-        for word in words:
-            print(word + '\t\t ' + str(i), file = vacab_file)
-            i = i + 1
+model = gensim.models.Word2Vec.load('./Input_Output_Folder/Word2Vec_Model/mymodel_normalized_stage_2_bigram_stage_1_filtered_bigram_transformed_10000_min_count_5')
 
+List_of_number_of_clusters = [3]#[5,15,25,35 ,45]
 
 def cluster(X):
-    for i in [35,45,55,65]:
+
+
+    for i in List_of_number_of_clusters:
         NUM_CLUSTERS = i
-        kclusterer = nltk.cluster.KMeansClusterer(NUM_CLUSTERS, distance=nltk.cluster.cosine_distance, repeats = 100 )
+        kclusterer = nltk.cluster.KMeansClusterer(NUM_CLUSTERS, distance=nltk.cluster.cosine_distance, repeats = 5000 )
         assigned_clusters = kclusterer.cluster(model[X], assign_clusters=True)
 
         words = list(X)
-        with open("./K_Means_Clustering/Model_20_lemmatized_vacab_eulidien_"+str(i)+".txt", "w") as vacab_file:
+        with open(save_folder_name+"/mymodel_normalized_stage_2_bigram_stage_1_filtered_bigram_transformed_10000_min_count_5_"+str(i)+".txt", "w") as vacab_file:
             for i, word in enumerate(words):
-                print(word + "\t\t\t" + str(assigned_clusters[i]), file=vacab_file)
+                print('{0:<20}\t{1}'.format(word, str(assigned_clusters[i])), file=vacab_file)
+                #print(word + "\t\t\t" + str(assigned_clusters[i]), file=vacab_file)
 
-def display_result():
-    with open("../Ignored_Files/vacab_2.txt", "r") as vacab_file:
-        line = vacab_file.readline()
-        cnt = 1
-        while line:
-            print("Line {}: {}".format(cnt, line.strip()))
-            line = fp.readline()
-            cnt += 1
 
 
 
 def divide_vacab():
 
+    failure_description_words = []
+    with open(Phrase_Detection_2.save_folder_name + '/final_stop_words_dic_for_parts_detection.txt', "r") as words_file:
+        line = words_file.readline()
+        while line:
+            word_list = line.split()
+            word = word_list[1]
+            if '!' not in word_list:
+                failure_description_words.append(word)
+            line = words_file.readline()
+
+    with open(Phrase_Detection_2.save_folder_name + '/extra_stopwords.txt', "r") as words_file:
+        line = words_file.readline()
+        while line:
+            word_list = line.split()
+            word = word_list[0]
+            failure_description_words.append(word)
+            line = words_file.readline()
+
+
+
     filtered_vocab = copy.deepcopy(model.wv.vocab)
     for word in model.wv.vocab.keys():
-        if word in stopwords:
+        if word not in failure_description_words:
             filtered_vocab.pop(word)
     return filtered_vocab
 
 
-def divide_vacab_only_VB():
-
-    filtered_vocab = copy.deepcopy(model.wv.vocab)
-    i = 1
-    for word in model.wv.vocab.keys():
-        if word in stopwords:
-            filtered_vocab.pop(word)
-        else:
-            s = nltk.pos_tag([word])[0]
-            if s[1] == 'VBD' or s[1] == 'VB' or s[1] == 'VBG' or s[1] == 'VBN' or s[1] == 'VBZ' or s[1] == 'VBP':
-                i+=1
-            else:
-                filtered_vocab.pop(word)
-    print('*************************:' + str(i) )
-
-    return filtered_vocab
+def sort_k_cluter_file():
 
 
-def divide_vacab_only_NN():
+    for i in List_of_number_of_clusters:
+        word_cluster_dict = {}
+        with open(save_folder_name+"/mymodel_normalized_stage_2_bigram_stage_1_filtered_bigram_transformed_10000_min_count_5_"+str(i)+".txt", "r") as words_file:
+            line = words_file.readline()
+            while line:
+                word_list = line.split()
+                word = word_list[0]
+                cluster = word_list[1]
+                word_cluster_dict[word] = int(cluster)
+                line = words_file.readline()
 
-    filtered_vocab = copy.deepcopy(model.wv.vocab)
-    i = 1
-    for word in model.wv.vocab.keys():
-        if word in stopwords:
-            filtered_vocab.pop(word)
-        else:
-            s = nltk.pos_tag([word])[0]
-            if s[1] == 'NN' or s[1] == 'NNS' :
-                i+=1
-            else:
-                filtered_vocab.pop(word)
-    print('*************************:' + str(i) )
-
-    return filtered_vocab
+            with open(save_folder_name + "/sorted_" + str(i) + ".txt", "w") as words_file:
+                for k,v in sorted(word_cluster_dict.items(), key=operator.itemgetter(1)):
+                    print('{0:<20}\t{1}'.format(k, str(v)), file=words_file)
 
 
-def divide_vacab_only_JJ():
+def tsne_display_result(filtered_vocab):
+    """use tsne algorithm to display the result. takes in the filtered model.wv.vocab as input"""
 
-    filtered_vocab = copy.deepcopy(model.wv.vocab)
-    i = 1
-    for word in model.wv.vocab.keys():
-        if word in stopwords:
-            filtered_vocab.pop(word)
-        else:
-            s = nltk.pos_tag([word])[0]
-            if s[1] == 'JJ' or s[1] == 'JJR' or s[1] == 'JJS' :
-                i+=1
-            else:
-                filtered_vocab.pop(word)
-    print('*************************:' + str(i) )
+    labels = []
+    for w in filtered_vocab:
+        labels.append(w)
 
-    return filtered_vocab
+    X = model[filtered_vocab]
+
+    perplexity = 5
+    tsne = TSNE(n_components=2, random_state=0 ,perplexity=perplexity)
+    X_2d = tsne.fit_transform(X)
+
+
+    plt.figure(figsize=(16, 16))
+    for i in range(len(X)):
+        plt.scatter(X_2d[i,0], X_2d[i,1])
+        plt.annotate(labels[i],xy=(X_2d[i,0], X_2d[i,1]),xytext=(5, 2),textcoords='offset points',ha='right',va='bottom',size=5)
+
+    plt.savefig(save_folder_name+'/tsne_perplexity_'+str(perplexity)+'.png')
+
+
 
 if __name__ == '__main__':
-    # display_result()
+    #tsne_display_result(divide_vacab())
 
     cluster(divide_vacab())
+    sort_k_cluter_file()
