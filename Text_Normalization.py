@@ -1,7 +1,14 @@
 import Data_Preprocessing
 from nltk.stem import WordNetLemmatizer
-lemmatizer = WordNetLemmatizer()
+import os
 
+trial_number = 3
+save_folder_name = "./Input_Output_Folder/Normalized_Record/"+ str(trial_number)
+if not os.path.isdir(save_folder_name):
+    os.makedirs(save_folder_name)
+
+
+lemmatizer = WordNetLemmatizer()
 uncorrected_words_dictionry = {}
 words_correction_dictionry = {}
 bigram_dictionary = []
@@ -20,6 +27,7 @@ def lemmatized_words_building():
                 lemmatized_words_dictionry[word] = lemmatized_word
 
             line = words_file.readline()
+
 
 def Unknown_words_building():
     with open( "./Input_Output_Folder/Words_Correction_Dictionary/uncorrected_words_dictionry_unsure.txt", "r") as words_file:
@@ -154,6 +162,8 @@ def Bigram_building():
     words_correction_dictionry['cyl'] = 'cylinder'
     words_correction_dictionry['hyd'] = 'hydraulic'
     words_correction_dictionry['mtr'] = 'motor'
+    words_correction_dictionry['fab'] = 'fabricate'
+
 #----------------print out results
 
     with open("./Input_Output_Folder/Words_Correction_Dictionary/bigram_dictionary.txt", "w") as bigram_file:
@@ -235,8 +245,8 @@ if __name__ == "__main__":
     Unknown_words_building()
     lemmatized_words_building()
     Bigram_building()
-    sentences = Data_Preprocessing.Sentences_Parser_2('./Input_Output_Folder/Preprocessed_Record/Cleaned_Data_15.txt')
-    with open("./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_1.txt", "w") as Normalized_Text_Stage_1:
+    sentences = Data_Preprocessing.Sentences_Parser_2('./Input_Output_Folder/Preprocessed_Record/Cleaned_Data_1.txt')
+    with open(save_folder_name + "Normalized_Text_Stage_1.txt", "w") as Normalized_Text_Stage_1:
         i = 1
         for sentence in sentences:
             string_to_print = ' '.join(Normalize_Text_stage_1(sentence))
@@ -244,8 +254,8 @@ if __name__ == "__main__":
             i+=1
 
 
-    sentences = Data_Preprocessing.Sentences_Parser_2('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_1.txt')
-    with open("./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_1_lemmatized.txt", "w") as Normalized_Text_Stage_1_lemmatized:
+    sentences = Data_Preprocessing.Sentences_Parser_2(save_folder_name + "Normalized_Text_Stage_1.txt")
+    with open(save_folder_name + "Normalized_Text_Stage_1_lemmatized.txt", "w") as Normalized_Text_Stage_1_lemmatized:
         i = 1
         for sentence in sentences:
             string_to_print = ' '.join(Lemmatize_words(sentence))
@@ -253,16 +263,16 @@ if __name__ == "__main__":
             i+=1
 
 
-    sentences = Data_Preprocessing.Sentences_Parser_2('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_1_lemmatized.txt')
-    with open("./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt", "w") as Normalized_Text_Stage_2:
+    sentences = Data_Preprocessing.Sentences_Parser_2(save_folder_name + "Normalized_Text_Stage_1_lemmatized.txt")
+    with open(save_folder_name + "Normalized_Text_Stage_2.txt", "w") as Normalized_Text_Stage_2:
         i = 1
         for sentence in sentences:
             string_to_print = ' '.join(Normalize_Text_stage_2(sentence))
             print(str(i) + '\t' + string_to_print, file=Normalized_Text_Stage_2)
             i += 1
 
-    sentences = Data_Preprocessing.Sentences_Parser_2('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
-    with open("./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2_unknown_replaced.txt", "w") as Normalized_Text_Stage_3:
+    sentences = Data_Preprocessing.Sentences_Parser_2(save_folder_name + "Normalized_Text_Stage_2.txt")
+    with open(save_folder_name + "Normalized_Text_Stage_2_unknown_replaced.txt", "w") as Normalized_Text_Stage_3:
         i = 1
         for sentence in sentences:
             string_to_print = ' '.join(Replace_Unknown_words(sentence))
