@@ -120,18 +120,16 @@ def apply_failure_description_ngram(sentences):
                     failue_description_dictionary.append(word)
                 line = failue_description_file.readline()
 
-    failue_description_dictionary.sort(key = lambda s: len(s), reverse=True)
-
-    List_of_failure_adj = []
-    with open("./Input_Output_Folder/Failure_Description/List_of_maintenance_adj_manul_edited.txt", "r") as failure_adj_file:
+    with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_ngram_without_is_are.txt", "r") as failure_adj_file:
         line = failure_adj_file.readline()
         while line:
             word_list = line.split()
             if len(word_list) > 0:
                 word = word_list[0]
-                List_of_failure_adj.append(word)
+                failue_description_dictionary.append(word)
             line = failure_adj_file.readline()
 
+    failue_description_dictionary.sort(key = lambda s: len(s), reverse=True)
 
     with open(save_file_name, "w") as bigram_file:
         c = 1
