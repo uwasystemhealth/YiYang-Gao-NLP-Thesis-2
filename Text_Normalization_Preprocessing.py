@@ -1,16 +1,22 @@
 import gensim
 import aspell
 import Data_Preprocessing
+import os
 
-Path_to_Word2Vec_Model = './Data/mymodel_19_1000'
+trial_number = 1
+save_folder_name = "./Input_Output_Folder/Words_Correction_Dictionary/"+ str(trial_number)
+if not os.path.isdir(save_folder_name):
+    os.makedirs(save_folder_name)
 
+Path_to_Word2Vec_Model = './Input_Output_Folder/Word2Vec_Model/Data/mymodel_19_1000'
 model = gensim.models.Word2Vec.load(Path_to_Word2Vec_Model)
 word_list = list(model.wv.vocab)
 word_list.sort(key=len, reverse=False)
 words = sorted(word_list)
 
-Data_Preprocessing.write_vacab_to_txt('./Processed_Data/vacab_alphebat.txt',words)
-Data_Preprocessing.write_vacab_to_txt('./Processed_Data/vacab_length.txt',word_list)
+
+Data_Preprocessing.write_vacab_to_txt(save_folder_name+ 'vacab_alphebat.txt',words)
+Data_Preprocessing.write_vacab_to_txt(save_folder_name+ 'vacab_length.txt',word_list)
 
 
 
@@ -22,7 +28,7 @@ def string_in_corpus(string_to_search):
 
 
 def stage_1():
-    words = Data_Preprocessing.Words_Parser('./Processed_Data/', 'vacab_alphebat.txt')
+    words = Data_Preprocessing.Words_Parser(save_folder_name, 'vacab_alphebat.txt')
     s = aspell.Speller('lang', 'en')
     with open("./Processed_Data/Stage1/auto_corrected_words_v_3.txt", "w") as auto_corrected_words_2:
         with open("./Processed_Data/Stage1/auto_corrected_words_v_3.txt", "w") as auto_corrected_words:
@@ -123,4 +129,5 @@ def stage_2():
 
 
 if __name__ == "__main__":
-    stage_2()
+    stage_1()
+    #stage_2()
