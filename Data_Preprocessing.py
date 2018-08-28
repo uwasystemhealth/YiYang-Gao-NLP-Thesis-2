@@ -1,6 +1,14 @@
 import csv
 import re
+import os
 from collections import defaultdict
+
+trial_number = 1
+save_folder_name = "./Input_Output_Folder/Preprocessed_Record/"
+if not os.path.isdir(save_folder_name):
+    os.makedirs(save_folder_name)
+
+ignored_lines_placeholder = '='
 
 class Words_Parser(object):
     def __init__(self, dir_name , file_name ):
@@ -203,37 +211,17 @@ class Sentences_Parser(object):
 
         short_text = re.sub('\s\w?_number_\w?_number_\w?\s', ' ', short_text)
         short_text = re.sub('\s\w{1,2}_number_\w?\s', ' ', short_text)
+
         #------------------------------Speacial Case 2----------------------------------------------------------------------------------------------------------------
 
         short_text = re.sub('\som\s', ' on ', short_text)
         short_text = re.sub('\swill not\s',   ' cannot ', short_text)
         short_text = re.sub('wont\s',         ' cannot ', short_text)
         short_text = re.sub('won t\s',        ' cannot ', short_text)
-        with open(self.dir_name + self.file_name , newline='') as words_file:
-            for line  in words_file:
-                yield line.split()[1]
-
-class Sentences_Parser_3(object):
-    def __init__(self, file_name):
-
-
-
-
-
-
-
-
-
-
-        self.file_name = file_name
 
         short_text = re.sub('cant\s',         ' cannot ', short_text)
         short_text = re.sub('can t\s',        ' cannot ', short_text)
         short_text = re.sub('\scan not\s',    ' cannot ', short_text)
-
-
-
-
 
         short_text = re.sub('\scould not\s',  ' cannot ', short_text)
         short_text = re.sub('\scouldnt\s',    ' cannot ', short_text)
@@ -246,10 +234,14 @@ class Sentences_Parser_3(object):
 
         short_text = re.sub('\sdo not\s', ' cannot ', short_text)
         short_text = re.sub('\sd not\s', ' cannot ', short_text)
-        short_text = re.sub('\sdont\s', ' cannot ', short_text)
+        shokcxrt_text = re.sub('\sdont\s', ' cannot ', short_text)
 
         short_text = re.sub('\sdoes not\s', ' cannot ', short_text)
         short_text = re.sub('\sdoesnt\s', ' cannot ', short_text)
+
+        short_text = re.sub('\snot able to\s', ' cannot ', short_text)
+        short_text = re.sub('\sunable to\s', ' cannot ', short_text)
+
 
 # deal with common bigrams
         short_text = re.sub('over haul\s', ' overhaul ', short_text)
@@ -274,7 +266,7 @@ class Sentences_Parser_3(object):
         short_text = re.sub('\sj (?=mod)', ' j_', short_text)
 
         short_text = re.sub('\se (?=stop)', ' emergency_', short_text)
-        short_text = re.sub('\so (?=ring)', ' oil_', short_text)
+        short_text = re.sub('\so (?=ring)', ' o_', short_text)
         short_text = re.sub('\sc (?=breaker)', ' circuit ', short_text)
         short_text = re.sub('\sr h\s', ' r_h ', short_text)
         short_text = re.sub('\sl h\s', ' r_h ', short_text)
@@ -298,10 +290,13 @@ class Sentences_Parser_3(object):
                     yield short_text.split()
                 else:
                     self.ignored_lines_count+=1
-                    yield '~'
+                    yield ignored_lines_placeholder
 
-def Print_Out_Resuls(sentences):
-    with open("./Processed_Data/Cleaned_Data_15.txt", "w") as cleaned_data_file:
+
+def Precrocess_Records_and_Print(sentences):
+    Path_to_Save_file = save_folder_name + 'Cleaned_Data_' + str(trial_number) +'.txt'
+
+    with open(Path_to_Save_file, "w") as cleaned_data_file:
         i = 1
         for sentence in sentences:
             string_to_print = str(i) + '\t' + " ".join(sentence)
@@ -348,9 +343,13 @@ def write_vacab_to_txt(file_path, words):
 
 
 if __name__ == "__main__":
-    #sentences = Sentences_Parser('./Data/')
-    sentences = Sentences_Parser_2('./Words_Correction_Dictionary/Normalized_Text_Stage_2.txt')
+    Path_to_Rawdata = './Input_Output_Folder/Raw_Record/'
+    sentences = Sentences_Parser(Path_to_Rawdata)
+    Precrocess_Records_and_Print(sentences)
+
+
+    #sentences = Sentences_Parser_2('./Words_Correction_Dictionary/Normalized_Text_Stage_2.txt')
     #for s in sentences:
        #print(s)
-    #Print_Out_Resuls(sentences)
-    Print_Out_Token_Frequecy(sentences)
+    #Print_Out_Token_Frequecy(sentences)
+
