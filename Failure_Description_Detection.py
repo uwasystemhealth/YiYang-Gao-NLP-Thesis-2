@@ -7,8 +7,6 @@ from pattern.en import conjugate
 from pattern.en import tag
 from Utility import Utility_Sentence_Parser
 
-
-
 trial_number = 4
 save_folder_name = "./Input_Output_Folder/Failure_Description/" + str(trial_number)
 if not os.path.isdir(save_folder_name):
@@ -87,7 +85,7 @@ def failure_description_ngram_detect(sentences):
                                 w = a[1:]
                                 List_of_failure_description_ngram_without_is_are.append(delimiter.decode().join(w))
                                 if len(w) ==1 :
-                                    List_of_failure_description_single_word.append(w)
+                                    List_of_failure_description_single_word.append(w[0])
 
                             s = key.decode()
                             print('{0}\t\t{1:<10}'.format(c, s), file=bigram_2_file)
