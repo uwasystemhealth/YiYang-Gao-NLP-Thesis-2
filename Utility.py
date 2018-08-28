@@ -1,4 +1,5 @@
-from sklearn.feature_extraction.text import CountVectorizer
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
 import nltk
 from collections import defaultdict
@@ -6,375 +7,348 @@ from gensim.corpora import Dictionary
 from gensim.matutils import corpus2csc
 import numpy as np
 
-stopwords = [
-            'Sunday' ,'Friday' ,'Monday' ,'monday' , 'tuesday' , 'wednessday' ,'thursday' , 'friday' , 'saturday' ,'sunday' ,
-
-            'janurary' , 'february' , 'march' ,'april' , 'may' ,'june' , 'july' , 'auguster' , 'september' , 'october' ,'november' , 'december'
-
-            ,'an', 'the', 'a'
-
-            'between', 'through','below' ,'under', 'above' , 'into','before', 'after' , 'onto' ,'into'
-
-            ,'for','of', 'at' , 'up', 'as', 'from', 'about', 'with', 'to' , 'in' , 'on', 'and', 'over' , 'by'
-
-            , 'no', 'nor', 'not'
-
-            , 'can'
-
-            ,'but', 'again', 'or' ,'then', 'so'
-
-            , 'there' , 'this', 'these', 'that', 'those','here'
-
-            ,'very','most','any','some' , 'more', 'than'  , 'all', 'only', 'few'
-
-            ,'during', 'while'
-
-            , 'having' , 'has','had', 'have'
-            , 'does'   , 'doing', 'did'
-            , 'own'
-            , 'being'
-            , 'will'
-            , 'should'
-            , 'been'
-            , 'such'
-            , 'other'
-            , 's'
-            , 'each'
-            , 'until'
-            , 'both'
-            , 'same' , 'because', 'now'
-            , 'just', 'too', 't', 'if'
-            , 'against', 'further'
-
-
-            , 'where' , 'which'     , 'whom'       , 'what', 'why' , 'when', 'how'
-
-            , 'it'    , 'its'       ,'itself'
-            , 'i'     , 'my'    , 'myself'    , 'me'
-            , 'theirs', 'they'      , 'themselves' , 'them'
-            , 'your'  ,'yourselves' , 'you'
-            , 'him'   , 'he'        , 'his'
-            , 'she'
-            , 'we'    , 'ours'
-            ]
-
-
-bigram_stopwords_3 = [
-    'ref'
-    , 'right', 'left'
-    , 'right-hand-side', 'left-hand-side'
-    , 'right-front', 'left-front'
-    , 'right-hand', 'left-hand'
-    , 'right-rear', 'left-rear'
-    , 'right-hand-rear', 'left-hand-rear'
-    , 'right-hand-front', 'left-hand-front'
-    , 'rear'
-    , 'front'
-
-    , 'hour', 'hr', 'hourly'
-    , 'weekly', 'wkly', 'week'
-    , 'fortnightly'
-    , 'date', 'monthly'
-    , 'day', 'daily'
-    , 'month'
-    # noun
-    , 'vendor_name', 'verndo_name', 'mindrill', 'hastings', 'deering', 'Volvo'  # vendor name
-    , 'equipment'
-    , 'equipment_id'
-    , 'electrician'
-    , 'white'
-    , 'black'
-    , 'yellow'
-    , '_number_c', '_number_', 'number'
-    , 'meeting'
-
-    , 'service'  # !!!!!
-    , 'fault'  # !!!!!
-    , 'failure'  # !!!!!
-    , 'report'
-    , 'NA'
-    , 'date_time', 'wednesday'
-
-    , 'problem'
-    , 'issue'
-    , 'complaint'
-
-    , 'five', 'three', 'four', 'six', 'zero', 'one', 'two', 'seven'
-
-    , 'volt'
-    , 'vims'
-    , '_number_b'
-    , 'crack'
-    , 'per'
-    , 'warranty'
-    , 'wk'
-    , 'Mir'
-    , 'kg'  # for kilogram
-]
-
-bigram_stopwords_2 = [
-
-                #speacial list
-                'cannot'
-                ,'ref'
-                # preposition
-                ,'not' , 'is' , 'are'
-                ,'around' ,'on' , 'in' , 'and', 'near' ,'between' , 'out'
-                , 'at', 'as', 'to' , 'behind' , 'inside' , 'outside'
-
-                #position
-                , 'right', 'left'
-                , 'right-hand-side' , 'left-hand-side'
-                , 'right-front'     , 'left-front'
-                , 'right-hand', 'left-hand'
-                , 'right-rear', 'left-rear'
-                , 'right-hand-rear' , 'left-hand-rear'
-                , 'right-hand-front', 'left-hand-front'
-                , 'rear'
-                , 'front'
-                ,'bottom'
-
-                #time
-
-                ,'hour'   ,'hr'      ,'hourly'
-                ,'weekly' ,'wkly'    , 'week'
-                ,'fortnightly'
-                ,'date'   ,'monthly'
-                ,'day'    ,'daily'
-                ,'month'
-                ,'year'
-
-                # verb
-                ,'fabricate'
-                ,'adjust'
-                , 'change' , 'changed'
-                , 'check'  ,  'investigate'
-
-                ,'reweld' ,'weld'
-                ,'refuelling'
-                ,'recharge'
-                ,'resample'
-                ,'retorque'
-                ,'repower'
-                ,'reroute'
-                ,'restock'
-                ,'reskin'
-                ,'retighten'
-                ,'revisit'
-                ,'rekit'
-                ,'regas'
-                ,'rebuild'
-                ,'rebush'
-                ,'reclaim'
-                ,'rectify'
-                ,'refill'
-                ,'relocate'
-
-                ,'shut' ,'shutting'
-                , 'need' , 'see'
-                ,'reseal'
-                ,'reshim'
-                ,'install'
-                ,'fit'   ,'refit' ,'fitted'
-                ,'remove'
-
-                ,'changeout'
-                ,'carryout'
-                ,'inspection'
-                ,'performd'
-                ,'t_c'
-
-                ,'request'
-                ,'require', 'required' , 'requires'
-                ,'fix'
-                ,'repair' , 'repaired'
-                ,'replace', 'replaced'
-                ,'reset'
-                ,'inspect' , 'inspected'
-                ,'be'
-
-                ,'making'
-                ,'take'
-                ,'running'
-                ,'getting' , 'get'
-                ,'going'   , 'go'
-                ,'diagnose', 'diagnosed'
-                ,'trouble-shoot' , 'troubleshoot'
-                ,'calibrate'
-                ,'send'
-                ,'coming' , 'come'
-                ,'fell' , 'fallen'
-                ,'modify'
-                ,'add'
-                ,'update' , 'updated'
-                ,'ensure'
-                ,'keep'
-                ,'flush'
-                ,'upgrade'
-                ,'cut'
-                ,'tighten'
-                ,'overhaul'
-                ,'hire'
-                ,'stay'
-                ,'purge' , 'purged'
-                ,'prep'                 #equipment isolate prep for work --> prep is a verb for prepare
-                ,'perform'
-                ,'tidy'
-
-
-                ,'burning'
-                ,'overcharging'
-                ,'activating'               #alarm activating
-                ,'using'
-                ,'falling'
-                ,'turning'
-                ,'taking'
-                ,'lacking'
-                ,'working'
-                ,'staying'
-                ,'flashing'
-                ,'squealing'
-                ,'sounding'
-                ,'losing'
-                ,'creeping'
-                ,'blowing'
-                ,'weeping'
-                ,'leaking'
-                ,'missing'
-                ,'dragging'             #condition for brake
-                ,'entering'
-                ,'flickering'
-                ,'flicking'
-                ,'tripping'
-                ,'faulting'             #system faulting
-                ,'sticking'             #valve is sticking
-                ,'banging'
-                ,'surging'                 #surging a condition for engine
-                ,'hunting'              # a condition for engine
-                ,'housekeeping'             # e,g substation housekeeping
-                ,'fluctuating'
-
-                ,'jammed'
-                , 'collapsed'  # batery collpsed
-                , 'cracked'
-                , 'bogged'
-                , 'stopped'
-                , 'rusted'
-                , 'damaged'
-                ,'gone'             ,'went'                #gone off
-                ,'loose'
-                ,'broken'
-                ,'blown'
-                ,'blocked'
-                ,'plugged'
-                ,'activated'
-                ,'tripped'
-                ,'worn'
-                ,'bent'
-                ,'attached'
-                ,'ripped'
-                ,'mounted'
-                ,'flogged'
-                ,'turned'
-                ,'stuck'
-                ,'discharged'
-                ,'reported'             #operator reported
-                ,'failed'
-                ,'flashed'
-                ,'unplanned'
-
-                #adj
-                ,'offline'
-                ,'runout'       #!!!!!!!!!!!!! a spercific condition for tyre
-                ,'dull'          #light dull
-                ,'various'
-                ,'poor'
-                ,'harsh'                        #harsh shifting ---> a confition for tranmission boxes
-                ,'tight'
-                ,'bad' , 'badly' , 'new'
-                ,'faulty'
-                ,'correctly'
-                ,'unservicable'
-                , 'additional' , 'extra'
-                ,'small'
-                ,'high'
-                ,'low'
-                ,'lower'
-                ,'outer' , 'inner'
-                ,'external' ,'internal'
-                ,'active'
-                ,'aux' , 'auxiliary'
-                ,'weak'
-                ,'slow'
-                ,'spare'
-                ,'lost'         ,'loosing'
-                ,'excessive'
-                ,'primary'
-                ,'overheating'
-                ,'noisy'
-                ,'scratchy'
-                ,'flat'                             #for battery and tyre
-                ,'hard'                             # for hard to see
-                ,'burnt'
-                ,'busted'
-                ,'scheduled'
-                ,'rubbed'
-
-                # past tense verbs
+import nltk
+from nltk.corpus import stopwords
+from pattern.en.wordlist import TIME
 
 
 
-                #noun
+stopwords_nltk = set(stopwords.words('english'))
+stopwords_nltk_pattern = stopwords_nltk.union(TIME)
+custom_stopwords = ['Sunday','Friday', 'Monday', 'monday', 'tuesday','wednessday','thursday','friday','saturday','sunday',
+                     'janurary','february','march','april','may','june','july','auguster','september','october','november','december',
+                     'abetween', 'onto','around'
+                     'cannot',
+                     'zero','one' ,'two' ,'three','four' ,'five' ,'six' ,'seven','eight','nine','ten'
+                     ,'red','green' ,'blue','black','blue','yellow','white'
+                     ,'wk' ,'wkly' ,'fortnightly' ,'hr'
+                     ,'volt' ,'kilowatt' ,'kg' ,'watt'
+                     ,'outside' ,'inside' ,'internal' ,'external' ,'inner' ,'outer'
+                     ,'NA'
+                     ,'number'
+                     ,'need' ,'see'
+                    ]
+stopwords_nltk_pattern_custom = stopwords_nltk_pattern.union(custom_stopwords)
+stopwords_nltk_pattern_custom = list(stopwords_nltk_pattern_custom)
+# stopwords = [
+#             'Sunday' ,'Friday' ,'Monday' ,'monday' , 'tuesday' , 'wednessday' ,'thursday' , 'friday' , 'saturday' ,'sunday' ,
+#
+#             'janurary' , 'february' , 'march' ,'april' , 'may' ,'june' , 'july' , 'auguster' , 'september' , 'october' ,'november' , 'december'
+#
+#             ,'an', 'the', 'a'
+#
+#             'between', 'through','below' ,'under', 'above' , 'into','before', 'after' , 'onto' ,'into' , 'to'
+#
+#             ,'with'
+#
+#             ,'for','of', 'at' , 'up', 'as', 'from', 'about', 'with', 'in' , 'on', 'and', 'over' , 'by'
+#
+#             , 'no', 'nor', 'not'
+#
+#             , 'is', 'are', 'be', 'being' , 'been'
+#
+#             , 'can' , 'cannot'
+#
+#             ,'but', 'again', 'or' ,'then', 'so'
+#
+#             , 'there' , 'this', 'these', 'that', 'those','here'
+#
+#             ,'very','most','any','some' , 'more', 'than'  , 'all', 'only', 'few'
+#
+#             ,'during', 'while'
+#
+#             , 'having' , 'has','had', 'have'
+#             , 'does'   , 'doing', 'did'
+#             , 'own'
+#
+#             , 'will'
+#             , 'should'
+#             , 'such'
+#             , 'other'
+#             , 's'
+#             , 'each'
+#             , 'until'
+#             , 'both'
+#             , 'same' , 'because', 'now'
+#             , 'just', 'too', 't', 'if'
+#             , 'against', 'further'
+#
+#
+#             , 'where' , 'which'     , 'whom'       , 'what', 'why' , 'when', 'how'
+#
+#             , 'it'    , 'its'       ,'itself'
+#             , 'i'     , 'my'    , 'myself'    , 'me'
+#             , 'theirs', 'they'      , 'themselves' , 'them'
+#             , 'your'  ,'yourselves' , 'you'
+#             , 'him'   , 'he'        , 'his'
+#             , 'she'
+#             , 'we'    , 'ours'
+#             ]
 
-                , 'meeting'
-                , 'service'                                      #!!!!!
-                , 'schedule'
-                , 'test'
-                , 'maintenance'
 
-                ,'fault'                                        #!!!!!
-                ,'failure'                                      #!!!!!
-                ,'report'
-                ,'problem'
-                ,'issue'
-                ,'complaint'
-                ,'damage'
-                ,'drag'
-                ,'err' ,'error'
-                ,'warning'
-                ,'leak'    ,'oil-leak' ,'air-leak'
-                ,'leakage'
-                ,'fail'
-                ,'usage'
+# bigram_stopwords_2 = [
+#
+#                 #speacial list
+#                 'cannot'
+#                 ,'ref'
+#                 # preposition
+#                 ,'not' , 'is' , 'are'
+#                 ,'around' ,'on' , 'in' , 'and', 'near' ,'between' , 'out'
+#                 , 'at', 'as', 'to' , 'behind' , 'inside' , 'outside'
+#
+#                 #position
+#                 , 'right', 'left'
+#                 , 'right-hand-side' , 'left-hand-side'
+#                 , 'right-front'     , 'left-front'
+#                 , 'right-hand', 'left-hand'
+#                 , 'right-rear', 'left-rear'
+#                 , 'right-hand-rear' , 'left-hand-rear'
+#                 , 'right-hand-front', 'left-hand-front'
+#                 , 'rear'
+#                 , 'front'
+#                 ,'bottom'
+#
+#                 #time
+#
+#                 ,'hour'   ,'hr'      ,'hourly'
+#                 ,'weekly' ,'wkly'    , 'week'
+#                 ,'fortnightly'
+#                 ,'date'   ,'monthly'
+#                 ,'day'    ,'daily'
+#                 ,'month'
+#                 ,'year'
+#
+#                 # verb
+#                 ,'fabricate'
+#                 ,'adjust'
+#                 , 'change' , 'changed'
+#                 , 'check'  ,  'investigate'
+#
+#                 ,'reweld' ,'weld'
+#                 ,'refuelling'
+#                 ,'recharge'
+#                 ,'resample'
+#                 ,'retorque'
+#                 ,'repower'
+#                 ,'reroute'
+#                 ,'restock'
+#                 ,'reskin'
+#                 ,'retighten'
+#                 ,'revisit'
+#                 ,'rekit'
+#                 ,'regas'
+#                 ,'rebuild'
+#                 ,'rebush'
+#                 ,'reclaim'
+#                 ,'rectify'
+#                 ,'refill'
+#                 ,'relocate'
+#
+#                 ,'shut' ,'shutting'
+#                 , 'need' , 'see'
+#                 ,'reseal'
+#                 ,'reshim'
+#                 ,'install'
+#                 ,'fit'   ,'refit' ,'fitted'
+#                 ,'remove'
+#
+#                 ,'changeout'
+#                 ,'carryout'
+#                 ,'inspection'
+#                 ,'performd'
+#                 ,'t_c'
+#
+#                 ,'request'
+#                 ,'require', 'required' , 'requires'
+#                 ,'fix'
+#                 ,'repair' , 'repaired'
+#                 ,'replace', 'replaced'
+#                 ,'reset'
+#                 ,'inspect' , 'inspected'
+#                 ,'be'
+#
+#                 ,'making'
+#                 ,'take'
+#                 ,'running'
+#                 ,'getting' , 'get'
+#                 ,'going'   , 'go'
+#                 ,'diagnose', 'diagnosed'
+#                 ,'trouble-shoot' , 'troubleshoot'
+#                 ,'calibrate'
+#                 ,'send'
+#                 ,'coming' , 'come'
+#                 ,'fell' , 'fallen'
+#                 ,'modify'
+#                 ,'add'
+#                 ,'update' , 'updated'
+#                 ,'ensure'
+#                 ,'keep'
+#                 ,'flush'
+#                 ,'upgrade'
+#                 ,'cut'
+#                 ,'tighten'
+#                 ,'overhaul'
+#                 ,'hire'
+#                 ,'stay'
+#                 ,'purge' , 'purged'
+#                 ,'prep'                 #equipment isolate prep for work --> prep is a verb for prepare
+#                 ,'perform'
+#                 ,'tidy'
+#
+#
+#                 ,'burning'
+#                 ,'overcharging'
+#                 ,'activating'               #alarm activating
+#                 ,'using'
+#                 ,'falling'
+#                 ,'turning'
+#                 ,'taking'
+#                 ,'lacking'
+#                 ,'working'
+#                 ,'staying'
+#                 ,'flashing'
+#                 ,'squealing'
+#                 ,'sounding'
+#                 ,'losing'
+#                 ,'creeping'
+#                 ,'blowing'
+#                 ,'weeping'
+#                 ,'leaking'
+#                 ,'missing'
+#                 ,'dragging'             #condition for brake
+#                 ,'entering'
+#                 ,'flickering'
+#                 ,'flicking'
+#                 ,'tripping'
+#                 ,'faulting'             #system faulting
+#                 ,'sticking'             #valve is sticking
+#                 ,'banging'
+#                 ,'surging'                 #surging a condition for engine
+#                 ,'hunting'              # a condition for engine
+#                 ,'housekeeping'             # e,g substation housekeeping
+#                 ,'fluctuating'
+#
+#                 ,'jammed'
+#                 , 'collapsed'  # batery collpsed
+#                 , 'cracked'
+#                 , 'bogged'
+#                 , 'stopped'
+#                 , 'rusted'
+#                 , 'damaged'
+#                 ,'gone'             ,'went'                #gone off
+#                 ,'loose'
+#                 ,'broken'
+#                 ,'blown'
+#                 ,'blocked'
+#                 ,'plugged'
+#                 ,'activated'
+#                 ,'tripped'
+#                 ,'worn'
+#                 ,'bent'
+#                 ,'attached'
+#                 ,'ripped'
+#                 ,'mounted'
+#                 ,'flogged'
+#                 ,'turned'
+#                 ,'stuck'
+#                 ,'discharged'
+#                 ,'reported'             #operator reported
+#                 ,'failed'
+#                 ,'flashed'
+#                 ,'unplanned'
+#
+#                 #adj
+#                 ,'offline'
+#                 ,'runout'       #!!!!!!!!!!!!! a spercific condition for tyre
+#                 ,'dull'          #light dull
+#                 ,'various'
+#                 ,'poor'
+#                 ,'harsh'                        #harsh shifting ---> a confition for tranmission boxes
+#                 ,'tight'
+#                 ,'bad' , 'badly' , 'new'
+#                 ,'faulty'
+#                 ,'correctly'
+#                 ,'unservicable'
+#                 , 'additional' , 'extra'
+#                 ,'small'
+#                 ,'high'
+#                 ,'low'
+#                 ,'lower'
+#                 ,'outer' , 'inner'
+#                 ,'external' ,'internal'
+#                 ,'active'
+#                 ,'aux' , 'auxiliary'
+#                 ,'weak'
+#                 ,'slow'
+#                 ,'spare'
+#                 ,'lost'         ,'loosing'
+#                 ,'excessive'
+#                 ,'primary'
+#                 ,'overheating'
+#                 ,'noisy'
+#                 ,'scratchy'
+#                 ,'flat'                             #for battery and tyre
+#                 ,'hard'                             # for hard to see
+#                 ,'burnt'
+#                 ,'busted'
+#                 ,'scheduled'
+#                 ,'rubbed'
+#
+#                 # past tense verbs
+#
+#
+#
+#                 #noun
+#
+#                 , 'meeting'
+#                 , 'service'                                      #!!!!!
+#                 , 'schedule'
+#                 , 'test'
+#                 , 'maintenance'
+#
+#                 ,'fault'                                        #!!!!!
+#                 ,'failure'                                      #!!!!!
+#                 ,'report'
+#                 ,'problem'
+#                 ,'issue'
+#                 ,'complaint'
+#                 ,'damage'
+#                 ,'drag'
+#                 ,'err' ,'error'
+#                 ,'warning'
+#                 ,'leak'    ,'oil-leak' ,'air-leak'
+#                 ,'leakage'
+#                 ,'fail'
+#                 ,'usage'
+#
+#
+#
+#                 ,'five' ,'three' ,     'four'    ,'six'       ,'zero' ,'one' ,'two' ,'seven'
+#                 ,'volt' ,'watt' ,'kilowatt'
+#                 , 'vims'
+#                 , '_number_b' , '_number_rd'
+#                 , 'NA'
+#                 , 'date_time', 'wednesday'
+#                 ,'crack'
+#                 ,'per'
+#                 ,'warranty'
+#                 ,'wk'
+#                 ,'Mir'
+#                 ,'kg'           #for kilogram
+#                 , 'vendor_name', 'verndo_name', 'mindrill', 'hastings', 'deering', 'Volvo'  # vendor name
+#                 , 'equipment'
+#                 , 'equipment_id'
+#                 , 'electrician'
+#                 , 'white', 'black', 'yellow', 'blue'
+#                 ,'kowa'
+#                 ,'kom'
+#
+#                 , '_number_c', '_number_', 'number'
+#                 ,'southern'
+#                 ]
 
 
-
-                ,'five' ,'three' ,     'four'    ,'six'       ,'zero' ,'one' ,'two' ,'seven'
-                ,'volt' ,'watt' ,'kilowatt'
-                , 'vims'
-                , '_number_b' , '_number_rd'
-                , 'NA'
-                , 'date_time', 'wednesday'
-                ,'crack'
-                ,'per'
-                ,'warranty'
-                ,'wk'
-                ,'Mir'
-                ,'kg'           #for kilogram
-                , 'vendor_name', 'verndo_name', 'mindrill', 'hastings', 'deering', 'Volvo'  # vendor name
-                , 'equipment'
-                , 'equipment_id'
-                , 'electrician'
-                , 'white', 'black', 'yellow', 'blue'
-                ,'kowa'
-                ,'kom'
-
-                , '_number_c', '_number_', 'number'
-                ,'southern'
-                ]
-
-
-class Sentences_Parser_3(object):
+class Utility_Sentence_Parser(object):
     def __init__(self, file_name):
         self.file_name = file_name
 
@@ -464,7 +438,7 @@ if __name__ == "__main__":
     tmp_fname = '/home/yiyang/PycharmProjects/Thesis_Pipeline/PipeLine/Input_Output_Folder/Phrase_Detection/3/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_Dic.txt'
 
 
-    sentences = Sentences_Parser_3(record_file_path)
+    sentences = Utility_Sentence_Parser(record_file_path)
     Gensim_Dic(sentences , tmp_fname)
     frequency = Print_Out_Token_Frequecy(sentences , "./Input_Output_Folder/Phrase_Detection/3/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_stat.txt")
 
