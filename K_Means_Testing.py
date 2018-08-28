@@ -16,7 +16,7 @@ if not os.path.isdir(save_folder_name):
 
 model = gensim.models.Word2Vec.load('./Input_Output_Folder/Word2Vec_Model/mymodel_normalized_stage_2_bigram_stage_1_filtered_bigram_transformed_10000_min_count_5')
 
-List_of_number_of_clusters = [3]#[5,15,25,35 ,45]
+List_of_number_of_clusters = [4]#[5,15,25,35 ,45]
 
 def cluster(X):
 
