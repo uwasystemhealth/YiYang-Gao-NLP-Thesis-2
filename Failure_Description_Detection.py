@@ -37,8 +37,8 @@ with open("./Input_Output_Folder/Failure_Description/List_of_Verb.txt", "r") as 
             List_of_maintenance_verb.append(word)
         line = words_file.readline()
 
-List_of_maintenance_adj = []
-
+List_of_failure_description_ngram_without_is_are = []
+List_of_failure_description_single_word = []
 
 
 def failure_description_ngram_detect(sentences):
@@ -85,14 +85,20 @@ def failure_description_ngram_detect(sentences):
 
                             if stop_word == 'is' or stop_word == 'are':
                                 w = a[1:]
-                                List_of_maintenance_adj.append(delimiter.decode().join(w))
+                                List_of_failure_description_ngram_without_is_are.append(delimiter.decode().join(w))
+                                if len(w) ==1 :
+                                    List_of_failure_description_single_word.append(w)
 
                             s = key.decode()
                             print('{0}\t\t{1:<10}'.format(c, s), file=bigram_2_file)
                             c += 1
 
-    with open("./Input_Output_Folder/Failure_Description/List_of_maintenance_adj.txt", "w") as words_file:
-        for index_no,w in enumerate(List_of_maintenance_adj):
+    with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_ngram_without_is_are.txt", "w") as words_file:
+        for index_no,w in enumerate(List_of_failure_description_ngram_without_is_are):
+            print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
+
+    with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_single_word.txt", "w") as words_file:
+        for index_no,w in enumerate(List_of_failure_description_single_word):
             print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
 
 
@@ -257,8 +263,8 @@ def advb_bigram_detect(sentences):
 #                             last_word_pos = List_of_taggeed_words_tupple[-1]
 #                             if last_word_pos[1] == "JJ":
 #                                 comment = 'adj'
-#                                 if last_word_pos[0] not in List_of_maintenance_adj:
-#                                     List_of_maintenance_adj.append(last_word_pos[0])
+#                                 if last_word_pos[0] not in List_of_failure_description_ngram_without_is_are:
+#                                     List_of_failure_description_ngram_without_is_are.append(last_word_pos[0])
 #
 #                             else:
 #                                 inf_verb = conjugate(last_word_pos[0], "inf")
@@ -271,8 +277,8 @@ def advb_bigram_detect(sentences):
 #                             print('{0}\t\t{1:<10}\t\t{2:<20}'.format(c, s,comment), file=bigram_2_file)
 #                             c+=1
 #
-#     with open("./Input_Output_Folder/Failure_Description/List_of_maintenance_adj.txt", "w") as words_file:
-#         for w in List_of_maintenance_adj:
+#     with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_ngram_without_is_are.txt", "w") as words_file:
+#         for w in List_of_failure_description_ngram_without_is_are:
 #             print(w , file=words_file)    for stop_word in stop_word_to_investigae:
 
 
@@ -282,7 +288,7 @@ if __name__ == "__main__":
     #sentences = Utility_Sentence_Parser(Phrase_Detection_2.save_folder_name +'/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     failure_description_ngram_detect(sentences)
     #pause the program. User need to mannual edit the list of files before it can progress
-    input("Program paused, pleas edit the List_of_maintenance_adj file")
+    input("Program paused, pleas edit the List_of_failure_description_ngram_without_is_are file")
 
     apply_failure_description_ngram(sentences)
 
