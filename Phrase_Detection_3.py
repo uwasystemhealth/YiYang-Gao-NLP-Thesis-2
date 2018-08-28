@@ -9,14 +9,14 @@ from Utility import Utility_Sentence_Parser
 from gensim.corpora import Dictionary
 import operator
 
-trial_number = 8
+trial_number = 9
 save_folder_name = "./Input_Output_Folder/Phrase_Detection/" + str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)
 
 bigram_minimum_count_threshold = 20
 max_vocab_size                 = 100000
-delimiter=b'='
+threshold                      = 5
 
 def apply_stage_1_bigram_to_text(sentences):
     bigram_dictionary = []
@@ -46,6 +46,17 @@ def apply_stage_1_bigram_to_text(sentences):
 
 def print_filtered_bigram(sentences):
 
+
+    # read in a manually prepared words file for words that need to be included
+    bigram_include_words = []
+    with open('./Input_Output_Folder/Phrase_Detection/Final_Speacial_words_to_be_included_in_bigram.txt', "r") as include_words_file:
+        line = include_words_file.readline()
+        while line:
+            word_list = line.split()
+            word = word_list[0]
+            bigram_include_words.append(word)
+            line = include_words_file.readline()
+
     bigram_stopwords = []
     #read in the manaually prepared words file to add in additional stop words
     with open('./Input_Output_Folder/Phrase_Detection/extra_stopwords.txt', "r") as words_file:
@@ -57,7 +68,7 @@ def print_filtered_bigram(sentences):
                 bigram_stopwords.append(word)
             line = words_file.readline()
 
-    phrases = Phrases(sentences,max_vocab_size = max_vocab_size ,min_count = bigram_minimum_count_threshold , threshold=5, delimiter=b'~')  # use # as delimiter to distinguish from ~ used in previous stages
+    phrases = Phrases(sentences,max_vocab_size = max_vocab_size ,min_count = bigram_minimum_count_threshold , threshold=threshold, delimiter=b'~')  # use # as delimiter to distinguish from ~ used in previous stages
     bigram_counter = Counter()
     bigram_counter2 = Counter()
     delim = phrases.delimiter.decode()
@@ -68,11 +79,12 @@ def print_filtered_bigram(sentences):
             a = a.split(delim)
             if len(a) > 1:
                 for word in a :
-                    if '#' in word or conjugate(word , "inf") in Failure_Description_Detection.List_of_maintenance_verb or word in Utility.bigram_stopwords_2 or w :
-                        flag = 1
-                    else:
-                        if len(word) == 1:
-                            flag = 2
+                    if word not in bigram_include_words:
+                        if '#' in word or conjugate(word , "inf") in Failure_Description_Detection.List_of_maintenance_verb or word in Utility.bigram_stopwords_2 or word in bigram_stopwords or word in Utility.stopwords:
+                            flag = 1
+                        else:
+                            if len(word) == 1:
+                                flag = 2
                 if flag == 0:
                     bigram_counter[key] += phrases.vocab[key]
                 if flag ==2:
@@ -80,7 +92,7 @@ def print_filtered_bigram(sentences):
 
     with open(save_folder_name + '/bigram_filtered.txt', "w") as bigram_file: #_2_after_applying_filtered_bigram
         i = 1
-        for key, counts in bigram_counter.most_common(4500):
+        for key, counts in bigram_counter.most_common(6500):
             print('{0}\t{1: <20}\t{2}'.format(i ,key.decode(), counts), file=bigram_file)
             i+=1
 
@@ -156,6 +168,8 @@ def apply_filtered_bigram_to_text(sentences):
             s = ' '.join(s)
             print('{0}\t{1}'.format(c, s) ,file=bigram_file)
             c +=1
+
+
 
 
 def analyze_and_print_n_grams(sentences):
@@ -243,60 +257,92 @@ def analyze_and_print_n_grams(sentences):
                 c += 1
 
 
-def apply_transformed_filtered_bigram_to_text(sentences):
-    """for all the ngrams in the text, only take the final word of that ngrams. """
-    with open(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_transformed.txt', "w") as filtered_bigram_transformed:
+
+def tag_single_maintenance_item(sentences):
+
+    # read in a manually prepared words file for words that need to be included
+    maintenance_item = []
+    with open(save_folder_name + '/n_grams.txt',"r") as maintenance_item_file:
+        line = maintenance_item_file.readline()
+        while line:
+            word_list = line.split()
+            if len(word_list) > 2:
+                word = word_list[1]
+                maintenance_item.append(word)
+                line = maintenance_item_file.readline()
+
+    """if a single word is in the maintenance_item list, append '~' at the end to indicate it is an main item as well """
+    with open(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_single_item_tagged.txt', "w") as filtered_bigram_transformed:
         c = 1
         for s in sentences:
             for i in range(len(s)):
-                if '~' in s[i]:
+                if '~' not in s[i] and '#' not in s[i] and s[i] in maintenance_item :
                     temp = s[i]
-                    list_of_words = temp.split('~')
-                    s[i] = list_of_words[-1]
-
+                    s[i] = temp+'~'
             s = ' '.join(s)
             print('{0}\t{1}'.format(c, s) ,file=filtered_bigram_transformed)
             c +=1
 
-def print_extra_stop_words_for_bigram():
 
-    bigram_stopwords = []
-    with open(save_folder_name + '/final_stop_words_dic_for_parts_detection.txt', "r") as words_file:
-        line = words_file.readline()
-        while line:
-            word_list = line.split()
-            word = word_list[1]
-            if '!' not in word_list:
-                bigram_stopwords.append(word)
-            line = words_file.readline()
+#
+# def apply_transformed_filtered_bigram_to_text(sentences):
+#     """for all the ngrams in the text, only take the final word of that ngrams. """
+#     with open(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_transformed.txt', "w") as filtered_bigram_transformed:
+#         c = 1
+#         for s in sentences:
+#             for i in range(len(s)):
+#                 if '~' in s[i]:
+#                     temp = s[i]
+#                     list_of_words = temp.split('~')
+#                     s[i] = list_of_words[-1]
+#
+#             s = ' '.join(s)
+#             print('{0}\t{1}'.format(c, s) ,file=filtered_bigram_transformed)
+#             c +=1
 
-    bigram_extra_stopwords = []
-    for k in Utility.bigram_stopwords_2:
-        if k not in bigram_stopwords:
-            bigram_extra_stopwords.append(k)
-    c=1
-    with open('./Input_Output_Folder/Phrase_Detection' + '/extra_stopwords.txt', "w") as words_file:
-        for k in sorted(bigram_extra_stopwords):
-            print('{0}\t{1}'.format(c, k),file=words_file)
-            c+=1
+
+
+# def print_extra_stop_words_for_bigram():
+#
+#     bigram_stopwords = []
+#     with open(save_folder_name + '/final_stop_words_dic_for_parts_detection.txt', "r") as words_file:
+#         line = words_file.readline()
+#         while line:
+#             word_list = line.split()
+#             word = word_list[1]
+#             if '!' not in word_list:
+#                 bigram_stopwords.append(word)
+#             line = words_file.readline()
+#
+#     bigram_extra_stopwords = []
+#     for k in Utility.bigram_stopwords_2:
+#         if k not in bigram_stopwords:
+#             bigram_extra_stopwords.append(k)
+#     c=1
+#     with open('./Input_Output_Folder/Phrase_Detection' + '/extra_stopwords.txt', "w") as words_file:
+#         for k in sorted(bigram_extra_stopwords):
+#             print('{0}\t{1}'.format(c, k),file=words_file)
+#             c+=1
 
 if __name__ == "__main__":
-    sentences = Utility_Sentence_Parser(Failure_Description_Detection.save_file_name )
+    #sentences = Utility_Sentence_Parser(Failure_Description_Detection.save_file_name )
 
     #sentences = Utility_Sentence_Parser('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
-    apply_stage_1_bigram_to_text(sentences)
+    #apply_stage_1_bigram_to_text(sentences)
 
     #sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
     #print_stop_words_bigram(sentences)
 
-    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
-    print_filtered_bigram(sentences)
+    #sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
+    #print_filtered_bigram(sentences)
 
-    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
-    apply_filtered_bigram_to_text(sentences)
+    #sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
+    #apply_filtered_bigram_to_text(sentences)
 
     sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
-    analyze_and_print_n_grams(sentences)
+    #analyze_and_print_n_grams(sentences)
+    tag_single_maintenance_item(sentences)
+
     #apply_transformed_filtered_bigram_to_text(sentences)
 
     #print_extra_stop_words_for_bigram()
