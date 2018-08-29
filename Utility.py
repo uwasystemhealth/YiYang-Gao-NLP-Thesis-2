@@ -43,6 +43,7 @@ def read_words_file_into_list(file_path,position_of_word):
             line = words_file.readline()
     return return_list
 #------------------------------------------------------------------------------------------------------------------
+# first build the list of failure noun
 failure_noun_file_path = "./Input_Output_Folder/Failure_Description/List_of_Failure_Noun.txt"
 List_of_failure_noun = read_words_file_into_list(failure_noun_file_path , 0)
 
@@ -50,7 +51,7 @@ List_of_failure_noun = read_words_file_into_list(failure_noun_file_path , 0)
 maintenance_verb_file_path = "./Input_Output_Folder/Failure_Description/List_of_Verb.txt"
 List_of_maintenance_verb = read_words_file_into_list(maintenance_verb_file_path , 0)
 
-# first build the list of maintenance words
+# first build the list of positional words
 positional_word_file_path = "./Input_Output_Folder/Failure_Description/List_of_Positional_Words.txt"
 List_of_positional_word = read_words_file_into_list(positional_word_file_path , 0)
 #------------------------------------------------------------------------------------------------------------------
