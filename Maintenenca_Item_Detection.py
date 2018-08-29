@@ -73,38 +73,6 @@ def print_filtered_bigram(sentences):
                 List_of_failure_adj.append(word)
             line = failure_adj_file.readline()
 
-    List_of_failure_noun = []
-    with open("./Input_Output_Folder/Failure_Description/List_of_Failure_Noun.txt", "r") as failure_adj_file:
-        line = failure_adj_file.readline()
-        while line:
-            word_list = line.split()
-            if len(word_list) > 0:
-                word = word_list[0]
-                List_of_failure_noun.append(word)
-            line = failure_adj_file.readline()
-
-    # first build the list of maintenance words
-    List_of_maintenance_verb = []
-    with open("./Input_Output_Folder/Failure_Description/List_of_Verb.txt", "r") as words_file:
-        line = words_file.readline()
-        while line:
-            word_list = line.split()
-            if len(word_list) > 0:
-                word = word_list[0]
-                List_of_maintenance_verb.append(word)
-            line = words_file.readline()
-
-    # first build the list of maintenance words
-    List_of_positional_word = []
-    with open("./Input_Output_Folder/Failure_Description/List_of_Positional_Words.txt", "r") as words_file:
-        line = words_file.readline()
-        while line:
-            word_list = line.split()
-            if len(word_list) > 0:
-                word = word_list[0]
-                List_of_positional_word.append(word)
-            line = words_file.readline()
-
     """******************************************************************************************************************** """
 
     phrases = Phrases(sentences,max_vocab_size = max_vocab_size ,min_count = bigram_minimum_count_threshold , threshold=threshold, delimiter=b'~')  # use # as delimiter to distinguish from ~ used in previous stages
@@ -122,12 +90,12 @@ def print_filtered_bigram(sentences):
                         if (
                             '#' in word
                             or '_' in word
-                            or word in List_of_maintenance_verb
-                            or conjugate(word, "inf") in List_of_maintenance_verb
-                            or word in List_of_failure_adj
-                            or word in List_of_positional_word
+                            or word in Utility.List_of_maintenance_verb
+                            or conjugate(word, "inf") in Utility.List_of_maintenance_verb
+                            or word in Utility.List_of_positional_word
                             or word in Utility.stopwords_nltk_pattern_custom
-                            or word in List_of_failure_noun
+                            or word in Utility.List_of_failure_noun
+                            or word in List_of_failure_adj
                         ) :
                             flag = 1
                         else:
