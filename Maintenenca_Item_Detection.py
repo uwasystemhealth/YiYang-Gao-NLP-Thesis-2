@@ -62,6 +62,8 @@ def print_filtered_bigram(sentences):
 
     """read in all kinda of stopwords that should not be part of the bigram for maintenence item detection"""
     """******************************************************************************************************************** """
+    List_of_failure_description_single_word = Utility.read_words_file_into_list("./Input_Output_Folder/Failure_Description/List_of_failure_description_single_word.txt", 1)
+
     List_of_failure_adj = []
     with open("./Input_Output_Folder/Failure_Description/List_of_maintenance_adj_manul_edited.txt",
               "r") as failure_adj_file:
