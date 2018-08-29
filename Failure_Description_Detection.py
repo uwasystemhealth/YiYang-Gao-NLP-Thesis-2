@@ -10,7 +10,7 @@ from pattern.en import conjugate
 from pattern.en import tag
 from Utility import Utility_Sentence_Parser
 
-trial_number = 4
+trial_number = 5
 save_folder_name = "./Input_Output_Folder/Failure_Description/" + str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)
@@ -18,7 +18,7 @@ if not os.path.isdir(save_folder_name):
 save_file_name = save_folder_name + '/Normalized_Text_Stage_2_failure_desciprtion.txt'
 
 bigram_minimum_count_threshold = 1
-max_vocab_size                 = 200000  #100000
+max_vocab_size                 = 300000 #200000  #100000
 threshold                      = 1
 delimiter                      = b'#'
 progress_per                   = 100000
@@ -78,16 +78,22 @@ def failure_description_ngram_detect(sentences):
                         if a[0] != stop_word:       #only look for n-grams starting with the stop-word
                             flag = False
 
-                        if stop_word == 'to' and 'be' not in a:
+                        if stop_word == 'to' and 'be' not in a: #if stop_word is 'to', only look for bigram that also has 'bo'.
                             flag = False
+
+                        for w in a[1:]:             # go through the rest of the list, and see if positional word are there
+                            if w in Utility.List_of_positional_word:
+                                flag = False
 
                         if flag:
                             # s is the original n grams delimited by #
 
                             if stop_word == 'is' or stop_word == 'are':
                                 w = a[1:]
-                                List_of_failure_description_ngram_without_is_are.append(delimiter.decode().join(w))
-                                if len(w) ==1 :
+                                ngram_without_is_are = delimiter.decode().join(w)
+                                if ngram_without_is_are not in List_of_failure_description_ngram_without_is_are:
+                                    List_of_failure_description_ngram_without_is_are.append(ngram_without_is_are)
+                                if len(w) ==1 and w[0] not in List_of_failure_description_single_word:
                                     List_of_failure_description_single_word.append(w[0])
 
                             s = key.decode()
@@ -99,7 +105,7 @@ def failure_description_ngram_detect(sentences):
             print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
 
     with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_single_word.txt", "w") as words_file:
-        for index_no,w in enumerate(List_of_failure_description_single_word):
+        for index_no,w in enumerate(sorted(List_of_failure_description_single_word)):
             print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
 
 
@@ -220,66 +226,7 @@ def advb_bigram_detect(sentences):
 
     logger.info("PROGRESS: Finished advb_bigram_detect")
 
-# def failure_description_normalization(sentences):
-#
-#     #stop_word_to_investigae = ['to','is' ,'are' , 'not'  , 'need' , 'reported' ,'seem' ,'seems' ,'appear' ,'appears']
-#     stop_word_to_investigae = ['is', 'are', 'not', 'to' ,'cannot']
-#
-#     for stop_word in stop_word_to_investigae:
-#
-#         stopwords_2 = copy.deepcopy(Utility.stopwords)
-#         if stop_word in stopwords_2:
-#             stopwords_2.remove(stop_word)
-#
-#         for w in generic_words:
-#             stopwords_2.append(w)
-#
-#         phrases = Phrases(sentences,
-#                           max_vocab_size= max_vocab_size,
-#                           min_count     = bigram_minimum_count_threshold,
-#                           threshold     = threshold,
-#                           common_terms  = frozenset(stopwords_2),
-#                           delimiter     = b'#')  # use # as delimiter to distinguish from ~ used in previous stages
-#
-#
-#         with open(save_folder_name + '/' + stop_word + '_bigrams.txt', "w") as bigram_2_file:
-#             c = 1
-#             for key in phrases.vocab.keys():
-#                 if key not in Utility.stopwords:
-#                     flag = True
-#                     a = key.decode()
-#                     a = a.split("#")
-#                     if len(a) > 1 :
-#                         if stop_word not in a:  # or ('not' not in a and  'be' not in a) :
-#                             flag = False
-#
-#                         if a[0] != stop_word:       #only look for n-grams starting with the stop-word
-#                             flag = False
-#
-#
-#                         if flag:
-#                             string_to_be_tagged = ' '.join(a)
-#                             List_of_taggeed_words_tupple = tag(string_to_be_tagged)
-#                             last_word_pos = List_of_taggeed_words_tupple[-1]
-#                             if last_word_pos[1] == "JJ":
-#                                 comment = 'adj'
-#                                 if last_word_pos[0] not in List_of_failure_description_ngram_without_is_are:
-#                                     List_of_failure_description_ngram_without_is_are.append(last_word_pos[0])
-#
-#                             else:
-#                                 inf_verb = conjugate(last_word_pos[0], "inf")
-#                                 if inf_verb in List_of_maintenance_verb:
-#                                     comment = inf_verb + '\t\taction'
-#                                 else:
-#                                     comment = inf_verb
-#                             # s is the original n grams delimited by #
-#                             s = key.decode()
-#                             print('{0}\t\t{1:<10}\t\t{2:<20}'.format(c, s,comment), file=bigram_2_file)
-#                             c+=1
-#
-#     with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_ngram_without_is_are.txt", "w") as words_file:
-#         for w in List_of_failure_description_ngram_without_is_are:
-#             print(w , file=words_file)    for stop_word in stop_word_to_investigae:
+
 
 
 
@@ -287,10 +234,16 @@ if __name__ == "__main__":
     sentences = Utility_Sentence_Parser('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
     #sentences = Utility_Sentence_Parser(Phrase_Detection_2.save_folder_name +'/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     failure_description_ngram_detect(sentences)
+
+    f = open("./Input_Output_Folder/Failure_Description/" + "List_of_words_to_be_excluded_in_failure_description_single_word", "w+")
+    f.close()
     #pause the program. User need to mannual edit the list of files before it can progress
-    #input("Program paused, pleas edit the List_of_failure_description_ngram_without_is_are file")
+    input(" Program paused, pleas edit the List_of_failure_description_single_word file \n \
+            and write every words that is not a failure description word into           \n \
+            List_of_words_to_be_excluded_in_failure_description_single_word.txt")
 
-    #apply_failure_description_ngram(sentences)
 
-    #advb_detect(sentences)
-    #advb_bigram_detect(sentences)
+    apply_failure_description_ngram(sentences)
+
+    advb_detect(sentences)
+    advb_bigram_detect(sentences)
