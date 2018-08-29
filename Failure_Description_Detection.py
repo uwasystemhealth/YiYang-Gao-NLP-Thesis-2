@@ -1,5 +1,8 @@
 import os
 import copy
+import logging
+logger = logging.getLogger(__name__)
+
 import Utility
 
 from gensim.models.phrases import Phrases
@@ -18,7 +21,7 @@ bigram_minimum_count_threshold = 1
 max_vocab_size                 = 200000  #100000
 threshold                      = 1
 delimiter                      = b'#'
-
+progress_per                   = 100000
 #append the generic words into the stop_words for bbigrams as well
 generic_words = ['get' ,'getting' , 'take' ,'taking','come' ,'comming' ,'make' ,'making']
 for w in generic_words:
@@ -56,7 +59,7 @@ def failure_description_ngram_detect(sentences):
                           threshold     = threshold,
                           common_terms  = frozenset(stopwords_2),
                           delimiter     = delimiter,
-                          progress_per  = 100000
+                          progress_per  = progress_per
                             )  # use # as delimiter to distinguish from ~ used in previous stages
 
 
@@ -88,7 +91,7 @@ def failure_description_ngram_detect(sentences):
                                     List_of_failure_description_single_word.append(w[0])
 
                             s = key.decode()
-                            print('{0}\t\t{1:<10}'.format(c, s), file=bigram_2_file)
+                            print('{0}\t\t{1:<30}\t\t{2:<10}'.format(c, s ,phrases.vocab[key]), file=bigram_2_file)
                             c += 1
 
     with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_ngram_without_is_are.txt", "w") as words_file:
@@ -125,32 +128,33 @@ def apply_failure_description_ngram(sentences):
         while line:
             word_list = line.split()
             if len(word_list) > 0:
-                word = word_list[0]
+                word = word_list[1]
                 failue_description_dictionary.append(word)
             line = failure_adj_file.readline()
 
-    failue_description_dictionary.sort(key = lambda s: len(s), reverse=True)
+    failue_description_dictionary.sort(key = lambda s: len(s.split(delimiter.decode())), reverse=True)
+    with open("./Input_Output_Folder/Failure_Description/Complete_List_of_failure_description.txt", "w") as words_file:
+        for index_no,w in enumerate(failue_description_dictionary):
+            print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
 
-    with open(save_file_name, "w") as bigram_file:
-        c = 1
-        for s in sentences:
+    with open(save_file_name,"w") as bigram_file:
+        for c,s in enumerate(sentences):
+            if c % progress_per == 0:
+                logger.info( "PROGRESS: at sentence #%.i",c)
             s.append('')                            #append a empty string so that the last word can be processeed as well
             for i in range(len(s) - 1):             #need to minus two now because added one empty str
                 current_word = s[i]
                 next_word    = s[i+1]
-
                 string_to_be_contacted = current_word + delimiter.decode() +  next_word
                 if is_part_of_failue_description_dictionary(failue_description_dictionary , string_to_be_contacted):
                     s[i] = []
                     s[i + 1]    = string_to_be_contacted
-
-                if current_word in List_of_failure_adj:
+                if current_word in failue_description_dictionary:
                     s[i] = current_word + delimiter.decode()
 
             s = [x for x in s if x]
             s = ' '.join(s)
             print('{0}\t{1}'.format(c, s) ,file=bigram_file)
-            c +=1
 
 
 def advb_detect(sentences):
@@ -174,7 +178,7 @@ def advb_detect(sentences):
         for w in list_of_adverb:
             print('{0}\t{1}'.format(c, w), file=words_file)
             c+=1
-
+    logger.info("PROGRESS: Finished adverb detection")
 
 def advb_bigram_detect(sentences):
     # first build the list of maintenance words
@@ -193,7 +197,7 @@ def advb_bigram_detect(sentences):
                       min_count=bigram_minimum_count_threshold,
                       threshold=threshold,
                       delimiter=delimiter,
-                      progress_per = 100000)  # use # as delimiter to distinguish from ~ used in previous stages
+                      progress_per = progress_per)  # use # as delimiter to distinguish from ~ used in previous stages
 
     with open(save_folder_name + '/' +  'advb_bigram.txt', "w") as bigram_2_file:
         c = 1
@@ -214,8 +218,8 @@ def advb_bigram_detect(sentences):
                     print('{0}\t\t{1:<10}'.format(c, s), file=bigram_2_file)
                     c += 1
 
+    logger.info("PROGRESS: Finished advb_bigram_detect")
 
-#
 # def failure_description_normalization(sentences):
 #
 #     #stop_word_to_investigae = ['to','is' ,'are' , 'not'  , 'need' , 'reported' ,'seem' ,'seems' ,'appear' ,'appears']
@@ -284,9 +288,9 @@ if __name__ == "__main__":
     #sentences = Utility_Sentence_Parser(Phrase_Detection_2.save_folder_name +'/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     failure_description_ngram_detect(sentences)
     #pause the program. User need to mannual edit the list of files before it can progress
-    input("Program paused, pleas edit the List_of_failure_description_ngram_without_is_are file")
+    #input("Program paused, pleas edit the List_of_failure_description_ngram_without_is_are file")
 
-    apply_failure_description_ngram(sentences)
+    #apply_failure_description_ngram(sentences)
 
-    advb_detect(sentences)
-    advb_bigram_detect(sentences)
+    #advb_detect(sentences)
+    #advb_bigram_detect(sentences)
