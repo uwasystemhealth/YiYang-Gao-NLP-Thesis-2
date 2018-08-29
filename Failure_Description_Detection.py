@@ -17,30 +17,21 @@ if not os.path.isdir(save_folder_name):
 
 save_file_name = save_folder_name + '/Normalized_Text_Stage_2_failure_desciprtion.txt'
 
+#parameter used for the Phrase module in gensim
 bigram_minimum_count_threshold = 1
 max_vocab_size                 = 300000 #200000  #100000
 threshold                      = 1
 delimiter                      = b'#'
 progress_per                   = 100000
+
 #append the generic words into the stop_words for bbigrams as well
 generic_words = ['get' ,'getting' , 'take' ,'taking','come' ,'comming' ,'make' ,'making']
 for w in generic_words:
     Utility.stopwords_nltk_pattern_custom.append(w)
 
-# first build the list of maintenance words
-List_of_maintenance_verb = []
-with open("./Input_Output_Folder/Failure_Description/List_of_Verb.txt", "r") as words_file:
-    line = words_file.readline()
-    while line:
-        word_list = line.split()
-        if len(word_list)>0:
-            word = word_list[0]
-            List_of_maintenance_verb.append(word)
-        line = words_file.readline()
-
 List_of_failure_description_ngram_without_is_are = []
 List_of_failure_description_single_word = []
-
+List_of_maintenance_action_ngram = []
 
 def failure_description_ngram_detect(sentences):
 
@@ -87,6 +78,15 @@ def failure_description_ngram_detect(sentences):
 
                         if flag:
                             # s is the original n grams delimited by #
+                            if stop_word == 'to':
+                                last_word = a[-1]
+                                conjugated_last_word = conjugate(last_word)
+                                if conjugated_last_word in Utility.List_of_maintenance_verb:
+                                    logger.info("action word found: " + conjugated_last_word)
+                                    s = '~'.join(a)
+                                    if s not in List_of_maintenance_action_ngram:
+                                        List_of_maintenance_action_ngram.append(s)
+                                    break           #skip the rest code, so that it is not writen into the file
 
                             if stop_word == 'is' or stop_word == 'are':
                                 w = a[1:]
@@ -108,6 +108,9 @@ def failure_description_ngram_detect(sentences):
         for index_no,w in enumerate(sorted(List_of_failure_description_single_word)):
             print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
 
+    with open("./Input_Output_Folder/Failure_Description/List_of_maintenance_action_ngram.txt", "w") as words_file:
+        for index_no,w in enumerate(sorted(List_of_maintenance_action_ngram)):
+            print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
 
 def is_part_of_failue_description_dictionary( failue_description_dictionary,s):
     for a in failue_description_dictionary:
