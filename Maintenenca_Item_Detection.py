@@ -63,18 +63,8 @@ def print_filtered_bigram(sentences):
     """read in all kinda of stopwords that should not be part of the bigram for maintenence item detection"""
     """******************************************************************************************************************** """
     List_of_failure_description_single_word = Utility.read_words_file_into_list("./Input_Output_Folder/Failure_Description/List_of_failure_description_single_word.txt", 1)
-
-    List_of_failure_adj = []
-    with open("./Input_Output_Folder/Failure_Description/List_of_maintenance_adj_manul_edited.txt",
-              "r") as failure_adj_file:
-        line = failure_adj_file.readline()
-        while line:
-            word_list = line.split()
-            if len(word_list) > 0:
-                word = word_list[0]
-                List_of_failure_adj.append(word)
-            line = failure_adj_file.readline()
-
+    List_of_words_to_be_excluded_in_failure_description_single_word = Utility.read_words_file_into_list("./Input_Output_Folder/Failure_Description/List_of_words_to_be_excluded_in_failure_description_single_word.txt",0 )
+    List_of_failure_description_single_word = [w for w in List_of_failure_description_single_word if w not in List_of_words_to_be_excluded_in_failure_description_single_word]
     """******************************************************************************************************************** """
 
     phrases = Phrases(sentences,max_vocab_size = max_vocab_size ,min_count = bigram_minimum_count_threshold , threshold=threshold, delimiter=b'~')  # use # as delimiter to distinguish from ~ used in previous stages
@@ -97,8 +87,8 @@ def print_filtered_bigram(sentences):
                             or word in Utility.List_of_positional_word
                             or word in Utility.stopwords_nltk_pattern_custom
                             or word in Utility.List_of_failure_noun
-                            or word in List_of_failure_adj
-                        ) :
+                            or word in List_of_failure_description_single_word
+                        ):
                             flag = 1
                         else:
                             if len(word) == 1:
