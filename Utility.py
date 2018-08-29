@@ -1,21 +1,16 @@
+from collections import defaultdict
 import logging
+import nltk
+from nltk.corpus import stopwords
+from pattern.en.wordlist import TIME
+from gensim.corpora import Dictionary
+
+#setting up python logging module
 do_logging = 1
 if do_logging > 0:
     logging.basicConfig(level=logging.INFO)
 else:
     logging.basicConfig(level=logging.WARNING)
-
-import nltk
-from collections import defaultdict
-from gensim.corpora import Dictionary
-from gensim.matutils import corpus2csc
-import numpy as np
-
-import nltk
-from nltk.corpus import stopwords
-from pattern.en.wordlist import TIME
-
-
 
 stopwords_nltk = set(stopwords.words('english'))
 stopwords_nltk_pattern = stopwords_nltk.union(TIME)
