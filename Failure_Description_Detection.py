@@ -129,13 +129,16 @@ def apply_failure_description_ngram(sentences):
                     failue_description_dictionary.append(word)
                 line = failue_description_file.readline()
 
+    List_of_words_to_be_excluded_in_failure_description_single_word = Utility.read_words_file_into_list("./Input_Output_Folder/Failure_Description/List_of_words_to_be_excluded_in_failure_description_single_word.txt", 0)
+
     with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_ngram_without_is_are.txt", "r") as failure_adj_file:
         line = failure_adj_file.readline()
         while line:
             word_list = line.split()
             if len(word_list) > 0:
                 word = word_list[1]
-                failue_description_dictionary.append(word)
+                if word not in List_of_words_to_be_excluded_in_failure_description_single_word:
+                    failue_description_dictionary.append(word)
             line = failure_adj_file.readline()
 
     failue_description_dictionary.sort(key = lambda s: len(s.split(delimiter.decode())), reverse=True)
@@ -152,7 +155,9 @@ def apply_failure_description_ngram(sentences):
                 current_word = s[i]
                 next_word    = s[i+1]
                 string_to_be_contacted = current_word + delimiter.decode() +  next_word
-                if is_part_of_failue_description_dictionary(failue_description_dictionary , string_to_be_contacted):
+
+                if string_to_be_contacted in failue_description_dictionary:
+                #if is_part_of_failue_description_dictionary(failue_description_dictionary , string_to_be_contacted):
                     s[i] = []
                     s[i + 1]    = string_to_be_contacted
                 if current_word in failue_description_dictionary:
@@ -233,14 +238,14 @@ def advb_bigram_detect(sentences):
 if __name__ == "__main__":
     sentences = Utility_Sentence_Parser('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
     #sentences = Utility_Sentence_Parser(Phrase_Detection_2.save_folder_name +'/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
-    failure_description_ngram_detect(sentences)
-
-    f = open("./Input_Output_Folder/Failure_Description/" + "List_of_words_to_be_excluded_in_failure_description_single_word", "w+")
-    f.close()
-    #pause the program. User need to mannual edit the list of files before it can progress
-    input(" Program paused, pleas edit the List_of_failure_description_single_word file \n \
-            and write every words that is not a failure description word into           \n \
-            List_of_words_to_be_excluded_in_failure_description_single_word.txt")
+    # failure_description_ngram_detect(sentences)
+    #
+    # f = open("./Input_Output_Folder/Failure_Description/" + "List_of_words_to_be_excluded_in_failure_description_single_word.txt", "w+")
+    # f.close()
+    # #pause the program. User need to mannual edit the list of files before it can progress
+    # input(" Program paused, pleas edit the List_of_failure_description_single_word file \n \
+    #         and write every words that is not a failure description word into           \n \
+    #         List_of_words_to_be_excluded_in_failure_description_single_word.txt")
 
 
     apply_failure_description_ngram(sentences)
