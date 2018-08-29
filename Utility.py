@@ -31,38 +31,28 @@ stopwords_nltk_pattern_custom = stopwords_nltk_pattern.union(custom_stopwords)
 stopwords_nltk_pattern_custom = list(stopwords_nltk_pattern_custom)
 
 
+def read_words_file_into_list(file_path,position_of_word):
+    return_list = []
+    with open(file_path, "r") as words_file:
+        line = words_file.readline()
+        while line:
+            splited_word_list = line.split()
+            if len(splited_word_list) > 0:
+                word = splited_word_list[position_of_word]
+                return_list.append(word)
+            line = words_file.readline()
+    return return_list
 #------------------------------------------------------------------------------------------------------------------
-List_of_failure_noun = []
-with open("./Input_Output_Folder/Failure_Description/List_of_Failure_Noun.txt", "r") as failure_adj_file:
-    line = failure_adj_file.readline()
-    while line:
-        word_list = line.split()
-        if len(word_list) > 0:
-            word = word_list[0]
-            List_of_failure_noun.append(word)
-        line = failure_adj_file.readline()
+failure_noun_file_path = "./Input_Output_Folder/Failure_Description/List_of_Failure_Noun.txt"
+List_of_failure_noun = read_words_file_into_list(failure_noun_file_path , 0)
 
 # first build the list of maintenance words
-List_of_maintenance_verb = []
-with open("./Input_Output_Folder/Failure_Description/List_of_Verb.txt", "r") as words_file:
-    line = words_file.readline()
-    while line:
-        word_list = line.split()
-        if len(word_list) > 0:
-            word = word_list[0]
-            List_of_maintenance_verb.append(word)
-        line = words_file.readline()
+maintenance_verb_file_path = "./Input_Output_Folder/Failure_Description/List_of_Verb.txt"
+List_of_maintenance_verb = read_words_file_into_list(maintenance_verb_file_path , 0)
 
 # first build the list of maintenance words
-List_of_positional_word = []
-with open("./Input_Output_Folder/Failure_Description/List_of_Positional_Words.txt", "r") as words_file:
-    line = words_file.readline()
-    while line:
-        word_list = line.split()
-        if len(word_list) > 0:
-            word = word_list[0]
-            List_of_positional_word.append(word)
-        line = words_file.readline()
+positional_word_file_path = "./Input_Output_Folder/Failure_Description/List_of_Positional_Words.txt"
+List_of_positional_word = read_words_file_into_list(positional_word_file_path , 0)
 #------------------------------------------------------------------------------------------------------------------
 
 
