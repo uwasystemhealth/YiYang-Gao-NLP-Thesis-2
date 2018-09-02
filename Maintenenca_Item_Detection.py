@@ -3,15 +3,17 @@ import nltk
 import os
 import Utility
 import Failure_Description_Detection
-
-
 from Utility import Utility_Sentence_Parser
 
-from collections import defaultdict
-from pattern.en import conjugate
 from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+from pattern.en import conjugate
+
 from gensim.models.phrases import Phrases
 from gensim.corpora import Dictionary
+
 import gensim
 import operator
 import logging
@@ -377,6 +379,7 @@ if __name__ == "__main__":
     # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     # analyze_and_print_n_grams(sentences)
 
+
     # detecting_words_for_bigram_filter_stage_2()
     # filtered_bigram_dict is list of item bigram to be used for item detection
     # List_of_stopwords_for_filter_bigram_stage_2 is the list of single words to be used for failure detection stage 2
@@ -389,6 +392,14 @@ if __name__ == "__main__":
 
     sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     analyze_and_print_n_grams(sentences)
+
+    #build the frequency dict for all the token. then filter down to just maintenance items, then sort it, then print it uot
+    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
+    freq_dict = Utility.Build_Token_Frequecy_Dict(sentences)
+    maintenance_item = Utility.read_words_file_into_list(save_folder_name + '/n_grams.txt', 1)
+    freq_dict_filtered = dict([(key, val) for key, val in freq_dict.items() if key in maintenance_item and maintenance_item_delim in key ])
+    freq_dict_filtered = OrderedDict(sorted(freq_dict_filtered.items(),key=operator.itemgetter(1), reverse=True ))
+    Utility.write_dict_into_words_file(save_folder_name + '/n_grams_frequency.txt',freq_dict_filtered)
 
     #use the newly found List_of_stopwords_for_filter_bigram_stage_2 to refine the tagging for Failure_Description
     sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
