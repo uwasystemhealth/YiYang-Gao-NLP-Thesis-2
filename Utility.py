@@ -1,6 +1,7 @@
 from collections import defaultdict
 import logging
 import nltk
+from nltk.corpus import wordnet as wn
 from nltk.corpus import stopwords
 from pattern.en.wordlist import TIME
 from gensim.corpora import Dictionary
@@ -12,6 +13,9 @@ if do_logging > 0:
 else:
     logging.basicConfig(level=logging.WARNING)
 
+logger = logging.getLogger(__name__)
+
+progress_per = 100000
 stopwords_nltk = set(stopwords.words('english'))
 stopwords_nltk_pattern = stopwords_nltk.union(TIME)
 custom_stopwords = ['Sunday','Friday', 'Monday', 'monday', 'tuesday','wednessday','thursday','friday','saturday','sunday',
@@ -31,13 +35,36 @@ stopwords_nltk_pattern_custom = stopwords_nltk_pattern.union(custom_stopwords)
 stopwords_nltk_pattern_custom = list(stopwords_nltk_pattern_custom)
 
 
+def write_dict_into_words_file(file_path,l):
+    with open(file_path, "w") as words_file:
+        for c, w in enumerate(l):
+            print('{0}\t{1: <50}\t{2: <50}'.format(c,w , l[w]), file=words_file)
+
+def write_list_into_words_file(file_path,l):
+    with open(file_path, "w") as words_file:
+        for c, w in enumerate(l):
+            print('{0}\t{1: <50}'.format(c,w), file=words_file)
+
+
+def read_words_file_into_dict(file_path,position_of_word , relative_position_of_value = 1):
+    return_dict = {}
+    with open(file_path, "r") as words_file:
+        line = words_file.readline()
+        while line:
+            splited_word_list = line.split()
+            if len(splited_word_list) > position_of_word:
+                word = splited_word_list[position_of_word]
+                return_dict[word] = float(splited_word_list[position_of_word + relative_position_of_value])
+            line = words_file.readline()
+    return return_dict
+
 def read_words_file_into_list(file_path,position_of_word):
     return_list = []
     with open(file_path, "r") as words_file:
         line = words_file.readline()
         while line:
             splited_word_list = line.split()
-            if len(splited_word_list) > 0:
+            if len(splited_word_list) > position_of_word:
                 word = splited_word_list[position_of_word]
                 return_list.append(word)
             line = words_file.readline()
@@ -56,6 +83,47 @@ positional_word_file_path = "./Input_Output_Folder/Failure_Description/List_of_P
 List_of_positional_word = read_words_file_into_list(positional_word_file_path , 0)
 #------------------------------------------------------------------------------------------------------------------
 
+
+
+def nounify(verb_word):
+    """ Transform a verb to the closest noun: die -> death """
+    verb_synsets = wn.synsets(verb_word, pos="v")
+
+    # Word not found
+    if not verb_synsets:
+        return []
+
+    # Get all verb lemmas of the word
+    # a = []
+    # for s in verb_synsets:
+    #     for l in s.lemmas():
+    #         if s.name().split('.')[1] == 'v':
+    #             a.append(l)
+
+    verb_lemmas = [l for s in verb_synsets for l in s.lemmas() if s.name().split('.')[1] == 'v']
+
+    # Get related forms
+    derivationally_related_forms = [(l, l.derivationally_related_forms()) for l in verb_lemmas]
+
+    # a = []
+    # for drf in derivationally_related_forms:
+    #     for l in drf[1]:
+    #         if l.synset().name().split('.')[1] == 'n':
+    #             a.append(l)
+
+    # filter only the nouns
+    related_noun_lemmas = [l for drf in derivationally_related_forms for l in drf[1] if l.synset().name().split('.')[1] == 'n']
+
+    # Extract the words from the lemmas
+    words = [l.name() for l in related_noun_lemmas]
+    len_words = len(words)
+
+    # Build the result in the form of a list containing tuples (word, probability)
+    result = [(w, float(words.count(w))/len_words) for w in set(words)]
+    result.sort(key=lambda w: -w[1])
+
+    # return all the possibilities sorted by probability
+    return result
 
 class Utility_Sentence_Parser(object):
     def __init__(self, file_name):
@@ -137,6 +205,25 @@ def Gensim_Dic(sentences , tem_fname):
     dct.filter_tokens(bad_ids=a)
     dct.compactify()
     dct.save_as_text(tmp_fname)
+
+
+def customized_doesnt_match(word_Embeddings_Keyed_Vectors, words):
+    from numpy import dot,vstack,float32 as REAL
+    from gensim import  matutils
+
+    word_Embeddings_Keyed_Vectors.init_sims()
+
+    used_words = [word for word in words if word in word_Embeddings_Keyed_Vectors]
+    if len(used_words) != len(words):
+        ignored_words = set(words) - set(used_words)
+        logger.warning("vectors for words %s are not present in the model, ignoring these words", ignored_words)
+    if not used_words:
+        raise ValueError("cannot select a word from an empty list")
+    vectors = vstack(word_Embeddings_Keyed_Vectors.word_vec(word, use_norm=True) for word in used_words).astype(REAL)
+    mean = matutils.unitvec(vectors.mean(axis=0)).astype(REAL)
+    dists = dot(vectors, mean)
+    dists_mean = dists.mean(axis=0)
+    return sorted(zip(dists, used_words))[0][1],dists_mean
 
 
 if __name__ == "__main__":
