@@ -2,8 +2,11 @@
 import nltk
 import os
 import Utility
-from Utility import Utility_Sentence_Parser
 import Failure_Description_Detection
+
+
+from Utility import Utility_Sentence_Parser
+
 from collections import defaultdict
 from pattern.en import conjugate
 from collections import Counter
@@ -11,25 +14,24 @@ from gensim.models.phrases import Phrases
 from gensim.corpora import Dictionary
 import gensim
 import operator
+import logging
+logger = logging.getLogger(__name__)
 
-trial_number = 10
+trial_number = 11
 save_folder_name = "./Input_Output_Folder/Phrase_Detection/" + str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)
 
+processed_file_name = save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt'
+
+
 bigram_minimum_count_threshold = 20
 max_vocab_size                 = 100000
 threshold                      = 5
+maintenance_item_delim = '~'
 
 def apply_stage_1_bigram_to_text(sentences):
-    bigram_dictionary = []
-    with open('./Input_Output_Folder/Phrase_Detection/bigram_stage_1.txt', "r") as words_file:
-        line = words_file.readline()
-        while line:
-            word_list = line.split()
-            word = word_list[1]
-            bigram_dictionary.append(word)
-            line = words_file.readline()
+    bigram_dictionary = Utility.read_words_file_into_list('./Input_Output_Folder/Phrase_Detection/bigram_stage_1.txt',1)
 
     with open(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt', "w") as bigram_file:
          c = 1
@@ -47,18 +49,11 @@ def apply_stage_1_bigram_to_text(sentences):
 
 
 
-def print_filtered_bigram(sentences):
+def filtered_bigram_stage_1(sentences):
 
-
+    logger.info("Start printing filtered bigram")
     # read in a manually prepared words file for words that need to be included
-    bigram_include_words = []
-    with open('./Input_Output_Folder/Phrase_Detection/Final_Speacial_words_to_be_included_in_bigram.txt', "r") as include_words_file:
-        line = include_words_file.readline()
-        while line:
-            word_list = line.split()
-            word = word_list[0]
-            bigram_include_words.append(word)
-            line = include_words_file.readline()
+    bigram_include_words = Utility.read_words_file_into_list('./Input_Output_Folder/Phrase_Detection/Final_Speacial_words_to_be_included_in_bigram.txt',0)
 
     """read in all kinda of stopwords that should not be part of the bigram for maintenence item detection"""
     """******************************************************************************************************************** """
@@ -98,6 +93,8 @@ def print_filtered_bigram(sentences):
                 if flag ==2:
                     bigram_counter2[key] += phrases.vocab[key]
 
+
+
     with open(save_folder_name + '/bigram_filtered.txt', "w") as bigram_file: #_2_after_applying_filtered_bigram
         i = 1
         for key, counts in bigram_counter.most_common(6500):
@@ -112,20 +109,12 @@ def print_filtered_bigram(sentences):
 
     return bigram_counter
 
+def apply_filtered_bigram_to_text(bigram_dictionary,sentences):
+    """read in all the filtered bigrams, then apply then into the text.
+        connect the bigrams together if one bigram ends with the word another bigram starts with
+    """
 
-def apply_filtered_bigram_to_text(sentences):
-    """read in all the filtered bigrams, then apply then into the text. connect the bigrams together if one bigram ends with the word another bigram starts with"""
-
-    bigram_dictionary = {}
-    with open(save_folder_name+'/bigram_filtered.txt', "r") as words_file:
-        line = words_file.readline()
-        while line:
-            word_list = line.split()
-            word = word_list[1]
-            bigram_dictionary[word] = int(word_list[2])
-            line = words_file.readline()
-
-    with open(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt', "w") as bigram_file:
+    with open(processed_file_name, "w") as bigram_file:
         c = 1
         for s in sentences:
             s.insert(0, '')
@@ -265,7 +254,6 @@ def analyze_and_print_n_grams(sentences):
 
 
 
-
 def tag_single_maintenance_item(sentences):
 
     # read in a manually prepared words file for words that need to be included
@@ -291,20 +279,13 @@ def tag_single_maintenance_item(sentences):
 
 
 
-def trail():
+def detecting_words_for_bigram_filter_stage_2():
     model = gensim.models.Word2Vec.load('./Input_Output_Folder/Word2Vec_Model/mymodel_unknown_replaced_lemmatized_10000')
     outlier_words_dic = defaultdict(int)
     outlier_words_pos_filtered_dic = defaultdict(int)
+    single_word_freq_dict = Utility.read_words_file_into_dict(save_folder_name + '/parts_list_frequency.txt', 1)
     # read in a manually prepared words file for words that need to be included
-    maintenance_item = []
-    with open(save_folder_name + '/n_grams.txt',"r") as maintenance_item_file:
-        line = maintenance_item_file.readline()
-        while line:
-            word_list = line.split()
-            if len(word_list) > 2:
-                word = word_list[1]
-                maintenance_item.append(word)
-            line = maintenance_item_file.readline()
+    maintenance_item = Utility.read_words_file_into_list(save_folder_name + '/n_grams.txt',1)
 
     with open(save_folder_name + '/n_grams_2.txt', "w") as maintenance_item_file_2:
         for c,item in enumerate(maintenance_item,1):
@@ -318,44 +299,101 @@ def trail():
             if number_of_parts == 0:
                 outlier_word = ''
                 pos = ''
+                dist_mean = 0
             else:
-                outlier_word = model.wv.doesnt_match(parts_list)
+                outlier_word , dist_mean = Utility.customized_doesnt_match(model.wv,parts_list)
                 outlier_words_dic[outlier_word] += 1
                 pos = nltk.pos_tag(parts_list)
                 pos = [x for x in pos if x[0] == outlier_word][0][1]
-                if 'V' in pos or 'J' in pos:
+                if 'V' in pos   \
+                    and (       \
+                         outlier_word[-2:] == 'ed'
+                         #outlier_word[-3:] == 'ing'
+                    ):
+                #if 'J' in pos:
                     outlier_words_pos_filtered_dic[outlier_word] += 1
-            print('{0}\t{1:<50}\t{2:<20}\t{3}'.format(c,item,outlier_word,pos),file= maintenance_item_file_2)
+            print('{0}\t{1:<50}\t{2:<20}\t{3:<20}\t{4}'.format(c,item,outlier_word,str(dist_mean),pos),file= maintenance_item_file_2)
+
 
     with open(save_folder_name + '/outlier_word_in_items.txt', "w") as maintenance_item_file_3:
         for c,item in enumerate(sorted(outlier_words_dic.items(),key=operator.itemgetter(1), reverse = True),1):
-            print('{0}\t{1:<50}\t{2}'.format(c, item[0], item[1]), file=maintenance_item_file_3)
+            if item[0] in single_word_freq_dict:
+                freq = single_word_freq_dict[item[0]]
+                ratio = item[1]/freq
+            else:
+                freq = 0
+                ratio = 0
+            print('{0}\t{1:<50}\t{2}\t{3}\t{4}'.format(c, item[0], item[1],freq, ratio), file=maintenance_item_file_3)
 
-    with open(save_folder_name + '/outlier_word_in_items_pos_filtered.txt', "w") as maintenance_item_file_3:
+    with open(save_folder_name + '/outlier_word_in_items_pos_filtered_ranked_by_frequency.txt', "w") as maintenance_item_file_3:
         for c,item in enumerate(sorted(outlier_words_pos_filtered_dic.items(),key=operator.itemgetter(1), reverse = True),1):
-            print('{0}\t{1:<50}\t{2}'.format(c, item[0], item[1]), file=maintenance_item_file_3)
+            if item[0] in single_word_freq_dict:
+                freq = single_word_freq_dict[item[0]]
+                ratio = item[1]/freq
+            else:
+                freq = 0
+                ratio = 0
+            print('{0}\t{1:<50}\t{2}\t{3}\t{4}'.format(c, item[0], item[1], freq, ratio), file=maintenance_item_file_3)
+
+    outlier_words_pos_filtered_dic_ranked_by_ratio = {}
+    for item in outlier_words_pos_filtered_dic:
+        freq,ratio = 0,0
+        if item in single_word_freq_dict:
+            freq = single_word_freq_dict[item]
+            ratio = outlier_words_pos_filtered_dic[item] / freq
+        outlier_words_pos_filtered_dic_ranked_by_ratio[item] = ratio
+
+    with open(save_folder_name + '/outlier_word_in_items_pos_filtered_ranked_by_ratio.txt',"w") as maintenance_item_file_3:
+        for c, item in enumerate(sorted(outlier_words_pos_filtered_dic_ranked_by_ratio.items(), key=operator.itemgetter(1), reverse=True), 1):
+            print('{0}\t{1:<50}\t{2}\t{3}\t{4}'.format(c, item[0], outlier_words_pos_filtered_dic[item[0]] , single_word_freq_dict[item[0]] , item[1]), file=maintenance_item_file_3)
+
+
+def filter_bigram_stage_2():
+    outlier_word_file_name = 'outlier_word_in_items_pos_filtered_ranked_by_ratio.txt'
+    List_of_stopwords_for_filter_bigram_stage_2 = Utility.read_words_file_into_dict(save_folder_name + '/' + outlier_word_file_name, 1,3)
+    ratio_threshold = 0.1
+    List_of_stopwords_for_filter_bigram_stage_2 = [a for a in List_of_stopwords_for_filter_bigram_stage_2 if List_of_stopwords_for_filter_bigram_stage_2[a] > ratio_threshold]
+    List_of_bigram = Utility.read_words_file_into_dict(save_folder_name + '/bigram_filtered.txt',1)
+    List_of_bigram = dict([(bg, val) for bg, val in List_of_bigram.items() if set(List_of_stopwords_for_filter_bigram_stage_2).isdisjoint(bg.split(maintenance_item_delim))])
+    Utility.write_dict_into_words_file(save_folder_name + '/bigram_filtered_stage_2.txt',List_of_bigram)
+    return List_of_bigram , List_of_stopwords_for_filter_bigram_stage_2
+
+
+
 
 if __name__ == "__main__":
-    # sentences = Utility_Sentence_Parser(Failure_Description_Detection.save_file_name )
-    #
-    # #sentences = Utility_Sentence_Parser('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
+
+    #sentences = Utility_Sentence_Parser('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
+    # sentences = Utility_Sentence_Parser(Failure_Description_Detection.save_file_name)
     # apply_stage_1_bigram_to_text(sentences)
     #
-    # # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
-    # # print_stop_words_bigram(sentences)
+    # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
+    # filtered_bigram_stage_1(sentences)
     #
     # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
-    # print_filtered_bigram(sentences)
     #
-    # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
-    # apply_filtered_bigram_to_text(sentences)
+    # apply_filtered_bigram_to_text(Utility.read_words_file_into_dict(save_folder_name+'/bigram_filtered.txt',1) , sentences)
     #
     # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     # analyze_and_print_n_grams(sentences)
 
-    trail()
+    # detecting_words_for_bigram_filter_stage_2()
+    # filtered_bigram_dict is list of item bigram to be used for item detection
+    # List_of_stopwords_for_filter_bigram_stage_2 is the list of single words to be used for failure detection stage 2
+    filtered_bigram_dict , List_of_stopwords_for_filter_bigram_stage_2 = filter_bigram_stage_2()
 
-    #tag_single_maintenance_item(sentences)
+    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
+    apply_filtered_bigram_to_text(filtered_bigram_dict , sentences)
+
+    # tag_single_maintenance_item(sentences)
+
+    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
+    analyze_and_print_n_grams(sentences)
+
+    #use the newly found List_of_stopwords_for_filter_bigram_stage_2 to refine the tagging for Failure_Description
+    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
+    Failure_Description_Detection.apply_failure_description_ngram(List_of_stopwords_for_filter_bigram_stage_2,sentences)
+
 
 
 
