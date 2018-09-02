@@ -10,13 +10,15 @@ from pattern.en import conjugate
 from pattern.en import tag
 from Utility import Utility_Sentence_Parser
 
-trial_number = 5
-save_folder_name = "./Input_Output_Folder/Failure_Description/" + str(trial_number)
+trial_number = 6
+root_folder_name =  "./Input_Output_Folder/Failure_Description/"
+save_folder_name = root_folder_name + str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)
 
 save_file_name = save_folder_name + '/Normalized_Text_Stage_2_failure_desciprtion.txt'
 
+failure_description_delimiter = '#'
 #parameter used for the Phrase module in gensim
 bigram_minimum_count_threshold = 1
 max_vocab_size                 = 300000 #200000  #100000
@@ -86,7 +88,7 @@ def failure_description_ngram_detect(sentences):
                                     s = '~'.join(a)
                                     if s not in List_of_maintenance_action_ngram:
                                         List_of_maintenance_action_ngram.append(s)
-                                    break           #skip the rest code, so that it is not writen into the file
+                                    continue           #skip the rest code, so that it is not writen into the file
 
                             if stop_word == 'is' or stop_word == 'are':
                                 w = a[1:]
@@ -118,8 +120,8 @@ def is_part_of_failue_description_dictionary( failue_description_dictionary,s):
             return True
     return False
 
-def apply_failure_description_ngram(sentences):
-    failue_description_dictionary = []
+def failure_description_list_stage_1_building():
+    failure_description_list = []
 
     stop_word_to_investigae = ['is', 'are', 'not', 'to', 'cannot']
     for stop_word in stop_word_to_investigae:
@@ -129,29 +131,33 @@ def apply_failure_description_ngram(sentences):
                 word_list = line.split()
                 if len(word_list) > 0:
                     word = word_list[1]
-                    failue_description_dictionary.append(word)
+                    failure_description_list.append(word)
                 line = failue_description_file.readline()
 
-    List_of_words_to_be_excluded_in_failure_description_single_word = Utility.read_words_file_into_list("./Input_Output_Folder/Failure_Description/List_of_words_to_be_excluded_in_failure_description_single_word.txt", 0)
+    List_of_words_to_be_excluded_in_failure_description_single_word = Utility.read_words_file_into_list(
+        "./Input_Output_Folder/Failure_Description/List_of_words_to_be_excluded_in_failure_description_single_word.txt",
+        0)
 
-    with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_ngram_without_is_are.txt", "r") as failure_adj_file:
-        line = failure_adj_file.readline()
-        while line:
-            word_list = line.split()
-            if len(word_list) > 0:
-                word = word_list[1]
-                if word not in List_of_words_to_be_excluded_in_failure_description_single_word:
-                    failue_description_dictionary.append(word)
-            line = failure_adj_file.readline()
+    List_of_failure_description_ngram_without_is_are = Utility.read_words_file_into_list(
+        "./Input_Output_Folder/Failure_Description/List_of_failure_description_ngram_without_is_are.txt", 1)
+    List_of_failure_description_ngram_without_is_are = [w for w in List_of_failure_description_ngram_without_is_are if
+                                                        w not in List_of_words_to_be_excluded_in_failure_description_single_word]
 
-    failue_description_dictionary.sort(key = lambda s: len(s.split(delimiter.decode())), reverse=True)
-    with open("./Input_Output_Folder/Failure_Description/Complete_List_of_failure_description.txt", "w") as words_file:
-        for index_no,w in enumerate(failue_description_dictionary):
-            print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
+    failure_description_list = failure_description_list + List_of_failure_description_ngram_without_is_are
+    failure_description_list = failure_description_list + Utility.List_of_failure_noun
+    failure_description_list.sort(key=lambda s: len(s.split(delimiter.decode())), reverse=True)
 
+    Utility.write_list_into_words_file(
+        "./Input_Output_Folder/Failure_Description/Complete_List_of_failure_description.txt",
+        failure_description_list)
+
+    return failure_description_list
+
+
+def apply_failure_description_ngram(failure_description_list, sentences):
     with open(save_file_name,"w") as bigram_file:
         for c,s in enumerate(sentences):
-            if c % progress_per == 0:
+            if c % Utility.progress_per == 0:
                 logger.info( "PROGRESS: at sentence #%.i",c)
             s.append('')                            #append a empty string so that the last word can be processeed as well
             for i in range(len(s) - 1):             #need to minus two now because added one empty str
@@ -159,11 +165,11 @@ def apply_failure_description_ngram(sentences):
                 next_word    = s[i+1]
                 string_to_be_contacted = current_word + delimiter.decode() +  next_word
 
-                if string_to_be_contacted in failue_description_dictionary:
-                #if is_part_of_failue_description_dictionary(failue_description_dictionary , string_to_be_contacted):
+                if string_to_be_contacted in failure_description_list:
+                #if is_part_of_failue_description_dictionary(failure_description_list , string_to_be_contacted):
                     s[i] = []
                     s[i + 1]    = string_to_be_contacted
-                if current_word in failue_description_dictionary:
+                if current_word in failure_description_list:
                     s[i] = current_word + delimiter.decode()
 
             s = [x for x in s if x]
@@ -196,15 +202,7 @@ def advb_detect(sentences):
 
 def advb_bigram_detect(sentences):
     # first build the list of maintenance words
-    list_of_adverb = []
-    with open(save_folder_name + "/List_of_advb.txt", "r") as words_file:
-        line = words_file.readline()
-        while line:
-            word_list = line.split()
-            if len(word_list) > 0:
-                word = word_list[1]
-                list_of_adverb.append(word)
-            line = words_file.readline()
+    list_of_adverb = Utility.read_words_file_into_list(save_folder_name + "/List_of_advb.txt" , 1)
 
     phrases = Phrases(sentences,
                       max_vocab_size=max_vocab_size,
@@ -241,17 +239,18 @@ def advb_bigram_detect(sentences):
 if __name__ == "__main__":
     sentences = Utility_Sentence_Parser('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
     #sentences = Utility_Sentence_Parser(Phrase_Detection_2.save_folder_name +'/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
-    # failure_description_ngram_detect(sentences)
-    #
-    # f = open("./Input_Output_Folder/Failure_Description/" + "List_of_words_to_be_excluded_in_failure_description_single_word.txt", "w+")
-    # f.close()
-    # #pause the program. User need to mannual edit the list of files before it can progress
-    # input(" Program paused, pleas edit the List_of_failure_description_single_word file \n \
-    #         and write every words that is not a failure description word into           \n \
-    #         List_of_words_to_be_excluded_in_failure_description_single_word.txt")
+    failure_description_ngram_detect(sentences)
 
+    #check if List_of_words_to_be_excluded_in_failure_description_single_word exist or not
+    if not os.path.isfile("./Input_Output_Folder/Failure_Description/List_of_words_to_be_excluded_in_failure_description_single_word.txt"):
+        f = open("./Input_Output_Folder/Failure_Description/" + "List_of_words_to_be_excluded_in_failure_description_single_word.txt", "w+")
+        f.close()
+        #pause the program. User need to mannual edit the list of files before it can progress
+        input(" Program paused, pleas edit the List_of_failure_description_single_word file \n \
+                and write every words that is not a failure description word into           \n \
+                List_of_words_to_be_excluded_in_failure_description_single_word.txt")
 
-    apply_failure_description_ngram(sentences)
+    apply_failure_description_ngram(failure_description_list_stage_1_building(), sentences)
 
     advb_detect(sentences)
     advb_bigram_detect(sentences)
