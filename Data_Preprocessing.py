@@ -2,13 +2,23 @@ import csv
 import re
 import os
 from collections import defaultdict
+import logging
 
-trial_number = 1
-save_folder_name = "./Input_Output_Folder/Preprocessed_Record/"
+import Utility
+
+logger = logging.getLogger(__name__)
+trial_number = 3
+save_folder_name = "./Input_Output_Folder/Preprocessed_Record/"+ str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)
 
-ignored_lines_placeholder = '='
+ignored_lines_placeholder = '++++++++++'
+
+path_to_Rawdata = './Input_Output_Folder/Raw_Record/'
+path_to_Save_file = save_folder_name + '/Cleaned_Data_' + str(trial_number) + '.txt'
+path_to_token_frequency_file = save_folder_name + "/token_frequency.txt"
+path_to_raw_record_token_frequency_file = save_folder_name + "/raw_record_token_frequency.txt"
+
 
 class Words_Parser(object):
     def __init__(self, dir_name , file_name ):
@@ -54,13 +64,35 @@ class Sentences_Parser_2(object):
         with open(self.file_name, "r", newline='') as data_file:
                 line = data_file.readline()
                 while line:
-                    if line.__contains__('~'):
+                    if line.__contains__(ignored_lines_placeholder):
+                        yield ignored_lines_placeholder
                         line = data_file.readline()
                     else:
                         s = line.split('\t')
                         if len(s) > 1 :
                             yield s[1].split()
                         line = data_file.readline()
+
+class Raw_Record_Sentences_Parser(object):
+    def __init__(self, dir_name):
+        self.dir_name = dir_name
+        self.ignored_lines_count = 0
+        self.total_lines = 0
+        self.total_number_of_words = 0
+
+    def __iter__(self):
+
+        with open(self.dir_name + 'loader_work_orders_sanitised.csv', newline='') as csvfile:
+            data_reader = csv.reader(csvfile)
+            for row in data_reader:
+                self.total_lines+=1
+                short_text = row[4]
+                # only process if contains space, to get rid of the records where there is no space seperation
+                if short_text.find(' ') > 0 :
+                    yield short_text.split()
+                else:
+                    self.ignored_lines_count+=1
+                    yield ignored_lines_placeholder
 
 
 
@@ -71,7 +103,7 @@ class Sentences_Parser(object):
         self.total_lines = 0
         self.total_number_of_words = 0
 
-        self.Match_Case_1 = re.compile(r'((\w*[\w\s])\/([\w\s]\w*))')                  #for words connected wby /
+        self.Match_Case_1 = re.compile(r'((\w*[\w\s])\/([\w\s]\w*))')                  #for words_by_alphebat connected wby /
         self.Match_Case_2 = re.compile(r'([\s|^][a-z]{2,4}[\d|\s]\d{1,4})[\s|.]')      #for equipment ids
         self.Match_Case_3 = re.compile(r'\s[0-9]{2}[/.][0-9]{2}[/.][0-9]{2,4}')              #for datatiem format
         self.Match_Case_4 = re.compile('(?<=\d)[\.\/](?=\d)')                          # for cases like 12.25 or 12/25
@@ -85,9 +117,10 @@ class Sentences_Parser(object):
         short_text = re.sub('\[', ' ', short_text)                                   #[safas] get rid of brackets
         short_text = re.sub('\]', ' ', short_text)                                   #[safas] get rid of brackets
         short_text = re.sub('re-', 're', short_text)                                # change re-kit to 'rekit'
+
         short_text = re.sub('-', ' ', short_text)
-        short_text = re.sub('no.[\d|\s]\d+', ' number ', short_text)
-        short_text = re.sub('\'\s?s\s', ' ', short_text)                                  #get rid of cases like drive's --> driver
+        short_text = re.sub('no.[\d|\s]\d+', ' _number_ ', short_text)
+        short_text = re.sub('\'\aspell_checker?aspell_checker\aspell_checker', ' ', short_text)                                  #get rid of cases like drive'aspell_checker --> driver
         short_text = re.sub('\'\s?t\s', 't ', short_text)                               # get rid of cases like isn't --> isnt
 # ------------------------third match Case---------------------------------------------------------------------------------------------------------------
         short_text = re.sub(self.Match_Case_3.pattern, ' date_time ', short_text)
@@ -123,8 +156,8 @@ class Sentences_Parser(object):
 # ------------------------fifth match Case---------------------------------------------------------------------------------------------------------------
         short_text = re.sub(self.Match_Case_5.pattern, '', short_text)
         # delete the dot inbetween individual chars for abbreviation
-        # e.g.  e.m.s ---> ems
-        # e.g.  p.s.i ---> psi
+        # e.g.  e.m.aspell_checker ---> ems
+        # e.g.  p.aspell_checker.i ---> psi
 
 #-------------------------general case----------------------------------------------------------------------------------------------
         short_text = re.sub(r"'+", '', short_text)
@@ -176,10 +209,10 @@ class Sentences_Parser(object):
         short_text = re.sub('_number_\s?mth\s', ' _number_ month ', short_text)
         short_text = re.sub('_number_\s?mthly\s', ' _number_ monthly ', short_text)
         short_text = re.sub('_number_m', ' _number_ month ', short_text)
-        short_text = re.sub('_number_\s?hr[\s|s]', ' _number_ hour ', short_text)
+        short_text = re.sub('_number_\aspell_checker?hr[\aspell_checker|aspell_checker]', ' _number_ hour ', short_text)
         short_text = re.sub('_number_\s?hour', ' _number_ hour ', short_text)
         short_text = re.sub('_number_h ', ' _number_ hour ', short_text)
-        short_text = re.sub('_number_\s?min[\s|s] ', ' _number_ hour ', short_text)
+        short_text = re.sub('_number_\aspell_checker?min[\aspell_checker|aspell_checker] ', ' _number_ hour ', short_text)
         short_text = re.sub('_number_\s?sec ', ' _number_ sec ', short_text)
 
         short_text = re.sub(' _number_x(?![_x])', ' _number_ x ', short_text)
@@ -211,6 +244,7 @@ class Sentences_Parser(object):
 
         short_text = re.sub('\s\w?_number_\w?_number_\w?\s', ' ', short_text)
         short_text = re.sub('\s\w{1,2}_number_\w?\s', ' ', short_text)
+        short_text = re.sub('_number_', ' _number_ ', short_text)
 
         #------------------------------Speacial Case 2----------------------------------------------------------------------------------------------------------------
 
@@ -242,22 +276,24 @@ class Sentences_Parser(object):
         short_text = re.sub('\snot able to\s', ' cannot ', short_text)
         short_text = re.sub('\sunable to\s', ' cannot ', short_text)
 
+        short_text = re.sub('\sseems like\s', ' appears ', short_text)
+        short_text = re.sub('\sseems\s', ' appears ', short_text)
 
-# deal with common bigrams
+        # deal with common bigrams
         short_text = re.sub('over haul\s', ' overhaul ', short_text)
         short_text = re.sub('change out\s', ' changeout ', short_text)
         short_text = re.sub('up grade\s', ' upgrade ', short_text)
-        short_text = re.sub('u s\s', ' u_s ', short_text)
+        short_text = re.sub('u aspell_checker\aspell_checker', ' u_s ', short_text)
         short_text = re.sub('\sa c\s', ' a_c ', short_text)
         short_text = re.sub('\sc b\s', ' c_b ', short_text)
         short_text = re.sub('\sh i d\s', ' h_i_d ', short_text)
-        short_text = re.sub('\sl e d\s?s?\s', ' led ', short_text)
+        short_text = re.sub('\sl e d\aspell_checker?aspell_checker?\aspell_checker', ' led ', short_text)
         short_text = re.sub('\sh m u\s', ' hmu ', short_text)
         short_text = re.sub('\sg u i\s', ' gui ', short_text)
-        short_text = re.sub('\sp t o\s', ' p_t_o ', short_text)
-        short_text = re.sub('\sg p s\s', ' g_p_s ', short_text)
+        short_text = re.sub('\sp t o\s', ' pto ', short_text)
+        short_text = re.sub('\sg p aspell_checker\aspell_checker', ' gps ', short_text)
         short_text = re.sub('\sp l c\s', ' plc ', short_text)
-        short_text = re.sub('\sn c s\s', ' ncs ', short_text)
+        short_text = re.sub('\sn c aspell_checker\aspell_checker', ' ncs ', short_text)
         short_text = re.sub('\sweek ys\s', ' weekly ', short_text)
         # ------------------------------Speacial Case 3----------------------------------------------------------------------------------------------------------------
         # deal with single char in the text
@@ -270,7 +306,7 @@ class Sentences_Parser(object):
         short_text = re.sub('\sc (?=breaker)', ' circuit ', short_text)
         short_text = re.sub('\sr h\s', ' r_h ', short_text)
         short_text = re.sub('\sl h\s', ' r_h ', short_text)
-        short_text = re.sub('(?<=_h)\ss\s', '_s ', short_text)
+        short_text = re.sub('(?<=_h)\saspell_checker\aspell_checker', '_s ', short_text)
         short_text = re.sub('(?<=_h)\sf\s', '_f ', short_text)
         short_text = re.sub('(?<=_h)\sr\s', '_r ', short_text)
         short_text = re.sub('\sl and r\s', 'left and right ', short_text)
@@ -293,12 +329,13 @@ class Sentences_Parser(object):
                     yield ignored_lines_placeholder
 
 
-def Precrocess_Records_and_Print(sentences):
-    Path_to_Save_file = save_folder_name + 'Cleaned_Data_' + str(trial_number) +'.txt'
 
-    with open(Path_to_Save_file, "w") as cleaned_data_file:
+def Precrocess_Records_and_Print(sentences):
+    with open(path_to_Save_file, "w") as cleaned_data_file:
         i = 1
         for sentence in sentences:
+            if i % Utility.progress_per == 0 :
+                logger.info("PROGRESS: at sentence #%.i", i)
             string_to_print = str(i) + '\t' + " ".join(sentence)
             print( string_to_print , file=cleaned_data_file)
             i = i +1
@@ -308,48 +345,13 @@ def Precrocess_Records_and_Print(sentences):
         print(string_to_print, file=cleaned_data_file)
 
 
-def Print_Out_Token_Frequecy(sentences):
-    frequency = defaultdict(int)
-    for sentence in sentences:
-        for word in sentence:
-            frequency[word] += 1
-            #sentences.total_number_of_words+=1
-    i = 1
-    with open("./Words_Correction_Dictionary/Cleaned_Data_Frequency_16.txt", "w") as cleaned_data_file:
-        for w in sorted(frequency, key=frequency.get, reverse=True):
-            string_to_print = str(i) + '\t' + w +'\t\t\t\t\t'+ str(frequency[w])
-            print( string_to_print , file=cleaned_data_file)
-            i+=1
-        print('*******************************************************************************', file=cleaned_data_file)
-        #string_to_print = 'Total:' + str(sentences.total_number_of_words)
-        print(string_to_print, file=cleaned_data_file)
-    return frequency
 
-def Build_Frequency_Dic(sentences):
-    frequency = defaultdict(int)
-    for sentence in sentences:
-        for word in sentence:
-            frequency[word] += 1
-    return frequency
-
-
-def write_vacab_to_txt(file_path, words):
-    with open(file_path, "w") as vacab_file:
-        i = 1
-        for word in words:
-            string_to_print = '{0:15} \t {1:15}'.format(str(i),word)
-            print(string_to_print, file = vacab_file)
-            i = i + 1
 
 
 if __name__ == "__main__":
-    Path_to_Rawdata = './Input_Output_Folder/Raw_Record/'
-    sentences = Sentences_Parser(Path_to_Rawdata)
+    Utility.Print_Out_Token_Frequecy(Raw_Record_Sentences_Parser(path_to_Rawdata), path_to_raw_record_token_frequency_file)
+    sentences = Sentences_Parser(path_to_Rawdata)
     Precrocess_Records_and_Print(sentences)
+    Utility.Print_Out_Token_Frequecy( Utility.Utility_Sentence_Parser(path_to_Save_file) , path_to_token_frequency_file )
 
-
-    #sentences = Sentences_Parser_2('./Words_Correction_Dictionary/Normalized_Text_Stage_2.txt')
-    #for s in sentences:
-       #print(s)
-    #Print_Out_Token_Frequecy(sentences)
 
