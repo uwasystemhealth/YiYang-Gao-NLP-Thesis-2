@@ -19,7 +19,7 @@ import operator
 import logging
 logger = logging.getLogger(__name__)
 
-trial_number = 11
+trial_number = 12
 save_folder_name = "./Input_Output_Folder/Phrase_Detection/" + str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)
@@ -54,7 +54,7 @@ def apply_stage_1_bigram_to_text(sentences):
 def filtered_bigram_stage_1(sentences):
 
     logger.info("Start printing filtered bigram")
-    # read in a manually prepared words file for words that need to be included
+    # read in a manually prepared words_by_alphebat file for words_by_alphebat that need to be included
     bigram_include_words = Utility.read_words_file_into_list('./Input_Output_Folder/Phrase_Detection/Final_Speacial_words_to_be_included_in_bigram.txt',0)
 
     """read in all kinda of stopwords that should not be part of the bigram for maintenence item detection"""
@@ -186,7 +186,7 @@ def analyze_and_print_n_grams(sentences):
             if '~' in token:
                 list_of_parts = token.split('~')
 
-                # check the last word for this ngram, if it is in system words then add to dict
+                # check the last word for this ngram, if it is in system words_by_alphebat then add to dict
                 if list_of_parts[-1] in system_parts_words:
                     if token in system_parts_dic:
                         system_parts_dic[token] += 1
@@ -254,21 +254,9 @@ def analyze_and_print_n_grams(sentences):
                 c += 1
 
 
-
-
 def tag_single_maintenance_item(sentences):
-
-    # read in a manually prepared words file for words that need to be included
-    maintenance_item = []
-    with open(save_folder_name + '/n_grams.txt',"r") as maintenance_item_file:
-        line = maintenance_item_file.readline()
-        while line:
-            word_list = line.split()
-            if len(word_list) > 2:
-                word = word_list[1]
-                maintenance_item.append(word)
-                line = maintenance_item_file.readline()
-
+    # single_maintenance_item
+    single_word_maintenance_item = Utility.read_words_file_into_list(save_folder_name + '/root_parts_list.txt',1)
     """if a single word is in the maintenance_item list, append '~' at the end to indicate it is an main item as well """
     with open(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_single_item_tagged.txt', "w") as filtered_bigram_transformed:
         for c, s in enumerate(sentences , 1):
@@ -286,7 +274,7 @@ def detecting_words_for_bigram_filter_stage_2():
     outlier_words_dic = defaultdict(int)
     outlier_words_pos_filtered_dic = defaultdict(int)
     single_word_freq_dict = Utility.read_words_file_into_dict(save_folder_name + '/parts_list_frequency.txt', 1)
-    # read in a manually prepared words file for words that need to be included
+    # read in a manually prepared words_by_alphebat file for words_by_alphebat that need to be included
     maintenance_item = Utility.read_words_file_into_list(save_folder_name + '/n_grams.txt',1)
 
     with open(save_folder_name + '/n_grams_2.txt', "w") as maintenance_item_file_2:
@@ -366,29 +354,27 @@ def filter_bigram_stage_2():
 if __name__ == "__main__":
 
     #sentences = Utility_Sentence_Parser('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
-    # sentences = Utility_Sentence_Parser(Failure_Description_Detection.save_file_name)
-    # apply_stage_1_bigram_to_text(sentences)
-    #
-    # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
-    # filtered_bigram_stage_1(sentences)
-    #
-    # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
-    #
-    # apply_filtered_bigram_to_text(Utility.read_words_file_into_dict(save_folder_name+'/bigram_filtered.txt',1) , sentences)
-    #
-    # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
-    # analyze_and_print_n_grams(sentences)
+    sentences = Utility_Sentence_Parser(Failure_Description_Detection.save_file_name)
+    apply_stage_1_bigram_to_text(sentences)
+
+    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
+    filtered_bigram_stage_1(sentences)
+
+    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
+
+    apply_filtered_bigram_to_text(Utility.read_words_file_into_dict(save_folder_name+'/bigram_filtered.txt',1) , sentences)
+
+    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
+    analyze_and_print_n_grams(sentences)
 
 
-    # detecting_words_for_bigram_filter_stage_2()
+    detecting_words_for_bigram_filter_stage_2()
     # filtered_bigram_dict is list of item bigram to be used for item detection
-    # List_of_stopwords_for_filter_bigram_stage_2 is the list of single words to be used for failure detection stage 2
+    # List_of_stopwords_for_filter_bigram_stage_2 is the list of single words_by_alphebat to be used for failure detection stage 2
     filtered_bigram_dict , List_of_stopwords_for_filter_bigram_stage_2 = filter_bigram_stage_2()
 
     sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1.txt')
     apply_filtered_bigram_to_text(filtered_bigram_dict , sentences)
-
-    # tag_single_maintenance_item(sentences)
 
     sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     analyze_and_print_n_grams(sentences)
@@ -401,9 +387,13 @@ if __name__ == "__main__":
     freq_dict_filtered = OrderedDict(sorted(freq_dict_filtered.items(),key=operator.itemgetter(1), reverse=True ))
     Utility.write_dict_into_words_file(save_folder_name + '/n_grams_frequency.txt',freq_dict_filtered)
 
+    tag_single_maintenance_item(sentences)
+
     #use the newly found List_of_stopwords_for_filter_bigram_stage_2 to refine the tagging for Failure_Description
-    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
+    # sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
+    sentences = Utility_Sentence_Parser(save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_single_item_tagged.txt')
     Failure_Description_Detection.apply_failure_description_ngram(List_of_stopwords_for_filter_bigram_stage_2,sentences)
+
 
 
 
