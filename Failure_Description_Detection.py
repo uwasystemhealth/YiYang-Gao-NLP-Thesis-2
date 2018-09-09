@@ -8,9 +8,11 @@ import Utility
 from gensim.models.phrases import Phrases
 from pattern.en import conjugate
 from pattern.en import tag
-from Utility import Utility_Sentence_Parser
 
-trial_number = 6
+from Utility import Utility_Sentence_Parser
+import Text_Normalization
+
+trial_number = 8
 root_folder_name =  "./Input_Output_Folder/Failure_Description/"
 save_folder_name = root_folder_name + str(trial_number)
 if not os.path.isdir(save_folder_name):
@@ -26,7 +28,7 @@ threshold                      = 1
 delimiter                      = b'#'
 progress_per                   = 100000
 
-#append the generic words into the stop_words for bbigrams as well
+#append the generic words_by_alphebat into the stop_words for bbigrams as well
 generic_words = ['get' ,'getting' , 'take' ,'taking','come' ,'comming' ,'make' ,'making']
 for w in generic_words:
     Utility.stopwords_nltk_pattern_custom.append(w)
@@ -79,7 +81,7 @@ def failure_description_ngram_detect(sentences):
                                 flag = False
 
                         if flag:
-                            # s is the original n grams delimited by #
+                            # aspell_checker is the original n grams delimited by #
                             if stop_word == 'to':
                                 last_word = a[-1]
                                 conjugated_last_word = conjugate(last_word)
@@ -190,7 +192,7 @@ def advb_detect(sentences):
                 if word not in list_of_adverb:
                     list_of_adverb.append(word)
 
-        #pprint(parse(s, relations=True, lemmata=True))
+        #pprint(parse(aspell_checker, relations=True, lemmata=True))
         #input("Press Enter to continue...")
 
     c = 1
@@ -201,7 +203,7 @@ def advb_detect(sentences):
     logger.info("PROGRESS: Finished adverb detection")
 
 def advb_bigram_detect(sentences):
-    # first build the list of maintenance words
+    # first build the list of maintenance words_by_alphebat
     list_of_adverb = Utility.read_words_file_into_list(save_folder_name + "/List_of_advb.txt" , 1)
 
     phrases = Phrases(sentences,
@@ -237,7 +239,8 @@ def advb_bigram_detect(sentences):
 
 
 if __name__ == "__main__":
-    sentences = Utility_Sentence_Parser('./Input_Output_Folder/Normalized_Record/2/Normalized_Text_Stage_2.txt')
+
+    sentences = Utility_Sentence_Parser(Text_Normalization.path_to_normalized_stage_2_records)
     #sentences = Utility_Sentence_Parser(Phrase_Detection_2.save_folder_name +'/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     failure_description_ngram_detect(sentences)
 
@@ -247,7 +250,7 @@ if __name__ == "__main__":
         f.close()
         #pause the program. User need to mannual edit the list of files before it can progress
         input(" Program paused, pleas edit the List_of_failure_description_single_word file \n \
-                and write every words that is not a failure description word into           \n \
+                and write every words_by_alphebat that is not a failure description word into           \n \
                 List_of_words_to_be_excluded_in_failure_description_single_word.txt")
 
     apply_failure_description_ngram(failure_description_list_stage_1_building(), sentences)
