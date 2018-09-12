@@ -1,0 +1,360 @@
+674	replace= both propel~motor leaking#
+5660	replace= grip~ in breakout~tongs
+6146	remove= lead~rod
+8384	pipe~support~cup not#gripping#
+12522	engine~ front main~seal leaking#
+14346	changeout= left rotary~head~motor
+14447	water~injection not#working#
+15624	replace= chip~deflector and deck~seal l
+20339	aircon~stacker~valve leaking#
+21917	adjust= top~chain
+22202	main~pump leaking#oil#
+24693	replace= dropped# drill~steel
+24778	number way no go
+25063	slap~wrench~fork worn#
+25101	oil-leak# on receivertank~return~hose
+28310	equipment_id air~receiver number yearly NA stat instep
+30282	weekly inspection= drill~ number completed
+32115	equipment_id mechanical inspection= number weekly
+40310	replacement= pin~
+40331	hydraulic-hose~ replacement=
+40342	change= wiper~ on cab~window equipment_id
+41402	left-hand track~ has come#off#front#idler
+43895	loose# grease~pump~motor
+44193	adjust= cut back laterial~link grease					????
+44523	changeout= worn# driv~tyre
+48962	fit= breather~ to hydraulic~tank
+49170	remove= gauge~ mounted= left-hand-front cab~grabrail
+51827	left-hand-front mud~guard~chain broken#
+53207	replace= left-hand steer~tyre
+53789	hi~beam~light unservicable#
+56581	jump-start								????
+67930	mechanical pm service=
+73778	mandatory brake~ test= monthly
+74115	equipment_id weekly inspection=
+82630	lost# tooth~
+83518	cutting~edge weld= broken#
+84418	number hour lube mechanical service
+84707	no#power# to starter~
+85769	daily inspection= equipment_id
+86045	daily inspection= equipment_id
+88270	equipment_id daily maintenance= inspection=
+95931	track~ needed#to#be#pumped#up
+97045	repair= hydraulic~ leak#
+99351	check= fuel~gauge for correct operation
+99892	fit= cover~ to engine~oil~receiver
+102618	fit= lockout~hasp and lanyard~
+103968	seat-belt~achor~bolt loose#
+105590	fwd_rev~lever tight#
+112678	replace= rear starter~isolator~switch
+113896	ripper~boot missing#
+116175	hydraulics~ slow#lift#and#tilt
+117959	battery~isolator cannot#turn#
+119791	ac not#working#
+119884	changed= alternator~
+120585	heater~control not#working#
+120708	replace= missing# grouser~bolt
+123386	mechanical pm service= pre-check
+125353	mechanical service= equipment_id
+132037	change= transformer~tank~sight-glass
+132144	component changeout= as per list
+134765	changeout= vims~ main module~battery has
+138681	cover missing# off host~controller
+143256	maintenance service=
+143553	trailer~hitch~harness unservicable#
+144089	ran#out#of#fuel#
+146350	replace= aircon~belt
+147387	replaced= broken# light~ in dash~
+148538	lubrication service=
+148973	mechanical pm service= pre-check
+151424	lube service= number weekly equipment_id
+151492	mechanical pm service=
+152827	repair= material~ number
+154964	welding= repair= to chassis~ crack#
+157009	auto~level fault#
+157102	v~belt~tensioner
+158393	repair= engine~bay~light
+163343	replace= engine~bonnet repeat order
+163439	investigate= arc~ error#
+166819	disconnect= fire~system~engine shutdown					???
+167147	inspect= engine~cover for damage and fire
+170987	repaired= coolant~ leak#
+175409	number monthly fire-suppression test= equipment_id
+175746	retension= front strut~ and steer~pin
+177855	investigate= high copper and lead in kowa				???
+180968	maintenance pre-check equipment_id
+181050	RI= engine~assembly
+181277	carry=out= machine exit inspection=
+181549	number hr pm clinic hydraulic system
+181666	non destructive testing= equipment_id
+183800	exit~ inspection=
+189267	broken# breakout~fork~cylinder
+191857	repair= roof~light
+192148	weld= bracket~ from trrop~lube~system
+192772	hydraulic-hose~ defect#
+192963	adjust= track~
+193057	weld= bar~ in manufacturer number hour plate~
+193709	replace= breather~
+194017	equipment_id lighting~ upgrade= external
+194835	p chanrger bit
+197180	adjust= left-hand propel~track
+197808	hoist~brake cannot#release#
+198197	gui~screen lost#communication#
+202169	refit= cover~
+203625	modify= engine~stand for transport
+206734	gear~shift stiff#to#shift
+212362	remove= number roller~ retension= track
+217285	equipment_id weekly servicing=
+221594	equipment_id daily maintenance inspection=
+222251	wednesday equipment_id performance meeting
+222842	internal condition monitor~ number month
+223485	dropped# steel~
+227591	trans~filter plugged#
+229227	reposition= wisker~switch
+233131	replace= battery~
+233576	air-filter~ blocked# low#boost#pressure
+235606	repair= commercial~radio
+244075	repair= engine~ oil-leak
+245198	equipment_id top tank of radiator~ leaking#
+245301	temporary fence for construction					???
+246407	jump-start
+246516	repair= cracked# hand~rail near right-hand mirror~
+251503	equipment_id mechanical equipment_id hr
+252681	air-conditioner~ and radio~ inspection=
+254613	equipment_id pm and lube service=
+256443	number radiator changeout=
+257060	equipment_id pm and lube service=
+257987	weld= crack# in main~frame
+258056	replace= steering~column~uni~joint
+262123	replace= seat~
+263642	replace= centre~bearing
+266021	replace= faulty# wheel~cleats too#short#
+266332	rim~ crack# test= x number
+269500	equipment_id mechanical pm
+269537	changeout= wheel~bearing front left
+270634	equipment_id weekly grease service=
+271348	mechanical lube service= equipment_id grease
+274221	right-front replace= drier~
+282575	replace= right-hand door~latch
+289946	hydraulic~ oil-leak#
+291915	exhaust~clamp broken#
+292684	diagnose= and repair= grease~system leak#
+292851	changeout= feed~pump
+293406	trans~ not#shifting#
+294511	repair= hydraulic~ oil-leak# on rotary~head~hose
+294646	repair= oil-leak# at engine~oil~filter
+295999	hire grader number hour service=
+304449	clam~cylinder~pipe cracked#
+306228	oil service= number							???
+309512	equipment_id pm and lube service=
+310079	equipment_id number day inspection=
+311278	equipment_id lubrication service= number hr
+314310	equipment_id monthly dynamic brake test
+314322	equipment_id pm and lube service=
+314469	equipment_id number hr mechanical inspection=
+316955	repair= us grease-line~ on left-hand-side ripper~
+324242	right-front replace= DE ice thermostat~
+325108	replace= missing# hydraulic~tank~cap
+325195	replace= battery~
+327163	replace= blown# tilt~cylinder~hose
+327788	inspect= tag~ling hitting front grill~
+327837	retorque= sprocket~segment~bolt
+330556	changeout= implement~pump
+330631	steering~ blown# oring~ replaced=
+335778	repair= charging~system fault#
+336076	replace= hydraulic~pump reman
+337836	excessive#black#smoke
+342984	replace= battery~ x number
+344422	replace= rear wiper~motor
+347787	changeout= aircon~compressor
+354474	bulk~grease not#pumping#
+355740	bulk~fuel~pump~motor realignment=
+364069	equipment_id pm and lube service=
+364143	repair= of m_n number
+366490	repair= rim~ as required
+367552	engine~ cannot#go#above#idle#
+371858	trans~pump leaking# between section
+372284	hydraulic~ oil-leak# at water-pump~
+372494	send rim~ for scheduled testing=
+375686	equipment_id mechanical service=
+376158	manufacturer number hour number d mechanical service=
+376433	equipment_id number hr lube service=
+381614	dust#entry into cab~
+384821	engine~ shut#down#									?????
+391353	engine~ overheating#
+393678	jump-start
+396757	equipment_id left-hand ripper~tilt~cylinder change=
+398291	aircond~ aircond~
+398560	gear~shift broken#
+400476	replace= door~seal leak# and conduit~hole
+400609	light~ unservicable#
+401186	harsh#gear#change#
+401943	number hour service= part only
+408919	replace= arm~rest right-hand s
+410271	equipment_id lubrication service=
+410421	equipment_id number month dynamic~brake test=
+415190	repair= roof~light
+416054	engine~ cannot#start#
+416704	blown# hose~ on cylinder~
+423385	shut down high#comp#temp								????
+425189	hydraulic~ leak# in high~pressure~filter
+426563	e oil-leak# on head~
+426614	tramming alarm
+427091	no#propel# hydraulic-hose~
+427744	pre shutdown job
+427919	m check= for loss#of#hydraulic#oil
+429607	repair= butterfly~valve
+430226	replace= seal~ at ind plate~ on motor~
+431326	rotation~pump~stroker manufacturer number hour
+432266	adjust= head-slide
+432534	regen~valve leaking#
+434285	NA pre service= inspection
+435324	change= bucket~tip
+435956	terex labour cost inv number
+437020	cq field to perform= bucket~ maintenance=
+437158	undercarriage~grease fault#
+439976	bucket~ repair=
+441793	pull-down~chain missing#
+443814	top=up= receiver~tank with oil~
+446577	e lost#power#
+448336	repair= light~ on top of cab~ equipment_id
+449197	reweld= sub~
+449602	def right-hand-rear jack~ slow#
+449797	check= oil~ leaking# from head~
+449977	def pipe~support not#holding# rod~
+453246	end for end top sub										?????
+454427	spare~seat in cab~ has broken# base~ equipment_id
+455537	modify= feed make=up= filter~mount
+455970	oil-leak behind compressor~
+456960	changeout= breakout~dies equipment_id
+457229	rebuild= feed~cylinder ex equipment_id left-hand-side
+461031	check= low#engine#rev NA
+462326	mem labour number of fitter~ equipment_id number
+463026	replace= filter~spring and plate~
+464853	fit=up= test= hose~ off pump~
+470052	number of lighting~ unservicable#
+470499	repair= damage to pipe~positioner
+473637	operator weekly inspection=
+473881	no#propel#
+474132	holding~wrench coming#on#by#itself
+474590	replace= sub-saver
+479418	daily inspection= equipment_id
+483427	equipment_id mechanical inspection= number weekly
+486551	number air~comp service= equipment_id
+489110	change= steer~tyre
+489630	floor-mat~ need replacing=						?????
+490026	repair= commercial~radio
+491256	flip steer~tyre on rim~							?????
+494069	replace= steering~linkage
+495578	transport~tray pd to dpsa vendor_name
+497501	reposition= hitch~junction~box
+498961	coolant~ leak# on engine~cooler
+500093	replace= door~glass reseal= door~
+500721	aircon~ blowing#hot#air#
+502376	replace= light~
+508589	e changeout= commercial~radio
+513072	replace= missing# right-hand walkway mesh
+519583	repair= number way
+519889	repair= right-hand door~wiper not#working#
+520185	diagnose= and repair= low#power#problem#
+521180	fabricate= and refit= rear camera~mount
+522238	change= ripper~boot
+522479	install= FMs kit southern cross
+523411	rep leak# at hose~fitting on imp~cont~valve
+524095	equipment_id number hr pm and lube service=
+525243	equipment_id number hr pm and lube service=
+526003	changeout= left-hand turbo~
+526912	book out con stock fitted= number number number					?????
+528227	replace= meter~pcb~board~engine~oil
+530327	hastings changeout= labour equipment_id
+530406	two-way~ repair=
+530999	identification~sign required on cab
+533036	replace= nylon~coupling on circ~pump
+533925	+ + + + + + + + + +
+535817	supply number litre pod~ of number watt
+541643	replace= qttm~overload~resistor
+544617	camera~ repair=
+548867	replace= broken# tooth~
+553925	+ + + + + + + + + +
+554475	equipment_id weekly rope~ inspection=
+554852	equipment_id ndt inspection= number equipment_id
+555509	number number week electrical pre-start inspect=
+565034	repair= crack# as per attached sheet
+565947	repair= fire-suppression~system equipment_id
+565968	replace= mirror~bracket and mirror~
+567703	am-fm~radio am-fm
+569746	repair= rear camera~
+570766	replace= right-hand hoist~cylinder
+573020	crack# test= tie-rod~ball-studs								????
+573149	lubricate= door~striker~latch~assembly left-hand
+573312	aerial~holder the t is#loose# rattle
+577656	equipment_id number hr pm and lube service=
+578754	equipment_id coal position new tyre~ changeout=
+580471	equipment_id number hr pm and lube service=
+585711	fire~system inspection=
+587455	light~ under house falling#apart#
+588613	ref aircon~ not#cooling#
+589464	repair= fire~system~alarm fault#
+589595	vendor_name right-hand propel~box oil-leak#
+596849	repair= floodlight~ near falling#off#
+597401	replace= front control~valve~hose
+601214	replace= deadman~switch
+601693	two-way~ repair=
+602362	inspect= cab~bench top equipment_id
+602837	changeout= main driveshaft~
+603469	srm she weekly fill~rope skid
+604078	shock-sub~bolt loose#
+607557	aircon~hydraulic leaking# badly
+608650	vendor_name labour for maintenance day date_time
+610644	+ + + + + + + + + +
+610899	repair= stinger~
+612012	replace= front engine~seal
+615707	+ + + + + + + + + +
+615777	+ + + + + + + + + +
+616963	m load unload for maintenance number
+617007	nqis~machine clean number
+617289	m changeout= breakout~fork
+618563	equipment_id number week load and unload for maintenance
+619244	equipment_id number week mechanical service=
+619994	number number week electrical pre-start inspect=
+620437	equipment_id weekly rope~ inspection=
+624640	NA weekly lube and mechanical instep
+627613	equipment_id cable~ work equipment_id
+628585	+ + + + + + + + + +
+629551	number number week lube instep and repair=
+633419	replace= coolant~line part only
+634223	replace= seat-belt~
+637201	replace= cutting~edge
+637524	replace= steering~column~spring
+641540	lube~ fault#
+641559	repair= drifting# lift~cylinder
+641692	replace= number injector~
+642133	supply= spare~ for quick~coupler
+644855	replace= seat~cushion and arm~rest
+646617	tramming with heat~gun							????
+647171	repair= crack# in left-hand boom~arm
+649318	replace= pump-drive~
+653783	labour hire= hopper~back~pay
+653832	number way~radio unservicable#
+655083	model number hour mechanical pm service=
+657511	model number hour lubrication service= number hr
+657913	model number hour lubrication service= number hr
+659897	model number hour lubrication service= number hr
+664145	equipment_id weekly engine~oil sample=					????
+668038	air-conditioner~ repair=
+669763	side~light out#
+674548	replace= t~converter~pump
+674987	replace= pto~
+676407	repair= mat number caliper
+677907	replace= equipment_id
+679445	rim~ inspection= number np number
+680129	fit= second-hand tyre~ equipment_id
+682050	changeout= driver~mirror
+682255	troubleshoot= oil~ in radiator~
+682838	left-hand air-box~bolt broken#
+684915	air~duct missing# on front panel~
+689683	repair= engine~ oil-leak# around filter~
+692057	RR= rim~ no
+693635	engine~ midlife changeout=
+694256	tkd hr service= inspection=
+696123	o_seas air~freight equipment_id housing~
