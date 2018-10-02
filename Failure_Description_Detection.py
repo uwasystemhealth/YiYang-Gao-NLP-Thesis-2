@@ -10,15 +10,20 @@ from pattern.en import conjugate
 from pattern.en import tag
 
 from Utility import Utility_Sentence_Parser
-import Text_Normalization
 
-trial_number = 8
+import Text_Normalization
+import Text_Normalization_2
+
+
+trial_number = 'Text_Normalization_2'
 root_folder_name =  "./Input_Output_Folder/Failure_Description/"
 save_folder_name = root_folder_name + str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)
 
 save_file_name = save_folder_name + '/Normalized_Text_Stage_2_failure_desciprtion.txt'
+
+normalized_token_freq_dict = {}
 
 failure_description_delimiter = '#'
 #parameter used for the Phrase module in gensim
@@ -110,7 +115,7 @@ def failure_description_ngram_detect(sentences):
 
     with open("./Input_Output_Folder/Failure_Description/List_of_failure_description_single_word.txt", "w") as words_file:
         for index_no,w in enumerate(sorted(List_of_failure_description_single_word)):
-            print('{0}\t\t{1:<10}'.format(index_no,w ), file=words_file)
+            print('{0}\t\t{1:<10}\t\t{2:<10}'.format(index_no,w ,normalized_token_freq_dict[w] ), file=words_file)
 
     with open("./Input_Output_Folder/Failure_Description/List_of_maintenance_action_ngram.txt", "w") as words_file:
         for index_no,w in enumerate(sorted(List_of_maintenance_action_ngram)):
@@ -240,7 +245,9 @@ def advb_bigram_detect(sentences):
 
 if __name__ == "__main__":
 
-    sentences = Utility_Sentence_Parser(Text_Normalization.path_to_normalized_stage_2_records)
+    normalized_token_freq_dict = Utility.read_words_file_into_dict(Text_Normalization_2.path_to_token_frequency_after_lemma_file,1)
+
+    sentences = Utility_Sentence_Parser(Text_Normalization_2.path_to_normalized_stage_4_lemmatized_records)
     #sentences = Utility_Sentence_Parser(Phrase_Detection_2.save_folder_name +'/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram.txt')
     failure_description_ngram_detect(sentences)
 
