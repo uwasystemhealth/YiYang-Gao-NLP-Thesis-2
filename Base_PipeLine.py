@@ -12,7 +12,7 @@ from Utility import Utility_Sentence_Parser
 import Text_Normalization_2
 import Text_Normalization
 
-trial_number = '2_auto_normalization_baseline'
+trial_number = '1_manul_normalization_baseline'
 save_folder_name = "./Input_Output_Folder/Base_PipeLine/" + str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)
@@ -115,7 +115,8 @@ def rule_based_action_items_symptoms_tagging(sentences):
 
 
 if __name__ == "__main__":
-    sentences = Utility_Sentence_Parser(Text_Normalization_2.path_to_normalized_stage_4_lemmatized_records)
+    # sentences = Utility_Sentence_Parser(Text_Normalization.path_to_normalized_stage_4_lemmatized_records)
+    sentences = Utility_Sentence_Parser(Text_Normalization.path_to_normalized_stage_2_records)
     rule_based_action_items_symptoms_tagging(sentences)
 
     #maintenance_verb_and_advb_detect(sentences)

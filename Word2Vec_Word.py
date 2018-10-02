@@ -72,8 +72,8 @@ def Legal_Words_Linked_Words():
 
 if __name__ == "__main__":
     #global_starting_word = 'reapair'
-    #words = dict(model.most_similar(positive=[global_starting_word ], topn=4))
-    #Linked_Words(words)
+    #words_by_alphebat = dict(model.most_similar(positive=[global_starting_word ], topn=4))
+    #Linked_Words(words_by_alphebat)
 
     #Legal_Words_Linked_Words()
     #Print_Similar_Word()

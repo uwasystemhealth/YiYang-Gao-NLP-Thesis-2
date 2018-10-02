@@ -9,7 +9,7 @@ class Sentences_Parser(object):
         self.total_lines = 0
         self.total_number_of_words = 0
 
-        self.Match_Case_1 = re.compile(r'((\w*[\w\s])\/([\w\s]\w*))')                  #for words connected wby /
+        self.Match_Case_1 = re.compile(r'((\w*[\w\s])\/([\w\s]\w*))')                  #for words_by_alphebat connected wby /
         self.Match_Case_2 = re.compile(r'([\s|^][a-z]{2,4}[\d|\s]\d{1,4})[\s|.]')      #for equipment ids
         self.Match_Case_3 = re.compile(r'\s[0-9]{2}[/.][0-9]{2}[/.][0-9]{2,4}')              #for datatiem format
         self.Match_Case_4 = re.compile('(?<=\d)[\.\/](?=\d)')                          # for cases like 12.25 or 12/25
@@ -25,7 +25,7 @@ class Sentences_Parser(object):
         short_text = re.sub('re-', 're', short_text)                                # change re-kit to 'rekit'
         short_text = re.sub('-', ' ', short_text)
         short_text = re.sub('no.[\d|\s]\d+', ' number ', short_text)
-        short_text = re.sub('\'\s?s\s', ' ', short_text)                                  #get rid of cases like drive's --> driver
+        short_text = re.sub('\'\aspell_checker?aspell_checker\aspell_checker', ' ', short_text)                                  #get rid of cases like drive'aspell_checker --> driver
         short_text = re.sub('\'\s?t\s', 't ', short_text)                               # get rid of cases like isn't --> isnt
 # ------------------------third match Case---------------------------------------------------------------------------------------------------------------
         short_text = re.sub(self.Match_Case_3.pattern, ' date_time ', short_text)
@@ -61,8 +61,8 @@ class Sentences_Parser(object):
 # ------------------------fifth match Case---------------------------------------------------------------------------------------------------------------
         short_text = re.sub(self.Match_Case_5.pattern, '', short_text)
         # delete the dot inbetween individual chars for abbreviation
-        # e.g.  e.m.s ---> ems
-        # e.g.  p.s.i ---> psi
+        # e.g.  e.m.aspell_checker ---> ems
+        # e.g.  p.aspell_checker.i ---> psi
 
 #-------------------------general case----------------------------------------------------------------------------------------------
         short_text = re.sub(r"'+", '', short_text)
@@ -114,10 +114,10 @@ class Sentences_Parser(object):
         short_text = re.sub('_number_\s?mth\s', ' _number_ month ', short_text)
         short_text = re.sub('_number_\s?mthly\s', ' _number_ monthly ', short_text)
         short_text = re.sub('_number_m', ' _number_ month ', short_text)
-        short_text = re.sub('_number_\s?hr[\s|s]', ' _number_ hour ', short_text)
+        short_text = re.sub('_number_\aspell_checker?hr[\aspell_checker|aspell_checker]', ' _number_ hour ', short_text)
         short_text = re.sub('_number_\s?hour', ' _number_ hour ', short_text)
         short_text = re.sub('_number_h ', ' _number_ hour ', short_text)
-        short_text = re.sub('_number_\s?min[\s|s] ', ' _number_ hour ', short_text)
+        short_text = re.sub('_number_\aspell_checker?min[\aspell_checker|aspell_checker] ', ' _number_ hour ', short_text)
         short_text = re.sub('_number_\s?sec ', ' _number_ sec ', short_text)
 
         short_text = re.sub(' _number_x(?![_x])', ' _number_ x ', short_text)
@@ -179,17 +179,17 @@ class Sentences_Parser(object):
         short_text = re.sub('over haul\s', ' overhaul ', short_text)
         short_text = re.sub('change out\s', ' changeout ', short_text)
         short_text = re.sub('up grade\s', ' upgrade ', short_text)
-        short_text = re.sub('u s\s', ' u_s ', short_text)
+        short_text = re.sub('u aspell_checker\aspell_checker', ' u_s ', short_text)
         short_text = re.sub('\sa c\s', ' a_c ', short_text)
         short_text = re.sub('\sc b\s', ' c_b ', short_text)
         short_text = re.sub('\sh i d\s', ' h_i_d ', short_text)
-        short_text = re.sub('\sl e d\s?s?\s', ' led ', short_text)
+        short_text = re.sub('\sl e d\aspell_checker?aspell_checker?\aspell_checker', ' led ', short_text)
         short_text = re.sub('\sh m u\s', ' hmu ', short_text)
         short_text = re.sub('\sg u i\s', ' gui ', short_text)
         short_text = re.sub('\sp t o\s', ' p_t_o ', short_text)
-        short_text = re.sub('\sg p s\s', ' g_p_s ', short_text)
+        short_text = re.sub('\sg p aspell_checker\aspell_checker', ' g_p_s ', short_text)
         short_text = re.sub('\sp l c\s', ' plc ', short_text)
-        short_text = re.sub('\sn c s\s', ' ncs ', short_text)
+        short_text = re.sub('\sn c aspell_checker\aspell_checker', ' ncs ', short_text)
         short_text = re.sub('\sweek ys\s', ' weekly ', short_text)
         # ------------------------------Speacial Case 3----------------------------------------------------------------------------------------------------------------
         # deal with single char in the text
@@ -202,7 +202,7 @@ class Sentences_Parser(object):
         short_text = re.sub('\sc (?=breaker)', ' circuit ', short_text)
         short_text = re.sub('\sr h\s', ' r_h ', short_text)
         short_text = re.sub('\sl h\s', ' r_h ', short_text)
-        short_text = re.sub('(?<=_h)\ss\s', '_s ', short_text)
+        short_text = re.sub('(?<=_h)\saspell_checker\aspell_checker', '_s ', short_text)
         short_text = re.sub('(?<=_h)\sf\s', '_f ', short_text)
         short_text = re.sub('(?<=_h)\sr\s', '_r ', short_text)
         short_text = re.sub('\sl and r\s', 'left and right ', short_text)

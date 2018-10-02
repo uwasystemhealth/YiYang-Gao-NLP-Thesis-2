@@ -35,18 +35,23 @@ stopwords_nltk_pattern_custom = stopwords_nltk_pattern.union(custom_stopwords)
 stopwords_nltk_pattern_custom = list(stopwords_nltk_pattern_custom)
 
 
-def write_dict_into_words_file(file_path,l):
+def write_dict_into_words_file(file_path, l, value_type=0):
     with open(file_path, "w") as words_file:
         for c, w in enumerate(l):
-            print('{0}\t{1: <50}\t{2: <50}'.format(c,w , l[w]), file=words_file)
+            if value_type == 1:
+                print('{0}\t{1: <20}\t{2: <50}'.format(c, w, ' '.join(l[w])), file=words_file)
+            elif value_type == 2:
+                print('{0}\t{1: <20}\t{2: <50}'.format(c, w, ' '.join([x[0]+' '+str(x[1]) for x in l[w]])), file=words_file)
+            else:
+                print('{0}\t{1: <20}\t{2: <50}'.format(c, w, l[w]), file=words_file)
+
 
 def write_list_into_words_file(file_path,l):
     with open(file_path, "w") as words_file:
         for c, w in enumerate(l):
             print('{0}\t{1: <50}'.format(c,w), file=words_file)
 
-
-def read_words_file_into_dict(file_path,position_of_word , relative_position_of_value = 1):
+def read_words_file_into_dict(file_path,position_of_word , relative_position_of_value = 1 ,value_type=0):
     return_dict = {}
     with open(file_path, "r") as words_file:
         line = words_file.readline()
@@ -54,7 +59,10 @@ def read_words_file_into_dict(file_path,position_of_word , relative_position_of_
             splited_word_list = line.split()
             if len(splited_word_list) > position_of_word:
                 word = splited_word_list[position_of_word]
-                return_dict[word] = float(splited_word_list[position_of_word + relative_position_of_value])
+                if value_type == 1:
+                    return_dict[word] = splited_word_list[position_of_word + relative_position_of_value]
+                else:
+                    return_dict[word] = float(splited_word_list[position_of_word + relative_position_of_value])
             line = words_file.readline()
     return return_dict
 
@@ -74,14 +82,30 @@ def read_words_file_into_list(file_path,position_of_word):
 failure_noun_file_path = "./Input_Output_Folder/Failure_Description/List_of_Failure_Noun.txt"
 List_of_failure_noun = read_words_file_into_list(failure_noun_file_path , 0)
 
-# first build the list of maintenance words
+# first build the list of maintenance words_by_alphebat
 maintenance_verb_file_path = "./Input_Output_Folder/Failure_Description/List_of_Verb.txt"
 List_of_maintenance_verb = read_words_file_into_list(maintenance_verb_file_path , 0)
 
-# first build the list of positional words
+
+
+# first build the list of positional words_by_alphebat
 positional_word_file_path = "./Input_Output_Folder/Failure_Description/List_of_Positional_Words.txt"
 List_of_positional_word = read_words_file_into_list(positional_word_file_path , 0)
 #------------------------------------------------------------------------------------------------------------------
+
+
+
+def auto_generate_List_of_maintenance_verb_noun_form():
+    with open(save_folder_name + "/List_of_maintenance_verb_noun_form_auto_generated","w") as words_file:
+        for w in Utility.List_of_maintenance_verb:
+            a = Utility.nounify(w)
+            print(w + ' : ', file=words_file)
+            print(' '.join('{}: {}'.format(*k) for k in enumerate(a)), file=words_file)
+
+    if not os.path.isfile(save_folder_name +  "/List_of_maintenance_verb_noun_form_manual_edited"):
+        f = open(save_folder_name +  "/List_of_maintenance_verb_noun_form_manual_edited", "w+")
+        f.close()
+        input(" Program paused, pleas edit the List_of_maintenance_verb_noun_form_auto_generated file")
 
 
 
@@ -95,9 +119,9 @@ def nounify(verb_word):
 
     # Get all verb lemmas of the word
     # a = []
-    # for s in verb_synsets:
-    #     for l in s.lemmas():
-    #         if s.name().split('.')[1] == 'v':
+    # for aspell_checker in verb_synsets:
+    #     for l in aspell_checker.lemmas():
+    #         if aspell_checker.name().split('.')[1] == 'v':
     #             a.append(l)
 
     verb_lemmas = [l for s in verb_synsets for l in s.lemmas() if s.name().split('.')[1] == 'v']
@@ -114,7 +138,7 @@ def nounify(verb_word):
     # filter only the nouns
     related_noun_lemmas = [l for drf in derivationally_related_forms for l in drf[1] if l.synset().name().split('.')[1] == 'n']
 
-    # Extract the words from the lemmas
+    # Extract the words_by_alphebat from the lemmas
     words = [l.name() for l in related_noun_lemmas]
     len_words = len(words)
 
@@ -166,6 +190,12 @@ def vocab_devider_vb(vocab):
 
     return vocab_vb
 
+def Build_Token_Frequecy_Dict(sentences):
+    frequency = defaultdict(int)
+    for sentence in sentences:
+        for word in sentence:
+            frequency[word] += 1
+    return frequency
 
 def Print_Out_Token_Frequecy(sentences , file_path):
     frequency = defaultdict(int)
@@ -182,6 +212,7 @@ def Print_Out_Token_Frequecy(sentences , file_path):
         #string_to_print = 'Total:' + str(sentences.total_number_of_words)
         print(string_to_print, file=cleaned_data_file)
     return frequency
+
 
 
 def Words_Cooccurance(sentences , file_path, frequency_dic):
@@ -216,7 +247,7 @@ def customized_doesnt_match(word_Embeddings_Keyed_Vectors, words):
     used_words = [word for word in words if word in word_Embeddings_Keyed_Vectors]
     if len(used_words) != len(words):
         ignored_words = set(words) - set(used_words)
-        logger.warning("vectors for words %s are not present in the model, ignoring these words", ignored_words)
+        logger.warning("vectors for words_by_alphebat %aspell_checker are not present in the model, ignoring these words_by_alphebat", ignored_words)
     if not used_words:
         raise ValueError("cannot select a word from an empty list")
     vectors = vstack(word_Embeddings_Keyed_Vectors.word_vec(word, use_norm=True) for word in used_words).astype(REAL)
