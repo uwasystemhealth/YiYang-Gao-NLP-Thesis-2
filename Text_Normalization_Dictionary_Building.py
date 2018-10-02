@@ -555,16 +555,30 @@ def stage_6_unigram_to_unigram_correction_dict():
 
     unigram_to_unigram_dict5 = Utility.read_words_file_into_dict(
         save_folder_name + '/' + 'stage_5_stage_4_stage_3_stage_2_unaccepted_token_freq_above_10_filtered_manul.txt', 1, 7,value_type=1)
-    unigram_to_unigram_dict5 =  {k: v for k, v in unigram_to_unigram_dict5.iteritems() if 'xx' not in v  and '~' not in v}
+    unigram_to_unigram_dict5 =  {k: v for k, v in unigram_to_unigram_dict5.items() if 'xx' not in v  and '~' not in v}
+
+    unigram_to_unigram_dict6 = Utility.read_words_file_into_dict(
+        save_folder_name + '/' + 'stage_4_step_2_2_incorrect_tokens_due_to_abbreviation.txt', 1, 8, value_type=1)
+    unigram_to_unigram_dict6 = {k: v for k, v in unigram_to_unigram_dict6.items() if '~' not in v}
 
     unigram_to_unigram_dict.update(unigram_to_unigram_dict2)
     unigram_to_unigram_dict.update(unigram_to_unigram_dict3)
     unigram_to_unigram_dict.update(unigram_to_unigram_dict4)
     unigram_to_unigram_dict.update(unigram_to_unigram_dict5)
+    unigram_to_unigram_dict.update(unigram_to_unigram_dict6)
 
     Utility.write_dict_into_words_file(save_folder_name + '/' + 'stage_6_unigram_to_unigram_correction_dict.txt',unigram_to_unigram_dict)
 
-#def stage_6_unigram_to_unigram_not_sure_dict():
+def stage_6_unigram_to_unigram_manual_dict_empty_file_create():
+    with open(save_folder_name + '/' + 'stage_6_manual.txt', "w") as manual_file:
+        with open(save_folder_name + '/' + 'stage_4_step_1_2_incorrect_tokens_due_to_abbreviation.txt', "r") as words_file:
+            line = words_file.readline()
+            while line:
+                line = line.split()
+                line.append('xxxxx')
+                line = '\t\t\t'.join(line)
+                print(line,file = manual_file)
+                line = words_file.readline()
 
 
 
@@ -581,6 +595,7 @@ if __name__ == "__main__":
     # stage_5_build_speacial_meaning_tokens()
     # stage_5_correct_stage_3_result()
     # stage_5_further_filter_unaccepted_token()
-    # stage_6_unigram_to_bigram_dict()
-    # stage_6_bigram_to_unigram_dict()
-    # stage_6_unigram_to_unigram_correction_dict()
+    stage_6_unigram_to_bigram_dict()
+    stage_6_bigram_to_unigram_dict()
+    stage_6_unigram_to_unigram_correction_dict()
+    # stage_6_unigram_to_unigram_manual_dict_empty_file_create()
