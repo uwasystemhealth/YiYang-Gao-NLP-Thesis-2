@@ -19,7 +19,7 @@ import operator
 import logging
 logger = logging.getLogger(__name__)
 
-trial_number = 12
+trial_number = 'Text_Normalization_2'
 save_folder_name = "./Input_Output_Folder/Phrase_Detection/" + str(trial_number)
 if not os.path.isdir(save_folder_name):
     os.makedirs(save_folder_name)

@@ -7,7 +7,7 @@ from pattern.en import conjugate
 
 logger = logging.getLogger(__name__)
 
-trial_number = 1
+trial_number = 'Text_Normalization_2'
 root_folder_name = "./Input_Output_Folder/Action_Detection/"
 save_folder_name = root_folder_name + str(trial_number)
 processed_file_name = save_folder_name + '/Normalized_Text_Stage_2_bigram_stage_1_filtered_bigram_action.txt'
