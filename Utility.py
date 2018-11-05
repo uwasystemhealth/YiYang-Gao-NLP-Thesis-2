@@ -18,6 +18,9 @@ logger = logging.getLogger(__name__)
 progress_per = 100000
 stopwords_nltk = set(stopwords.words('english'))
 stopwords_nltk_pattern = stopwords_nltk.union(TIME)
+
+
+
 custom_stopwords = ['Sunday','Friday', 'Monday', 'monday', 'tuesday','wednessday','thursday','friday','saturday','sunday',
                      'janurary','february','march','april','may','june','july','auguster','september','october','november','december',
                      'abetween', 'onto','around'
@@ -31,10 +34,12 @@ custom_stopwords = ['Sunday','Friday', 'Monday', 'monday', 'tuesday','wednessday
                      ,'number'
                      ,'need' ,'see'
                     ]
+
 stopwords_nltk_pattern_custom = stopwords_nltk_pattern.union(custom_stopwords)
 stopwords_nltk_pattern_custom = list(stopwords_nltk_pattern_custom)
 
 
+################################# writing to file####################################################################################
 def write_dict_into_words_file(file_path, l, value_type=0):
     with open(file_path, "w") as words_file:
         for c, w in enumerate(l):
@@ -51,6 +56,8 @@ def write_list_into_words_file(file_path,l):
         for c, w in enumerate(l):
             print('{0}\t{1: <50}'.format(c,w), file=words_file)
 
+
+################################# read to file####################################################################################
 def read_words_file_into_dict(file_path,position_of_word , relative_position_of_value = 1 ,value_type=0):
     return_dict = {}
     with open(file_path, "r") as words_file:
@@ -68,31 +75,21 @@ def read_words_file_into_dict(file_path,position_of_word , relative_position_of_
 
 def read_words_file_into_list(file_path,position_of_word):
     return_list = []
-    with open(file_path, "r") as words_file:
-        line = words_file.readline()
-        while line:
-            splited_word_list = line.split()
-            if len(splited_word_list) > position_of_word:
-                word = splited_word_list[position_of_word]
-                return_list.append(word)
+    try:
+        with open(file_path, "r") as words_file:
             line = words_file.readline()
-    return return_list
-#------------------------------------------------------------------------------------------------------------------
-# first build the list of failure noun
-failure_noun_file_path = "./Input_Output_Folder/Failure_Description/List_of_Failure_Noun.txt"
-List_of_failure_noun = read_words_file_into_list(failure_noun_file_path , 0)
+            while line:
+                splited_word_list = line.split()
+                if len(splited_word_list) > position_of_word:
+                    word = splited_word_list[position_of_word]
+                    return_list.append(word)
+                line = words_file.readline()
+        return return_list
+    except IOError:
+        print('Waining : FIle does not exist at ' + file_path)
+        return return_list
 
-# first build the list of maintenance words_by_alphebat
-maintenance_verb_file_path = "./Input_Output_Folder/Failure_Description/List_of_Verb.txt"
-List_of_maintenance_verb = read_words_file_into_list(maintenance_verb_file_path , 0)
-
-
-
-# first build the list of positional words_by_alphebat
-positional_word_file_path = "./Input_Output_Folder/Failure_Description/List_of_Positional_Words.txt"
-List_of_positional_word = read_words_file_into_list(positional_word_file_path , 0)
-#------------------------------------------------------------------------------------------------------------------
-
+###########################################################################################################################
 
 
 def auto_generate_List_of_maintenance_verb_noun_form():
