@@ -21,7 +21,7 @@ positional_word_file_path = "/home/systemhealth/PycharmProjects/Thesis_PipeLIne/
 
 
 class Custom_Words:
-    stopwords = ''
+    stop_words = ''
     verb = ''
     positional_words = ''
     failure_noun = ''
@@ -36,7 +36,7 @@ class Custom_Words:
         stopwords_nltk_pattern_custom = stopwords_nltk_pattern.union(custom_stopwords)
         stopwords_nltk_pattern_custom = list(stopwords_nltk_pattern_custom)
 
-        self.stopwords = stopwords_nltk_pattern_custom
+        self.stop_words = stopwords_nltk_pattern_custom
 
         # ------------------------------------------------------------------------------------------------------------------
         # first build the list of failure noun
@@ -46,10 +46,10 @@ class Custom_Words:
         self.verb = Utility.read_words_file_into_list(maintenance_verb_file_path, 0)
 
         # third build the list of positional words_by_alphebat
-        self.positional_word = Utility.read_words_file_into_list(positional_word_file_path, 0)
+        self.positional_words = Utility.read_words_file_into_list(positional_word_file_path, 0)
         # ------------------------------------------------------------------------------------------------------------------
 
 Custom_Words = Custom_Words()
 
 if __name__ == '__main__':
-    print(Custom_Words.stopwords)
+    print(Custom_Words.stop_words)
