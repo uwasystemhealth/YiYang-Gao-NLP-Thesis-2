@@ -1,0 +1,3434 @@
+----------------------------------------------------------------------
+a_e
+226724	order heatshrink and conduit for a_e store
+
+227420	order stock for a_e conduit cupboard
+
+227707	purchase stock for a_e room
+
+227782	purchase idle timer to replace a_e stock
+
+----------------------------------------------------------------------
+a_spark
+589963	a_spark rep elect fault behind dash
+
+594641	a_spark steps up warning disconnected
+
+594807	a_spark replace mast cable for pbo
+
+595386	a_spark update lighting system
+
+----------------------------------------------------------------------
+abss
+193541	abss equipment_id fault
+
+194279	abss fault keeps coming up
+
+194520	crowd locked on abss now deactivated
+
+194833	abss system fault
+
+----------------------------------------------------------------------
+acarp
+56474	carryout acarp upgrade and mods
+
+56611	carryout acarp upgrade and mods
+
+59334	carryout acarp upgrade and mods
+
+59337	carryout acarp upgrade and mods
+
+----------------------------------------------------------------------
+accom
+304512	accom for andrew tabke
+
+356443	accom for andrew tabke
+
+541613	supply accom for mine pro labour
+
+599431	supply accom for mine pro labour
+
+----------------------------------------------------------------------
+acds
+189123	parts from acds
+
+190174	SD labour g and s and acds
+
+191515	repair power head guide acds
+
+191553	mast inspection with acds
+
+----------------------------------------------------------------------
+ae
+10022	scope repair to ammeter ae
+
+10867	left-hand camera requires new connector ae
+
+54911	ae connect new lead to battery charger
+
+456241	scope repair to ammeter ae
+
+----------------------------------------------------------------------
+aeta
+63114	reseal aeta valve
+
+133743	check operatoin of aeta
+
+134506	aeta is not working
+
+136350	aeta not working
+
+----------------------------------------------------------------------
+afff
+49038	fill all tkw afff foam tanks
+
+50026	recharge afff system
+
+52610	fill up afff foam tank
+
+89210	fit afff fire suppression system
+
+----------------------------------------------------------------------
+ahern
+534318	j ahern repair broken water line
+
+534431	replace roll up visor re j ahern
+
+534810	ahern fit blind in cab
+
+536382	ahern refurbish crib hut
+
+----------------------------------------------------------------------
+al
+80357	replace al bucket tips
+
+84372	hino required for service day and al say
+
+110884	fire suppression system going out on al
+
+135023	replace al low and high beam lights
+
+----------------------------------------------------------------------
+apw
+16044	apw upgrade of the potable water system
+
+16045	apw upgrade of the potable water system
+
+16046	apw upgrade of the potable water system
+
+16047	apw upgrade of the potable water system
+
+----------------------------------------------------------------------
+ar
+6523	intermittent feed problem what parts ar
+
+44505	check lube system timer steer points ar
+
+50097	scope oil leak converter output pump ar
+
+55176	scope air leak at park brake cylinder ar
+
+----------------------------------------------------------------------
+atb
+556005	atb pro monthly supply of supervisor
+
+556094	atb pro monthly supply of supervisor
+
+556195	atb pro monthly supply of supervisor
+
+556286	atb pro monthly supply of supervisor
+
+----------------------------------------------------------------------
+att
+76014	cci rca of failure of stick att equipment_id
+
+103703	replace coolant fill line and clamp att
+
+114107	scope damage tocable handling att
+
+157089	a copy of hastings service report is att
+
+----------------------------------------------------------------------
+attac
+22455	broke pivot arm off where cylinder attac
+
+186774	accident damage to headboard see attac
+
+224904	fit new clamp to piping see update attac
+
+224905	fit new clamp to piping see update attac
+
+----------------------------------------------------------------------
+aust
+7562	assist manufacturer number hour aust with installation
+
+201665	install new aust std stairway
+
+225807	refit handrails to aust standards
+
+280960	engine bay door latch unservicable no parts aust
+
+----------------------------------------------------------------------
+awex
+15497	investigate hydraulic leak awex
+
+17113	fire system leaked gas gauge broken awex
+
+17116	blown hydraulic hose pump drive awex
+
+21285	wiper blades to be replaced awex
+
+----------------------------------------------------------------------
+awma
+21340	pipe in hole sensor unservicable NA awma
+
+21460	intermitting fault propel switch awma
+
+21728	winch pressure switch leaking awma
+
+21783	air gun in cab broken awma
+
+----------------------------------------------------------------------
+b_m
+206272	cqfms x number b_m equipment_id number
+
+206438	equipment_id number cqfms x number b_m number fi b crew b_m
+
+424844	cqfms x number b_m equipment_id number
+
+424955	equipment_id number cqfms x number b_m number fi b crew b_m
+
+----------------------------------------------------------------------
+bcm
+544722	changeout hoist ropes due to bcm
+
+558357	changeout hoist rope bcm
+
+558358	changeout hoist rope bcm
+
+559068	changeout hoist ropes on bcm
+
+----------------------------------------------------------------------
+bcs
+75026	bcs screen unable to fault find
+
+76526	replace bcs buzzer
+
+77446	replace dash bulbs below bcs screen
+
+78140	fault codes on bcs
+
+----------------------------------------------------------------------
+blk
+206586	repair right-hand sad blk injection bank mount
+
+217855	changeout saddle blk wear plates right-hand-side
+
+217856	changeout saddle blk wear plates left-hand-side
+
+220144	changeout saddle blk wear plates left-hand-side
+
+----------------------------------------------------------------------
+bol
+60814	rear of engine oil pan has a missing bol
+
+105246	replace bolts in track frame replace bol
+
+116643	replace rear wiper and replace walkway bol
+
+137512	replace missing cow catcher mounting bol
+
+----------------------------------------------------------------------
+bsem
+224293	RR tyres dve_number_a_number_a to bsem
+
+224294	RR tyres s_number_rtx_number_ to bsem
+
+224295	RR tyres mls_number_e_number_a to bsem
+
+224296	RR tyres fve_number_a_number_a to bsem
+
+----------------------------------------------------------------------
+bushers
+56896	replace worn ripper pins and bushers
+
+57823	ripper mounting pins and bushers have worn
+
+59719	replace torsion bar bushers
+
+60529	ripper pins and bushers
+
+----------------------------------------------------------------------
+bv
+10810	bv down day ndt inspections
+
+13452	bv to inspect and certify air relief
+
+13941	drain comp oil for bv inspection
+
+15057	vendor_name valve missing leaver bv
+
+----------------------------------------------------------------------
+bw
+1900	bw weekly inspection on drill number
+
+1902	bw drill number due a weekly service
+
+7402	extra cost to certify south bw beam nqc
+
+66305	bw equipment_id lube services number hour
+
+----------------------------------------------------------------------
+c_side
+189956	c_side track has come off
+
+191572	repairs to c_side tower cyl mounting
+
+199885	lower c_side jack pin not connected
+
+200892	m change c_side feed cylinder
+
+----------------------------------------------------------------------
+c_valve
+42353	left-hand-side implement c_valve needs resealing
+
+80177	broken pilot line boom c_valve equipment_id
+
+90845	reseal hydraulic c_valve return hose
+
+229478	replace blown hose screen to c_valve
+
+----------------------------------------------------------------------
+c_w
+201487	install _number_hp motor c_w new coupling don
+
+317853	replace tracks c_w loaner unit
+
+533551	b c_w repdys number swing housing front
+
+533552	SD c_w equipment_id hoist gear manufacturer number hour
+
+----------------------------------------------------------------------
+cac
+196547	equipment_id replace cac main contacts
+
+470610	replace cac contacts
+
+534379	cac welded in can maintenance replace them pls
+
+534577	changeout cac contactor set up contact
+
+----------------------------------------------------------------------
+caes
+316542	remove caes system
+
+316598	replace caes gps antenna
+
+318159	refit and mount caes system
+
+318233	modify caes system
+
+----------------------------------------------------------------------
+cas
+45469	cas cam system not working
+
+45530	repair cas system
+
+46835	cas system not working number number number number
+
+53084	cas monitor not working
+
+----------------------------------------------------------------------
+cas_cam
+105247	cas_cam not working
+
+168529	cas_cam mount cas_cam
+
+234882	replace cas_cam display
+
+235677	replace all cas_cam components and wiring
+
+----------------------------------------------------------------------
+cav
+77746	replace us anti cav valve
+
+78042	replace right-hand fan motor anti cav valve
+
+79031	anti cav valve leak
+
+81459	replace leaking anti cav valve mcv
+
+----------------------------------------------------------------------
+cb
+23096	main cb tripped
+
+84408	lights tripped cb left-hand rear circuit fault
+
+164587	left-hand window cb tripped
+
+188598	reset cb number in number volts control board
+
+----------------------------------------------------------------------
+cct
+22449	broken hyd pipe in feed cct up mast
+
+205408	repair ac cct ground fault
+
+227161	modify alternator cct breaker wiring
+
+263376	audible alarm cct activating
+
+----------------------------------------------------------------------
+cedt
+536894	cooee invoice cedt number
+
+536896	cooee invoice cedt number
+
+537027	cooee invoice cedt number
+
+537204	cooee invoice cedt number
+
+----------------------------------------------------------------------
+cense
+155270	replaced cense ecm
+
+155280	download cense data from engine
+
+156250	oil restriction fault cense harness unservicable
+
+156258	replace another cense harness on engine
+
+----------------------------------------------------------------------
+cha
+14049	fuel filter light staying on need to cha
+
+19811	equipment_id equipment_id repair replace repair replace cha
+
+26072	change oil bad SOS result resampled cha
+
+29502	equipment_id hydraulic cooling motor cha
+
+----------------------------------------------------------------------
+chage
+134946	chage out trailer tyres
+
+146224	chage air filters
+
+156977	chage battery equipment_id card and calibrate
+
+170361	chage out fire ex
+
+----------------------------------------------------------------------
+cisco
+242795	rcs fit cisco to equipment_id in workshop
+
+242942	rcs reconfigure cisco test unit
+
+257833	diagnose cisco bracket equipment_id
+
+544479	rcs remove cisco from team engine site
+
+----------------------------------------------------------------------
+cma
+452967	cma equipment_id duck eggs
+
+460713	cma type number number month prysmian x number month
+
+536998	e fix peak downs adapter new cma adapto
+
+537656	cma equipment_id invoice number
+
+----------------------------------------------------------------------
+cms
+56204	cms test switch not working display m
+
+66249	all cms gauge lights up all the time
+
+77655	cms buss off
+
+77710	repairs to cms system
+
+----------------------------------------------------------------------
+cnr
+115185	replace cnr tips and turn cutting edges
+
+121124	turn cutting edges and checkout cnr tips
+
+122531	right-hand cnr tip missing
+
+123087	replace right-hand cnr tip
+
+----------------------------------------------------------------------
+collets
+536727	m face down bolts on hoist rope collets
+
+590245	m face down bolts on hoist rope collets
+
+631519	retorque collets on left-hand lift cylinder
+
+631762	retorque collets
+
+----------------------------------------------------------------------
+colum
+48361	steering colum strut unservicable
+
+60839	steer wheel colum loose
+
+61517	repair steering colum
+
+115369	forward reverse colum us
+
+----------------------------------------------------------------------
+comms
+77465	der card comms fault equipment_id
+
+78541	pmsv comms fault equipment_id
+
+105076	fit dozer number comms
+
+167216	GE comms fault
+
+----------------------------------------------------------------------
+compl
+3513	replace injector on equalizer bar compl
+
+25654	fuel leak at right-hand-side injection pump compl
+
+26504	flat batteries replaced batteries compl
+
+27717	carousel lock pin not retracting compl
+
+----------------------------------------------------------------------
+cond
+160	air cond not cold
+
+182	air cond pressurizers unservicable
+
+225	air cond clutch not coming in
+
+538	clean cab and air cond
+
+----------------------------------------------------------------------
+cooee
+508553	cooee change commercial radio
+
+533420	cooee invoice equipment_id
+
+533614	cooee invoice equipment_id
+
+533615	cooee invoice equipment_id
+
+----------------------------------------------------------------------
+coupler
+10678	hyd tank manifold coupler leaking
+
+16395	replace hyd coupler
+
+22680	replace coupler on slap wrench
+
+23500	blown coupler hose
+
+----------------------------------------------------------------------
+coxon
+289100	replace coxon adapter on radiator
+
+345950	replace coxon adapter on radiator
+
+370006	replace coxon adapter on radiator
+
+380956	modify coxon cap adapter
+
+----------------------------------------------------------------------
+cpfp
+406432	cpfp safety checklist equipment_id
+
+406460	cpfp safety checklist equipment_id
+
+406461	cpfp safety checklist equipment_id
+
+406466	cpfp safety checklist equipment_id
+
+----------------------------------------------------------------------
+cq
+16156	cq dry ice cleaning NA date_time
+
+77950	cq industries boom weld repairs
+
+199054	cq dry ice clean equipment_id and equipment_id
+
+199373	cq dry ice equipment_id cleaning date_time
+
+----------------------------------------------------------------------
+cqfms
+10513	cqfms labour NA number
+
+203897	drill fitting assistance equipment_id cqfms
+
+204499	m labour for engine change cqfms
+
+205005	cqfms shift coverage a crew
+
+----------------------------------------------------------------------
+cqms
+39661	fit grease nipples to new cqms bucket
+
+39675	hastings fit cqms bucket equipment_id
+
+39693	replace teeth cqms type number
+
+41468	replace bucket tips with cqms type
+
+----------------------------------------------------------------------
+croud
+80596	slow croud function
+
+80818	boom cannot croud
+
+82366	oil leak on croud ram
+
+83049	signal not getting to croud function
+
+----------------------------------------------------------------------
+cts
+103643	carry out cts inspection hd support
+
+103644	carry out cts inspection hd support
+
+126100	cts inspection
+
+126107	cts inspection not done
+
+----------------------------------------------------------------------
+cvl
+687865	check hoist cvl mount bolts
+
+687866	check hoist cvl mount bolts
+
+687867	check hoist cvl mount bolts
+
+687868	check hoist cvl mount bolts
+
+----------------------------------------------------------------------
+d_e
+211849	d_e bearing retainer bolts broken on
+
+214891	high temp crowd motor d_e bearing
+
+216379	grease hoist motor d_e and nde bearings
+
+216380	grease crowd motor d_e and nde bearings
+
+----------------------------------------------------------------------
+d_s
+43079	repairs to d_s mirror bracket
+
+44179	cracking in walkway d_s
+
+46279	d_s door latch is d_s comes open driving
+
+51673	replace bottom bolt d_s mirror bracket
+
+----------------------------------------------------------------------
+day_blow
+543763	equipment_id elect pre-maintenance day_blow out
+
+556627	she elect pre-maintenance day_blow out
+
+556670	she elect pre-maintenance day_blow out
+
+556784	she elect pre-maintenance day_blow out
+
+----------------------------------------------------------------------
+dcp
+11985	replace number number kg dcp extinguishers
+
+12565	changeout number kg cab dcp extinguisher
+
+12820	changeout dcp fire extinguishers
+
+12967	changeout dcp extinguisher cylinders
+
+----------------------------------------------------------------------
+dcs
+672	repair dcs rock guard on track frame
+
+6464	replace dcs jack pad pin
+
+203561	replace dcs lower sheave
+
+422730	replace dcs lower sheave
+
+----------------------------------------------------------------------
+deering
+174	frieght step ass to hasting deering
+
+25288	hastings deering refer work-order number
+
+25289	hastings deering refer work-order number
+
+42246	hastings deering maintenance costs equipment_id
+
+----------------------------------------------------------------------
+defct
+170671	operators defct inspect fwd rev lever fo
+
+170672	operators defct steering wheel cover loo
+
+170698	operators defct inspect front suspension
+
+170708	operator defct pass window cannot go up
+
+----------------------------------------------------------------------
+der
+40862	electrical der box
+
+75273	erratic signals der card unservicable
+
+75274	rectify temp elect wire between der card
+
+75356	supply terex with der card
+
+----------------------------------------------------------------------
+detent
+20482	replace rotation joystick no detent
+
+47715	control lever for coolant cannot detent
+
+49898	control valve number has no detent position
+
+51209	replace gear lever park brake detent
+
+----------------------------------------------------------------------
+detroit
+631512	mtu detroit perform service
+
+632545	mtu detroit carry out engine valve set
+
+633774	detroit reseal fuel rails
+
+634825	detroit labour for engine midlife number hour
+
+----------------------------------------------------------------------
+dg
+171166	replace equipment_id and number with iglr and dg
+
+183086	change equipment_id and number to dg and iglrs
+
+519786	dg dg equipment_id model number hour number channel not worki
+
+525047	dg number hour air con inspection
+
+----------------------------------------------------------------------
+dickie
+43762	dickie seat needs remounting
+
+65516	dickie seat seat belt
+
+77696	no seat belt in dickie seat
+
+131608	repair dickie seat mounting bracket
+
+----------------------------------------------------------------------
+diverter
+1017	replace right-hand diverter valve
+
+1035	overhaul right-hand diverter valve
+
+1397	refit right-hand diverter valve
+
+7933	oil leak at aircon diverter valve
+
+----------------------------------------------------------------------
+dozer
+74883	equip damage dozer made contact with
+
+76350	checked dozer number screen
+
+88736	demobilize dozer for off-site repairs
+
+88954	filters for dozer number
+
+----------------------------------------------------------------------
+dpsa
+13455	supply dpsa with shaft seal
+
+14040	dpsa supply pex stacker for NA
+
+14824	dpsa labour NA Monday tuesday
+
+15984	dpsa fabricate collars and certify beams
+
+----------------------------------------------------------------------
+drosterlabour
+548120	gon _number_ drosterlabour week number
+
+548121	gon _number_ drosterlabour week number
+
+548445	gon _number_ drosterlabour equipment_id
+
+548446	gon _number_ drosterlabour equipment_id
+
+----------------------------------------------------------------------
+ds
+102947	hedweld step damaged unservicable completed ds
+
+104467	repair left-hand-side of blade completed ds number
+
+106453	repair handrail and step completed ds
+
+108607	repair broken handrail completed ds number
+
+----------------------------------------------------------------------
+duals
+----------------------------------------------------------------------
+dve
+74656	cost to repair m_n final dve
+
+236020	replace hose bottom of pump dve box to tc
+
+236050	replace hose top of pump dve box to tcon
+
+242130	replace leaking pump dve drain hose
+
+----------------------------------------------------------------------
+dy
+272329	dy engine assess scratch damage equipment_id
+
+272330	dy engine replace side door glass equipment_id
+
+272331	dy engine replacel h lower door glass equipment_id
+
+272567	dy engine replace left-hand upper door glass equipment_id
+
+----------------------------------------------------------------------
+dys
+189722	dys engine repair cab window
+
+190065	dys engine replace broken window glass
+
+191243	dys engine cab window
+
+223943	dys engine replace number glass equipment_id
+
+----------------------------------------------------------------------
+e_cont
+187970	shovel number tripping e_cont
+
+188030	prepare to relocate e_cont resistor
+
+188066	e_cont trip
+
+188068	tripping e_cont
+
+----------------------------------------------------------------------
+e_f
+451000	repair e_f motor field transformer
+
+536209	lost power at sub tripped on main e_f
+
+536489	trailing cable failed on e_f
+
+539330	repair e_f no number house blower
+
+----------------------------------------------------------------------
+e_l
+926	fit e_l gpo to number volts inverters lurch
+
+2448	inverter tripping on e_l
+
+2653	lights tripping e_l
+
+6656	e_l e_l faulty
+
+----------------------------------------------------------------------
+e_m
+27	e_m relocate e_m from equipment_id
+
+193717	e_m repair air conditioner
+
+403265	e_m replace antenna
+
+416355	e_m repair air conditioner
+
+----------------------------------------------------------------------
+e_mover
+224175	strip and mount e_mover spares
+
+227570	mount e_mover spares
+
+560388	strip and mount e_mover spares
+
+563719	mount e_mover spares
+
+----------------------------------------------------------------------
+ecam
+187713	change oil pdt ecam sample
+
+187714	change rotary gear-case oil ecam
+
+191853	ecam check compressor dirt entry
+
+193745	change oil in rotary gearbox ecam
+
+----------------------------------------------------------------------
+ecm
+15120	replace engine ecm plug cover
+
+20063	rewire ecm wiring harness
+
+42764	download engine ecm
+
+57905	replace engine ecm
+
+----------------------------------------------------------------------
+edc
+402	adjust limit switch reset edc
+
+274136	edc not resetting
+
+274781	repair edc controller
+
+275137	modify deck wrench sensor for edc
+
+----------------------------------------------------------------------
+edd
+5549	scv edd ladder repairs acc
+
+9611	dean glass audit edd and shd
+
+209796	edd no air
+
+217203	pdo edd weekly inspection list
+
+----------------------------------------------------------------------
+edic
+103613	replace edic motor
+
+104729	replace edic motor
+
+104988	edic motor unservicable
+
+108055	engine cannot start disconnected edic mo
+
+----------------------------------------------------------------------
+el
+27853	e equipment_id equipment_id four monthly el
+
+27865	e equipment_id equipment_id four monthly el
+
+27899	e equipment_id equipment_id four monthly el
+
+27965	e equipment_id equipment_id four monthly el
+
+----------------------------------------------------------------------
+elc
+49384	replace pgxl with manufacturer number hour elc coolant
+
+49385	replace pgxl with manufacturer number hour elc coolant
+
+49386	replace pgxl with manufacturer number hour elc coolant
+
+49388	replace pgxl with manufacturer number hour elc coolant
+
+----------------------------------------------------------------------
+elt
+554874	stat number month elt and continuity test
+
+554875	stat number month elt and continuity test
+
+555088	stat number month elt and continuity test
+
+555089	stat number month elt and continuity test
+
+----------------------------------------------------------------------
+emg
+91605	replace ripper bar emg shut dwn side-wall
+
+192554	fit emg light above l_p board at back
+
+192560	lighting repaired emg and inside
+
+280270	replace emg steer module
+
+----------------------------------------------------------------------
+end_end
+23631	end_end sub
+
+23712	end_end sub saver
+
+23980	end_end sub-saver
+
+24264	end_end sub
+
+----------------------------------------------------------------------
+eq
+105377	repair leaking lube hose on left-hand outer eq
+
+107470	inspect and grease eq bar bearing
+
+111771	outer eq bar seal leaking right-hand-side
+
+115124	schedule changeout of eq bar
+
+----------------------------------------------------------------------
+fab_fit
+192266	fab_fit cover over engine
+
+192268	fab_fit cover over engine
+
+196957	fab_fit kick panels in cab
+
+216436	fab_fit box for danger tags
+
+----------------------------------------------------------------------
+fd
+83303	source parts tooling for fd change outs
+
+90183	warranty repair to loss of drive left-hand fd
+
+104564	take oil sample left-hand fd
+
+156711	replace broken left-hand fd wheel studs
+
+----------------------------------------------------------------------
+festo
+48305	repair festo spray solenoid box
+
+52231	replace festo valve
+
+59395	air leak at festo box
+
+64760	replace festo valves
+
+----------------------------------------------------------------------
+fi
+9491	changeout air fi lters
+
+52037	fit fire sleeve over fuel hoses fit fi
+
+58551	new seat covers required pass driver fi
+
+74895	right-hand steering cylinder damaged hose and fi
+
+----------------------------------------------------------------------
+fil
+52266	repair grease line near wiggins fast fil
+
+55161	scope and repair if possible leak at fil
+
+94866	replace missing caps on wiggins fast fil
+
+102858	remove unwanted brackets in cab and fil
+
+----------------------------------------------------------------------
+fis
+226790	Mir supply fis buttons for smart FMs
+
+228086	Mir supply fis buttons
+
+228978	Mir suppply fis buttons
+
+230299	Mir suppply fis buttons
+
+----------------------------------------------------------------------
+flac
+10524	flac sampling points to be fitted
+
+10525	flac sampling points to be fitted
+
+10526	flac sampling points to be fitted
+
+10527	flac sampling points to be fitted
+
+----------------------------------------------------------------------
+fld
+456164	e hoist mtr fld brake tripped
+
+465338	fld crane inspections number month equipment_id
+
+466097	fld crane inspections number month
+
+470852	vendor_name fld modify air compressor
+
+----------------------------------------------------------------------
+fpe
+54082	replace drivers seat at per fpe report
+
+54465	make repairs to fuel shut off system fpe
+
+108885	radiator cap tight fpe item
+
+108887	no murphy gauge fitted fpe item
+
+----------------------------------------------------------------------
+frcp
+42747	frcp dash lights hard to see
+
+42748	frcp left-hand-side hand rails cracked
+
+42749	frcp rear number not high visibility
+
+42751	frcp no wheel chocks fitted
+
+----------------------------------------------------------------------
+fwd_rev
+105591	fwd_rev lever tight
+
+158485	replace fwd_rev directional switch
+
+166224	repair fwd_rev lever
+
+166997	repair fwd_rev lever spring
+
+----------------------------------------------------------------------
+g_case
+189821	change right-hand propel g_case oil
+
+467590	change hoist g_case breathers
+
+467593	change rear g_case breather
+
+534399	rewedge hoist g_case
+
+----------------------------------------------------------------------
+g_d
+281122	g_d no power to both radio s
+
+284123	g_d radio wired through key switch
+
+340451	g_d no power to both radio s
+
+342399	g_d radio wired through key switch
+
+----------------------------------------------------------------------
+gon
+535573	SE gon maintenance day date_time
+
+535574	SE gon maintenance day date_time
+
+535724	SE gon maintenance day date_time
+
+535727	SE gon maintenance equipment_id
+
+----------------------------------------------------------------------
+gpo
+926	fit e_l gpo to number volts inverters lurch
+
+8506	no power gpo lights out
+
+8789	replace inverter gpo
+
+18773	replaced gpo mounting block
+
+----------------------------------------------------------------------
+gps
+2639	repairs to gps system
+
+7165	gps sensor at top left-hand mast smashed off
+
+14941	repair gps antannae
+
+14976	gps dropping out equipment_id
+
+----------------------------------------------------------------------
+grd
+60854	pre maintenance and post maintenance grd
+
+277587	repair and return grd cylinders
+
+286277	replace fuel cap and inspect all other grd
+
+286785	grd position number flat
+
+----------------------------------------------------------------------
+grp
+38984	cost to repair m_n seat grp
+
+44290	right-hand drive wheel grp seal leak repair
+
+44328	action SOS samples diff rear wheel grp
+
+44600	changeout left-hand drive wheel grp
+
+----------------------------------------------------------------------
+grps
+42443	replace left-hand left-hand front brake grps
+
+43282	both right-hand wheel grps bearing collapsed
+
+44365	new bolts for final drive wheel grps
+
+64984	changeout left-hand left-hand drive wheel grps
+
+----------------------------------------------------------------------
+grs
+1157	grs labour equipment_id date_time
+
+1584	grs NA l cole date_time
+
+1585	grs labour hire g ried number
+
+1718	grs labour g grogan number
+
+----------------------------------------------------------------------
+gui
+187145	reboot gui for operator
+
+189483	gui system in ups system faulty
+
+189498	reset gui screen
+
+189830	reset gui
+
+----------------------------------------------------------------------
+h_d
+40005	number hour pm h_d
+
+40041	number number hour serv h_d
+
+40042	number number hour serv h_d
+
+40043	number number hour serv h_d
+
+----------------------------------------------------------------------
+h_light
+53608	replace h_light
+
+92197	replace h_light
+
+134030	repair short in h_light wiring
+
+139650	replace number x h_light and number x h_light bulbs
+
+----------------------------------------------------------------------
+h_lights
+44749	h_lights going out
+
+44750	h_lights going out
+
+58014	repair h_lights
+
+58041	h_lights not dipping
+
+----------------------------------------------------------------------
+h_v
+51657	fuel leak from h_v real oo
+
+52728	changeout h_v fuel hose
+
+55247	check h_v grease not working
+
+55540	manufacturer number hour to change h_v and h_v fuel hose
+
+----------------------------------------------------------------------
+hac
+534568	hac contacts need replacing were welded
+
+534720	equipment_id hac contactor overhaul
+
+539902	check operation of hac it cannot re
+
+542096	purhase spare contacts for hac as per ne
+
+----------------------------------------------------------------------
+hd
+3721	hd adjusted chains
+
+7714	hd warranty oil in radiator
+
+41213	replace swing gearcases with hd type
+
+49761	wire hd lights to scene lights re oo
+
+----------------------------------------------------------------------
+hdal
+42252	hdal Marc equipment_id
+
+42253	hdal Marc costs number equipment_id to number equipment_id
+
+74696	hdal Marc equipment_id number to number
+
+74697	hdal Marc equipment_id number to number
+
+----------------------------------------------------------------------
+hdl
+271964	hdl component changeout labour equipment_id
+
+335212	hdl component changeout labour equipment_id
+
+508172	hdl component changeout labor equipment_id
+
+508458	hdl component changeout labour equipment_id
+
+----------------------------------------------------------------------
+heui
+46015	repair oil leak heui pump feed line
+
+60967	changeout fuel injectors and heui pump equipment_id
+
+92678	replace all injectors and heui pump
+
+104866	investigate oil leak at heui pump
+
+----------------------------------------------------------------------
+hids
+292297	replace headlights or install hids
+
+326284	change front hids to led lights
+
+326916	retrofit hids to leds
+
+348219	replace headlights or install hids
+
+----------------------------------------------------------------------
+hino
+44027	replace f_maint hino truck alternator
+
+56638	hino service kenmare equipment_id number
+
+62147	repairs to hino as request d byrne
+
+63252	overhaul hino service truck as requested
+
+----------------------------------------------------------------------
+hlp
+56154	check fill shutoff of hlp equipment_id
+
+63761	scope hlp equipment_id overflows when filling
+
+288841	hlp equipment_id product oil faulty
+
+288848	hlp equipment_id product oil faulty
+
+----------------------------------------------------------------------
+hm
+544682	lubricate front hm DE bearing
+
+544683	lubricate rear hm DE and nde bearings
+
+544715	lubricate front hm DE and nde bearings
+
+545442	equipment_id check front hm lubrication
+
+----------------------------------------------------------------------
+hmu
+42708	check for oil leak on hmu
+
+42883	hmu leaking
+
+43627	hmu leaking scope
+
+44448	hmu leaking
+
+----------------------------------------------------------------------
+hous
+48600	remove oil receiver fitting filter hous
+
+55890	parts for filter hous gearknob drainbung
+
+90170	hydraulic hose unservicable from unservicable to diff hous
+
+133817	engine oil leak around top flywheel hous
+
+----------------------------------------------------------------------
+hpr
+1837	fit hpr kit
+
+1842	oil cooler hose from hpr to lpr
+
+14001	hpr filter leaking top hyd tank
+
+18684	replace hpr relief in dog box
+
+----------------------------------------------------------------------
+hse
+54526	changeout right-hand steer cylinder hse
+
+54527	changeout left-hand steer cylinder hse
+
+59687	hse water cart
+
+80550	repair blown hydraulic hse
+
+----------------------------------------------------------------------
+hsi
+244129	hsi left and front camera not working
+
+244130	cas cam not working hsi
+
+457610	hsi repair right-hand camera equipment_id
+
+466382	connect cable to gpo hsi please see atta
+
+----------------------------------------------------------------------
+hst
+46174	fit with new retread spec hst tread
+
+47005	changeout retreads fit hst retreads
+
+536090	vendor_name chg hst mtr dry couplings seal pbo
+
+537242	l fit gauges to swg pro hst brake pbo
+
+----------------------------------------------------------------------
+hv
+12088	inspect and repair hv lighting
+
+50632	hv grease not working completed
+
+51159	oil leaking on hv grease pump history
+
+54377	no hv grease reel
+
+----------------------------------------------------------------------
+hy
+1353	scope hy left-hand-side side camera is not working
+
+16734	fit steps to drill beside hy tank
+
+23951	wires off sensor wires off sensor on hy
+
+120422	oil coming out top of hydraulic tank hy
+
+----------------------------------------------------------------------
+i_o
+192728	lube system remote i_o block
+
+193782	burnt out i_o plc block in operator cab
+
+197556	equipment_id i_o board fault
+
+201170	temp i_o block i_o
+
+----------------------------------------------------------------------
+idt
+225685	supply idt for FMs pcb complete equipment_id
+
+225686	supply idt for FMs pcb complete equipment_id
+
+225687	supply idt for FMs pcb complete equipment_id
+
+225688	supply idt for FMs pcb complete equipment_id
+
+----------------------------------------------------------------------
+incab
+3199	replace aircon incab filter
+
+52399	replace incab hat hook
+
+54496	incab water level gauge not working
+
+56586	calibrate incab water level gauge
+
+----------------------------------------------------------------------
+inners
+24039	changeout both inners and outer air-cleaner
+
+41707	replace unservicable air filters inners
+
+81209	replace outters and inners equipment_id
+
+83925	replace air cleaners left-hand engine inners
+
+----------------------------------------------------------------------
+interm
+144548	park brake warning light flickers interm
+
+171336	not selecting reverse interm
+
+217859	changeout crowd interm shaft pinion
+
+219787	changeout hoist interm shaft bearings front
+
+----------------------------------------------------------------------
+interpole
+187276	hoist interpole temp alarm
+
+194617	left-hand f swing motor interpole over-temp
+
+208615	crowd motor interpole rtd over temp
+
+468370	rear hoist mtr interpole temp alarm
+
+----------------------------------------------------------------------
+inv
+52809	inv cab water level indicator not working
+
+53220	inv right-hand-front wheel seal weeping
+
+53531	inv reports of steering sight glass hard
+
+53532	inv left-hand reverse light not working
+
+----------------------------------------------------------------------
+j_box
+14105	numerous electrical problems j_box
+
+16190	mast j_box requires resealing
+
+17083	broken conduit on left-hand-side j_box to mast
+
+25519	burnt connections inside gen j_box
+
+----------------------------------------------------------------------
+jlg
+79532	scv supply jlg equipment_id date_time
+
+79823	scv supply jlg equipment_id date_time
+
+80521	scv supply jlg for crack repairs
+
+80800	scv supply jlg equipment_id number
+
+----------------------------------------------------------------------
+june
+40220	hastings excavator contract for june
+
+75061	vendor_name investigate fault codes number june
+
+81861	off site repair equipment_id june number
+
+87939	equipment_id terex agreement for month of june
+
+----------------------------------------------------------------------
+kal
+99799	right-hand-side horn unservicable new one ordered by kal
+
+155942	assist kal changeout radiator
+
+666191	equipment_id warranty period kal labour equipment_id
+
+666196	kal warranty support labour equipment_id october number
+
+----------------------------------------------------------------------
+kom
+123273	kom number hour lube and minor
+
+123274	kom number hour lube and minor
+
+123275	kom number hour lube and minor
+
+123292	kom number hour lube and minor
+
+----------------------------------------------------------------------
+kone
+450551	kone replace chain container
+
+456901	kone catenary cover and log book
+
+456933	kone adjust tugga winch brakes number
+
+459256	kone replace pendant labels directions
+
+----------------------------------------------------------------------
+kowa
+121941	collect kowa engine oil sample
+
+122687	change transmission oil kowa result
+
+154439	inspect engine kowa alarm
+
+154788	kowa samples
+
+----------------------------------------------------------------------
+kress_number_
+226481	differential failing kress_number_ warranty
+
+226628	kress_number_ diff making metal warranty
+
+227854	wrry kress_number_ oil leak on pump casing
+
+228406	fit water separator same as kress_number_
+
+----------------------------------------------------------------------
+l_d
+148218	changeout suspension cyl l_d
+
+148228	changeout suspension cyl l_d
+
+148245	changeout suspension cyl l_d
+
+148254	changeout suspension cyl l_d
+
+----------------------------------------------------------------------
+l_up
+159528	repair oil leak at l_up clutch valve
+
+233218	diagnose trans and l_up clutch slipage
+
+234388	replace trans filter to l_up hose
+
+242141	replace hose from l_up valve to rear of transformer
+
+----------------------------------------------------------------------
+l_v
+50129	checkout oil leak l_v and l_v motor seal
+
+52090	repair l_v fuel despenser
+
+52538	replace l_v fuel gun
+
+55482	change l_v fuel gun part only
+
+----------------------------------------------------------------------
+laterial
+44194	adjust cut back laterial link grease
+
+46019	laterial link keeper bolt broke
+
+229864	replace laterial link bearings and pins
+
+251742	replace laterial link bearing on equipment_id
+
+----------------------------------------------------------------------
+laydown
+26074	sort out parts racks and store laydown
+
+191045	daily checks and laydown yard tidy up
+
+208205	tidy container and parts laydown thursday
+
+208206	tidy container and parts laydown thursday
+
+----------------------------------------------------------------------
+ld
+265557	changeout ld and right-hand steering cylinders
+
+665121	number hour mechanical instep loader wheeled surface ld
+
+665122	number hour lube svce loader wheeled surface ld
+
+665123	number hour mechanical svce loader wheeled surface ld
+
+----------------------------------------------------------------------
+leds
+60203	replace leds on foam tank gauge
+
+236785	fit leds to rear number
+
+237304	fit leds to rear number
+
+278188	fit leds to rear lights
+
+----------------------------------------------------------------------
+li
+18667	cracking onmast behind rotation steel li
+
+41676	replace missing pin replaced missing li
+
+74882	equip damage top handrail and clearance li
+
+89581	repair rear lights needs number complete li
+
+----------------------------------------------------------------------
+lta
+137039	carryout lta pod modifications
+
+137126	repair lta leaks
+
+137128	repair lta leaks
+
+155249	replace lta water pump
+
+----------------------------------------------------------------------
+ltr
+81809	order number ltr liquid nitrogen
+
+202581	equipment_id ltr bin to store pegs and gas bags
+
+202583	equipment_id ltr bin to store pegs and gas bags
+
+202585	equipment_id ltr bin to store pegs and gas bags
+
+----------------------------------------------------------------------
+lub
+14274	fit up compressor lub quick disconnects
+
+14486	thread lub pot and lid cannot seal
+
+15251	compressor leaking behind lub block
+
+21457	thread lub not working
+
+----------------------------------------------------------------------
+luber
+9816	repair thread luber
+
+22076	repair thread luber
+
+187197	reweld thread luber bracket back on
+
+188361	repair thread luber
+
+----------------------------------------------------------------------
+lv
+21	check lv slip rings and modify cabinet
+
+14795	set up lv cable guard
+
+18066	scv training lv and forklift
+
+48819	reduce fuel pressure on lv nozzle
+
+----------------------------------------------------------------------
+m_c
+38945	repairs to drive shaft m_c number
+
+77227	entire hydraulic system too slow on m_c
+
+99725	m_c m_c alt belt
+
+208528	replace flags at rear of m_c
+
+----------------------------------------------------------------------
+m_n
+20389	cost to repair m_n number
+
+38943	repair of motor m_n number
+
+38948	repair m_n starter motor
+
+38949	repair m_n starter motor
+
+----------------------------------------------------------------------
+m_n_number_
+223103	repair m_n_number_
+
+315205	repair m_n_number_
+
+315210	repair m_n_number_
+
+315218	repair m_n_number_
+
+----------------------------------------------------------------------
+m_t
+468502	b v m_t m_t side frame car-body bolts
+
+468503	b v m_t m_t side frame car-body bolts
+
+468506	bv m_t m_t propel m_t mounting bolts
+
+468507	bv m_t m_t propel m_t mounting bolts
+
+----------------------------------------------------------------------
+mack
+276	mack up hose and fit
+
+42541	number mack lube truck weekly checks
+
+42989	replace number way in mack lube truck
+
+43257	order tyres for mack service truck
+
+----------------------------------------------------------------------
+mamoth
+201250	broken pin in swing cylinder on mamoth
+
+203118	mamoth arm leaking oil
+
+203463	leaking hyd cyl on mamoth breakout
+
+204796	main cylinder leaking on mamoth arm
+
+----------------------------------------------------------------------
+matts
+96337	replace floor matts
+
+236128	purchase exhaust extension matts
+
+236129	purchase exhaust extension matts
+
+236130	purchase exhaust extension matts
+
+----------------------------------------------------------------------
+mcc
+22799	repairs to mcc panel
+
+187200	repairs to mcc panel due to truck damage
+
+188048	mcc indication lamps
+
+188649	doors in mcc cabinet hit manufacturer number hour box
+
+----------------------------------------------------------------------
+mcu
+261692	repairs to adapt FMs mcu
+
+264622	smart system mcu screen damaged
+
+276391	Mir supply and install rep mcu l equipment_id
+
+276392	Mir supply and install rep mcu l equipment_id
+
+----------------------------------------------------------------------
+mcv
+40891	changeout steel pipe to mcv pipe hole leak
+
+75949	replace return hose on mcv equipment_id
+
+76189	crowd cylinders operating on right-hand mcv only
+
+77026	replace loop hose on right-hand mcv
+
+----------------------------------------------------------------------
+mec
+119485	repairs to equipment_id field mec
+
+123266	manufacturer number hour number hour lube and mec
+
+123267	manufacturer number hour number hour lube and mec
+
+123268	manufacturer number hour number hour lube and mec
+
+----------------------------------------------------------------------
+mems
+158646	check condition of tyres mems install
+
+158647	check condition of tyres mems install
+
+158718	install mems and fit new tyres to drive
+
+159844	changeout worn steer tyres fit mems
+
+----------------------------------------------------------------------
+mfp
+276823	mfp supply solenoids for oil lines
+
+284146	mfp supply hose reel swivels
+
+300446	inspect and repair grease system mfp
+
+338010	mfp supply solenoids for oil lines
+
+----------------------------------------------------------------------
+mis
+10175	head slide mis aligned
+
+48363	left-hand tandem drain wiggins fitting cap mis
+
+113820	left-hand ripper shin guard has bottom pin mis
+
+113916	fire suppression top rubber mount is mis
+
+----------------------------------------------------------------------
+mms
+534980	mms machine clean equipment_id number week number
+
+535359	mms clean machine
+
+536198	clean machine inc inside car-body mms
+
+537556	mms clean machine
+
+----------------------------------------------------------------------
+mnt
+9306	equipment_id cannot start at shift change afr mnt
+
+110408	remove fire suppression mnt from pillar
+
+154062	repair drive-side bottom mirror mnt
+
+209815	replace carousel mnt bolts water filter
+
+----------------------------------------------------------------------
+motorvator
+444141	motorvator tripped
+
+444142	motorvator tripped
+
+455073	start motorvator and move shovel
+
+455083	start motorvator and set limits
+
+----------------------------------------------------------------------
+moura
+42370	moura gate broken
+
+42889	repair weld moura gate anchor post
+
+43612	moura bar missing
+
+44222	moura gate repair
+
+----------------------------------------------------------------------
+msd
+544156	msd replace dry tmblrs right-hand shaft and trans
+
+544404	msd replace left hand rear swing shaft
+
+544593	msd shipper shaft adjustment needed
+
+544594	msd saddle blocks need adjustment
+
+----------------------------------------------------------------------
+mse
+663800	mse hydraulic testing on equipment_id
+
+663829	mse hydraulic testing on equipment_id
+
+664071	mse hydraulic testing on equipment_id
+
+664078	mse hydraulic testing on equipment_id
+
+----------------------------------------------------------------------
+mst
+289460	changeout steering hmu mst
+
+289637	cam inspection mst
+
+322306	RI engine cooling thermostats mst
+
+322315	fit new seat belt mst
+
+----------------------------------------------------------------------
+mth
+220704	drill air receiver equipment_id mth inspect
+
+220750	equipment_id drill air rec equipment_id mth instep
+
+220754	equipment_id drill air rec equipment_id mth instep
+
+220820	NA drill air rec equipment_id mth instep
+
+----------------------------------------------------------------------
+mti
+156969	instrumentation mti strain gauges
+
+159210	mti strain gauge testing
+
+162610	mti strain gauge fault
+
+228772	chassis structural assessment mti
+
+----------------------------------------------------------------------
+mtq
+240230	repair and return two mtq turbos
+
+240626	RR four mtq turbos
+
+240945	RR one turbo to mtq ex equipment_id
+
+244175	RR mtq turbo
+
+----------------------------------------------------------------------
+n_r
+42848	fuel hose reel seals leaking badly n_r
+
+43309	right-hand-rear suspension cyl n_r
+
+43880	reseal combination valve and mounts n_r
+
+43888	fuel reel shaft seals n_r
+
+----------------------------------------------------------------------
+n_s
+8206	vendor_name labour equipment_id n_s
+
+75850	bracket truck oper for n_s equipment_id ryan milne
+
+80027	stick cylinder leaking number n_s groun
+
+205002	checked swing brake fault from n_s
+
+----------------------------------------------------------------------
+n_w
+45189	reversing alarm n_w
+
+45191	left-hand top brake light n_w
+
+46346	reversing alarm n_w
+
+46598	lights n_w
+
+----------------------------------------------------------------------
+nde
+187351	make inspection door for nde pedastal
+
+200656	check nde bearing lube number hoist motor
+
+201942	bv inspect hoist drum nde stub shaft
+
+202161	take grease sample hoist nde bearing
+
+----------------------------------------------------------------------
+ndt
+2298	cci routine ndt inspection
+
+2367	repair cracks as per ndt report
+
+6921	cci ndt mastpivot shaft equipment_id date_time
+
+7928	cci ndt inspection internal and external
+
+----------------------------------------------------------------------
+ne
+22758	rotary head continues to turn when in ne
+
+168431	operators defects replace nonslip mat ne
+
+176979	accident damage to wheel chock holder ne
+
+191093	removed broken stud and replaced with ne
+
+----------------------------------------------------------------------
+ner
+446882	e cable has ner fault replace cable
+
+533808	fire alarm and ner cabinet door
+
+536015	ner ground fault trip
+
+536488	vendor_name relay fault main transmit ner fault
+
+----------------------------------------------------------------------
+ngr
+543297	main transformer ngr faults
+
+543368	aux transformer ngr relay trip
+
+544263	field transformer ngr ground fault
+
+544339	main transformer ngr relay tripping
+
+----------------------------------------------------------------------
+nitto
+50463	replace nitto fittings
+
+58560	nitto fitting on hose real unservicable
+
+240089	equipment_id fit nitto female fittings
+
+240090	equipment_id fit nitto female fittings
+
+----------------------------------------------------------------------
+nixons
+5390	nixons check two way not clear enough
+
+5752	nixons NA number way blanked out
+
+6734	nixons commercial radio not working
+
+8312	nixons replace commercial radio
+
+----------------------------------------------------------------------
+nmm
+533371	nmm invoice number
+
+533421	nmm invoice number
+
+533422	nmm invoice number
+
+533798	nmm invoice number
+
+----------------------------------------------------------------------
+nmms
+301571	nmms repairs to water cannon
+
+354736	nmms repairs to water cannon
+
+543631	equipment_id wk nmms machine clean
+
+557293	equipment_id wk nmms machine clean
+
+----------------------------------------------------------------------
+np
+197072	np spare deck rubbers
+
+230189	relocate manufacturer number hour number and number from saraji to np
+
+244979	remove position number from machine number np number
+
+271469	np maintenance contract equipment_id
+
+----------------------------------------------------------------------
+nqc
+7402	extra cost to certify south bw beam nqc
+
+7531	nqc extra costs for sbw crane test
+
+188498	nqc repairs to service crane quote number
+
+189349	nqc inspect repair crane
+
+----------------------------------------------------------------------
+nqis
+75962	nqis to clean machine for crack testing
+
+201030	nqis clean areas as requested
+
+533685	nqis vac full machine
+
+534600	nqis clean machine maintenance day number
+
+----------------------------------------------------------------------
+ns
+123367	ns equipment_id lubrication service number hour
+
+147667	bw ns equipment_id lube services number hour
+
+148007	bw ns equipment_id lube services number hour
+
+148008	bw ns equipment_id lube services number hour
+
+----------------------------------------------------------------------
+nulling
+6971	feed pump requires nulling
+
+192739	pumps need nulling
+
+193849	tracks need nulling out
+
+199075	pumps need nulling turning left propel
+
+----------------------------------------------------------------------
+o_d
+23954	oil leak oil leak on engine head on o_d
+
+59322	o_d side rail cracked
+
+62690	o_d s spray cannot shut off with switch
+
+136449	repair hyd oil leaks o_d s
+
+----------------------------------------------------------------------
+o_l
+187004	reset o_l propel blower
+
+189339	front hoist blower motor tripped on o_l
+
+189361	reset blower motor o_l
+
+189382	hoist number blower tripping out o_l
+
+----------------------------------------------------------------------
+o_s
+23074	o_s cab door missing lower seal
+
+110595	stairs bent o_s
+
+139444	o_s rock ejector hitting wheel housing
+
+139447	o_s mirror loose
+
+----------------------------------------------------------------------
+ocs
+187665	repair handrail ocs
+
+187803	change ocs top sheave
+
+188473	oil leak comp metering pump ocs
+
+190163	repair mast ocs hand rail
+
+----------------------------------------------------------------------
+od
+175555	od a replace floor mat
+
+175559	od a investigate commercial radio
+
+175560	od a investigate right-hand-rear hub leaking oil
+
+175712	od d replace fllor mat
+
+----------------------------------------------------------------------
+oem
+56417	change emergency-stop circuit to oem specs
+
+83478	oem repairs engine and bucket
+
+162828	carry equipment_id hr service as per oem
+
+168331	modify right-hand-side mirror returning it to oem s
+
+----------------------------------------------------------------------
+ogl
+189505	ogl red alert filter needs changing
+
+191254	number seconds delay ogl
+
+191255	number seconds delay ogl
+
+191475	upper frame ogl faulting out
+
+----------------------------------------------------------------------
+oiler
+2337	chaine oiler no working
+
+187937	fit oiler to cable reel air motor system
+
+191630	fit oiler fitted to air system
+
+208853	replace batteries and oiler unit
+
+----------------------------------------------------------------------
+ol
+26417	bad cracking at top of carousel the ol
+
+154175	ol leak at grease pump
+
+196705	ol block needs replacing
+
+204245	ol leak from pull down cylinders
+
+----------------------------------------------------------------------
+oo
+48677	number axle output shaft loose and worn oo
+
+49761	wire hd lights to scene lights re oo
+
+50551	requested two shock left-hand-front axles oo
+
+50553	rear brakes shoes worn replace oo
+
+----------------------------------------------------------------------
+oper
+37492	number watts oper inspect machine equipment_id
+
+37493	number watts oper inspect machine equipment_id
+
+37532	number watts oper inspect machine equipment_id
+
+37554	number watts oper inspect machine equipment_id
+
+----------------------------------------------------------------------
+ou
+8567	make up cab blow ou hose
+
+28666	equipment_id engine water pump change ou
+
+29988	equipment_id unerversal joints change ou
+
+33356	equipment_id engine water pump change ou
+
+----------------------------------------------------------------------
+ovm
+182935	replace drives with ovm and run outs and r
+
+182936	replace drives with ovm and run outs
+
+183088	rectify position number number number number with ovm rims
+
+228142	RR rim number x number ovm
+
+----------------------------------------------------------------------
+p_t
+90323	p_t filter warning
+
+92057	p_t filter plugged
+
+95700	p_t getting hot
+
+97396	p_t filter plugged
+
+----------------------------------------------------------------------
+pb
+63524	replace number ring on pb valve
+
+142549	oil leak on pb filter
+
+144395	replace hose from diverter valve to pb
+
+144758	pressure test fitting on pb filter unservicable
+
+----------------------------------------------------------------------
+pbo
+2682	replace die holder on swinging pbo arm
+
+8319	replace pbo wrench clamp cylinder
+
+11111	pbo wrench cylinder leaking
+
+13360	investgate pbo cylinder getting bent
+
+----------------------------------------------------------------------
+pc
+174278	number aux pc temp sensor fault
+
+195105	lost all pc screens
+
+195116	update on-board pc
+
+208751	repair number kilowatts light front walkway pc room
+
+----------------------------------------------------------------------
+pcr
+187133	chaseing up rescue kit for pcr room
+
+187924	fire alarm pcr
+
+188051	pcr flooring
+
+189148	reset fire alarm pcr equipment_id
+
+----------------------------------------------------------------------
+pdo
+47111	pdo cannot engage major electrical fault
+
+50241	pdo not engaging
+
+200040	include pdo safety object text id st
+
+217203	pdo edd weekly inspection list
+
+----------------------------------------------------------------------
+pdt
+187458	change pdt
+
+187494	oil transfer pdt see long text
+
+187713	change oil pdt ecam sample
+
+188071	check pdt for pump oil leaks
+
+----------------------------------------------------------------------
+pe
+1024	repair cracking on right-hand track idler as pe
+
+115727	hydraulic hose leaking under floor as pe
+
+213937	check hyd oil for water change pe cells
+
+430885	check hyd oil for water change pe cells
+
+----------------------------------------------------------------------
+perma
+1465	replace traveling sprocket perma lubes
+
+3612	replace perma lubes on feed sprockets
+
+6493	replace chicksan swivel perma lube
+
+16231	fit perma lube to bull hose
+
+----------------------------------------------------------------------
+pex
+988	hastings supply fit turbos pex engine
+
+1854	pex water injection motor
+
+1855	pex rope winch motor
+
+1857	pex left-hand-rear jack cyl
+
+----------------------------------------------------------------------
+ph
+46383	replace arm rest driver side door see ph
+
+47022	repair leaks on SOS lines as shown in ph
+
+47047	gasket on tandem manufacturer number hour are leaking see ph
+
+47203	repair oil leaks around diff stop see ph
+
+----------------------------------------------------------------------
+pla
+13545	right-hand rotation mtr leaking at indicator pla
+
+136530	replace damaged left-hand-side turbo water line pla
+
+175158	investigate coolant leak from spacer pla
+
+202672	equipment_id scope cracking both shipshaft pla
+
+----------------------------------------------------------------------
+pls
+118036	pls repair damaged leica screens
+
+138995	truck weighing system fault pls repair
+
+284308	pls fit access lights for platform
+
+342558	pls fit access lights for platform
+
+----------------------------------------------------------------------
+pms
+40930	pms falts coming up
+
+77550	pms card faulty right-hand engine not idling
+
+77693	left-hand engine pms sensor faulty
+
+78341	repair pms wiring fault equipment_id
+
+----------------------------------------------------------------------
+pmsv
+39475	acc damage front ladder access scv pmsv
+
+41209	coolant leak on after cooler pipe pmsv
+
+78541	pmsv comms fault equipment_id
+
+83053	clam ram hose is leaking pmsv
+
+----------------------------------------------------------------------
+po
+16733	scv po repairs to hand rails access gate
+
+39478	acc repair damage to walkway scv po
+
+165992	investigate low power fault throttle po
+
+166122	remove and refit po number for work-shop
+
+----------------------------------------------------------------------
+por
+186933	change hoses from verndo_name valve to VA por
+
+186936	change hoses from verndo_name valve to VA por
+
+411747	change hoses from verndo_name valve to VA por
+
+411750	change hoses from verndo_name valve to VA por
+
+----------------------------------------------------------------------
+ppc
+42059	replace all ppc hydraulic screens
+
+88181	replace _number_ of ppc hydraulic screens
+
+328785	replace hose in ppc circuit
+
+389302	replace blade cntl lever and ppc relief
+
+----------------------------------------------------------------------
+profroma
+437821	parts only hastings profroma number
+
+437822	parts only hastings profroma number
+
+437823	parts only hastings profroma number
+
+437824	parts only hastings profroma number
+
+----------------------------------------------------------------------
+ps
+19451	replace test station gauge number number ps
+
+291134	fit new tyres to ps number and number
+
+347419	fit new tyres to ps number and number
+
+370768	fit new tyres to ps number and number
+
+----------------------------------------------------------------------
+psc
+153864	replaced battery on cpu card in psc
+
+156112	low battery voltage on psc cpu card
+
+156975	inspect psc low battery flat
+
+158145	blown battery fuse in psc cabinet
+
+----------------------------------------------------------------------
+pyro
+13395	pyro tube needs remounting
+
+33201	equipment_id pyro wick change
+
+35504	equipment_id pyro wick change
+
+37983	changeout pyro wick
+
+----------------------------------------------------------------------
+r_d
+43997	rapair number way on r_d number
+
+148211	changeout suspension cyl r_d
+
+148219	changeout suspension cyl r_d
+
+148229	changeout suspension cyl r_d
+
+----------------------------------------------------------------------
+rax
+231551	thrust material in rax filter
+
+234269	RI rax motor
+
+237319	repair leak at rax pump
+
+237388	rax fan motor leaking
+
+----------------------------------------------------------------------
+rcr
+465053	rcr to commission number compressor
+
+544773	rcr service vendor_name air comps equipment_id
+
+545092	rcr compressor repairs
+
+545136	rcr repairs and service on compressors
+
+----------------------------------------------------------------------
+rcs
+202373	e comm radio rcs
+
+203174	e power supply faulty rcs
+
+208692	two way set up rcs
+
+208909	rcs NA am-fm not working
+
+----------------------------------------------------------------------
+rea
+25008	repair crack in right-hand-side track frame near rea
+
+27703	both left-hand jack cyl leaking the left-hand rea
+
+101358	repair left-hand fender cabinet latch rea
+
+295096	reseal main relief valve side trans and rea
+
+----------------------------------------------------------------------
+rht
+55407	change wheel bearings rht
+
+55409	change brakes rht
+
+55416	change strut rht
+
+56962	changeout strut rht
+
+----------------------------------------------------------------------
+ri
+165492	adjust ride height found machine was ri
+
+284090	install sign carry post on outside of ri
+
+306299	b changeout final drive ri
+
+306313	b changeout final drive ri
+
+----------------------------------------------------------------------
+riu
+226480	ET replace riu cable equipment_id
+
+240190	check smart replace riu board
+
+258416	check operation of smart riu
+
+258523	smart riu installation
+
+----------------------------------------------------------------------
+rom
+234834	high brake temp at rom
+
+237549	supply and fit rom camera monitor
+
+237550	supply and fit rom camera monitor
+
+237551	supply and fit rom camera monitor
+
+----------------------------------------------------------------------
+rop
+18731	winch rop frayed replace
+
+43739	rust in rop
+
+49382	inspect repair rop
+
+49777	rop keep dropping down rectify
+
+----------------------------------------------------------------------
+ros
+16472	warranty ros pump unservicable changeout
+
+17298	warranty ros pump leaking
+
+18307	fit up level switch ros tank
+
+18477	reseal ros pump leak at body gaskets
+
+----------------------------------------------------------------------
+roto
+43791	change service brake roto chamber
+
+43795	change service brake roto chamber
+
+57398	investigate leak above park brake roto
+
+63330	park brake roto chamber leaking
+
+----------------------------------------------------------------------
+rp
+156854	reset rp contactor fault
+
+162241	inspect rp contacts
+
+162245	inspect rp contacts
+
+162716	fault find rp contactors
+
+----------------------------------------------------------------------
+rtd
+186940	broken rtd wire
+
+186956	rtd bearing overtemps
+
+187023	motor rtd connections
+
+187109	repair rtd plugs mtr number and number make plugs d
+
+----------------------------------------------------------------------
+runout
+107719	replace left-hand track runout track fitted
+
+134963	check tyres for runout
+
+137519	rough ride check runout
+
+224761	fit runout tyres to position three
+
+----------------------------------------------------------------------
+s_a
+195632	two way foot switch cameraswitch s_a
+
+226400	right-front replace s_a fan motors
+
+228446	right-front replace s_a fan motor
+
+231937	right-front change s_a fan motor direction
+
+----------------------------------------------------------------------
+s_d
+204506	oil press sender causing engine to s_d
+
+205545	equipment_id replace cab glass s_d
+
+206034	replace cable tray s_d
+
+206279	bottom carousel cyl mounts inspect s_d
+
+----------------------------------------------------------------------
+s_o
+38978	repair material number s_o equipment_id
+
+39001	repair material number s_o equipment_id
+
+39086	repair material number s_o equipment_id
+
+77285	replace press s_o valve o-ring
+
+----------------------------------------------------------------------
+s_s
+54862	fit s_s fitting at water tank gauge port
+
+55384	fit s_s fitting at water tank gauge port
+
+92594	remove s_s antiskid plate on blade arms
+
+96449	remove s_s anti slip on blade arms
+
+----------------------------------------------------------------------
+s_steel
+42888	repair s_steel guard behind switches
+
+191859	replace grease system s_steel box
+
+194283	fit new s_steel water tank
+
+196925	fit s_steel kick plates
+
+----------------------------------------------------------------------
+s_truck
+157014	wait s_truck fuel farm not working
+
+157370	wait on s_truck coolant leak
+
+157374	wait on s_truck engine sump overfilling
+
+157644	wait on s_truck fuel farm not working
+
+----------------------------------------------------------------------
+sb
+218341	sb number month stat equipment_id earth leakage checks
+
+218342	sb number month stat equipment_id earth leakage checks
+
+218568	sb number month stat equipment_id earth leakage checks
+
+218569	sb number month stat equipment_id earth leakage checks
+
+----------------------------------------------------------------------
+sbtp
+45000	send number x number rims to reids sbtp number
+
+52822	sbtp number manufacturer number hour number x number rims
+
+52823	sbtp number vendor_name number x number rims
+
+53096	sbtp rim equipment_id number
+
+----------------------------------------------------------------------
+schd
+290527	schd changeout trailer hub hrs up remove bra
+
+290528	schd changeout trailer hub hrs up schd changeout t
+
+346968	schd changeout trailer hub hrs up remove bra
+
+346969	schd changeout trailer hub hrs up schd changeout t
+
+----------------------------------------------------------------------
+scr
+117001	replace fuel filter and clean primary scr
+
+176545	od d inspect operation of manufacturer number hour scr
+
+188768	replace shorted scr on equipment_id
+
+189162	rpc bank diode and scr shorted
+
+----------------------------------------------------------------------
+scrn
+229259	replace hose right-hand hoist scrn to hoist valve
+
+229318	reseal tube from transfer oil cooler to tc scrn
+
+229709	reseal hose from left-hand hoist scrn to valve
+
+239966	replace hose right-hand hoist scrn to front of pump
+
+----------------------------------------------------------------------
+senser
+23307	replace comp oil pressure senser
+
+24026	repair rotary head speed senser cable
+
+82094	fuel level senser playing up
+
+83633	replace hyd tank low level senser
+
+----------------------------------------------------------------------
+sept
+87716	equipment_id terex agreement for sept
+
+195898	off site repair xpb_number_ bw to vendor_name sept number
+
+214220	manufacturer number hour parts sept number
+
+280610	off-site repair equipment_id sept number
+
+----------------------------------------------------------------------
+serv
+10416	changeout break out cyl serv ex
+
+31714	NA mechanical serv equipment_id _number_hnot done
+
+31793	NA mechanical serv equipment_id _number_hnot done
+
+40041	number number hour serv h_d
+
+----------------------------------------------------------------------
+sheeves
+6120	def check lube to traveling sheeves
+
+10947	measure and compare traveling sheeves
+
+27707	replace perma lubes on traveling sheeves
+
+32558	replace feed sheeves
+
+----------------------------------------------------------------------
+shocky
+44925	both front shocky n replacing
+
+50951	changeout seat shocky
+
+56780	replace shocky rubbers as required
+
+100214	replace operators seat shocky unservicable
+
+----------------------------------------------------------------------
+silastic
+16134	replace silastic around left-hand turbo intake
+
+16683	replace clamps on air intake and silastic
+
+17264	silastic both turbo intake tubes
+
+188441	hazard report silastic taste in potable
+
+----------------------------------------------------------------------
+sissor
+75695	pick up sissor lift
+
+154443	readjust suspension sissor links
+
+155164	sissor links require adjustment
+
+225195	check for movement in sissor links
+
+----------------------------------------------------------------------
+smu
+237365	RI rear axle oil cooler fan motor at smu
+
+237371	RI rear axle oil cooler fan motor at smu
+
+237400	RI rear axle oil cooler fan motor at smu
+
+239420	equipment_id engine oil sample number smu
+
+----------------------------------------------------------------------
+spd
+115839	tco spd sensor error
+
+169732	critical alarm number engine spd
+
+169733	critical alarm number engine spd
+
+169736	critical alarm number engine spd
+
+----------------------------------------------------------------------
+speedo
+42936	tacko and speedo not working
+
+46846	speedo not working
+
+47541	check repair speedo for correct operatio
+
+47555	speedo is in mph
+
+----------------------------------------------------------------------
+sprag
+275161	replace right-hand outer door handle and sprag
+
+286471	replace left-hand door handle and sprag
+
+323490	hyd hot sprag clutch unservicable warranty
+
+337018	replace right-hand outer door handle and sprag
+
+----------------------------------------------------------------------
+sprags
+445283	cut bandit strap sprags suspension ropes
+
+462336	check sprags on rope
+
+533960	remove sprags from hoist ropes
+
+534105	inspect and remove sprags clamps
+
+----------------------------------------------------------------------
+sps
+83954	replace sps and start interlock relay
+
+84354	replace sps controller
+
+86438	fit modified battery unit for sps unit
+
+300762	replace sps contoller
+
+----------------------------------------------------------------------
+srb
+191170	fit srb to motor
+
+191513	remove srb from crowd motor equipment_id
+
+191609	remove srb from crowd motor equipment_id
+
+191702	equipment_id fit srb to hoist motors
+
+----------------------------------------------------------------------
+srm
+255948	transport wheel ass from srm to pdm
+
+525700	srm d number ton number hour pm and lube
+
+525771	srm d number ton dozer number pm and lube
+
+525854	srm d number ton dozer number pm and lube
+
+----------------------------------------------------------------------
+statut
+66321	test brake performance statut
+
+66322	test brake performance statut
+
+66323	test brake performance statut
+
+147574	test brake performance statut
+
+----------------------------------------------------------------------
+stc
+77375	left-hand engine stc reel o-ring leaking equipment_id
+
+81888	replace left-hand engine stc hose equipment_id
+
+277448	check stc operation left-hand engine
+
+279711	replace stc switch left-hand engine
+
+----------------------------------------------------------------------
+stemmer
+630986	replace blown hyd hose at stemmer
+
+630990	repair stemmer hydraulics slow
+
+632501	repair leaking right-hand stemmer cyl
+
+633656	c out stemmer cylinder
+
+----------------------------------------------------------------------
+str
+48029	tail str bspt male x LP hose
+
+129919	equipment_id change str and brake cont valve
+
+159098	warranty replace leaking right-hand front str
+
+162889	investigate outer str accumulator fault
+
+----------------------------------------------------------------------
+strg
+44900	left-hand-front lower strg pin retainer missing
+
+45025	left-hand-front lower strg pin falling out
+
+45320	strg tank gasket leaking
+
+47961	both strg cyl number move
+
+----------------------------------------------------------------------
+sus
+14851	hydraulic switch sus
+
+65962	trans lost drive sus broken axle
+
+96128	replace sus hose on pilot control valve
+
+138440	dust cover right-hand-rear sus cyl fell down
+
+----------------------------------------------------------------------
+svc
+8208	svc welding repairs service day
+
+12981	svc labour equipment_id number
+
+17984	svc labour NA date_time
+
+79531	svc boily for equipment_id date_time
+
+----------------------------------------------------------------------
+svce
+37637	number watts svce pre setup machine equipment_id
+
+37731	number watts svce pre setup machine equipment_id
+
+37824	number watts svce pre setup machine equipment_id
+
+37910	number watts svce pre setup machine equipment_id
+
+----------------------------------------------------------------------
+swc
+245538	changeout equipment_id with spare swc
+
+245711	replace equipment_id with spare swc
+
+289623	change equipment_id tyres swc
+
+346330	change equipment_id tyres swc
+
+----------------------------------------------------------------------
+t_c
+12468	t_c cab glass
+
+13146	replace cab glass t_c tony
+
+42792	replace t_c charge pump
+
+43584	wash truck and deliver to t_c _number_am number
+
+----------------------------------------------------------------------
+t_l
+148230	changeout suspension cyl t_l
+
+148246	changeout suspension cyl t_l
+
+148267	changeout wheel end t_l
+
+150108	changeout wheel end t_l
+
+----------------------------------------------------------------------
+t_q
+146569	replace t_q screen filter
+
+156235	t_q out temp err
+
+163473	replace t_q filters
+
+164868	t_q speed sensor err
+
+----------------------------------------------------------------------
+t_r
+148212	changeout suspension cyl t_r
+
+148231	changeout suspension cyl t_r
+
+148692	changeout suspension cyl t_r
+
+150174	changeout wheel end t_r
+
+----------------------------------------------------------------------
+tait
+50746	vendor_name repair tait mine radio
+
+84896	replaced two way tait unit
+
+113300	needs a new tait remote number way
+
+120018	changed number way speaker tait
+
+----------------------------------------------------------------------
+tc
+96918	tc speed sensor error fault
+
+105022	tc filter light coming on
+
+132260	changeout tc screen switch
+
+143113	repair leakingb tc filter
+
+----------------------------------------------------------------------
+tci
+155858	replace in tci cabinet
+
+159860	reset start date on tci counters
+
+162918	psc and tci comm fault prog card
+
+169495	repair electrical wiring on tci cards
+
+----------------------------------------------------------------------
+tco
+91968	tco speed sensor error
+
+91972	tco speed sensor unservicable
+
+92152	tco speed sensor error
+
+92499	tco spd_sens err
+
+----------------------------------------------------------------------
+tcon
+231188	reseal leaking hoses on tcon pump
+
+235691	repair oil leak at tcon
+
+235886	replace hose top of pump drive box to tcon
+
+236031	reseal elbow at tcon lockup valve
+
+----------------------------------------------------------------------
+tcp
+75800	walk shd from to tcp
+
+76067	cover walk from tcp to equipment_id
+
+104220	replace air filter stock for tcp dozer
+
+105072	air cleaner elements for tcp
+
+----------------------------------------------------------------------
+tcs
+164080	investigate tcs not working
+
+164221	repair tcs fault
+
+165990	investigate tcs fault
+
+174366	investigate tcs fault
+
+----------------------------------------------------------------------
+tex
+65190	switches missing from trans red box pto tex
+
+65234	left-hand-front blinker wire needs repairing tex
+
+70668	equipment_id mechanical services see long tex
+
+81060	replace both vertical step switches see tex
+
+----------------------------------------------------------------------
+th
+19068	number th roller from rear right-hand-side unservicable replace
+
+44619	park brake light cannot go out changed th
+
+46355	cover on control box for rear mounted th
+
+53433	lubircate water cannon on the rear of th
+
+----------------------------------------------------------------------
+tis
+452465	tis dragline blowouts equipment_id
+
+455224	tis machine blowouts equipment_id
+
+464319	tis blowouts equipment_id
+
+465128	tis equipment_id relocation from _number_s to _number_
+
+----------------------------------------------------------------------
+tk
+8938	tk signs for equipment_id
+
+183478	mechanical and lube service tk
+
+183531	mechanical and lube service tk
+
+183885	mechanical and lube service tk
+
+----------------------------------------------------------------------
+tkd
+179344	number hour pm service tkd
+
+227781	fit tyres for tkd to go to work
+
+228957	tkd fleet ball stud inspections pope
+
+245118	audit tkd fleet starer motors
+
+----------------------------------------------------------------------
+tol
+1551	changeout tol wrench hose
+
+203064	reset tol on compressor
+
+445132	main transformer tol
+
+445501	changeout tol wrench hose
+
+----------------------------------------------------------------------
+tp
+39033	cost tp repair m_n cylinder
+
+61772	scope hyd pump tp spray variation failur
+
+74598	cost tp repair m_n number
+
+438050	repairs tp bucket
+
+----------------------------------------------------------------------
+tra
+20843	changeout track chains l and r both tra
+
+55068	wash and investigate oil leak around tra
+
+89689	left-hand track roller equipment_id n_r replaced tra
+
+102969	pt filter light coming on removed tra
+
+----------------------------------------------------------------------
+trac
+62776	injectors rear cross member seized trac
+
+82126	equipment_id repair oil leak replaced trac
+
+94742	remove and replace broken bolt on right-hand trac
+
+110750	remove and replace right-hand track frame and trac
+
+----------------------------------------------------------------------
+trd
+117745	replace starter cables new cables on trd
+
+237006	equipment_id worn belts changeout position number to match trd
+
+392697	trd hire lube service
+
+396191	trd hire refit track come off
+
+----------------------------------------------------------------------
+tri
+3165	reweld tri tronics aerial
+
+13067	tri box dipstick unservicable
+
+15660	monitor rear tri box input shaft
+
+19420	suspect tri box has failed
+
+----------------------------------------------------------------------
+tritro
+23136	tritro repairs
+
+23285	repair tritro series_number_ screen
+
+61618	tritro radio failed
+
+62304	tritro repairs
+
+----------------------------------------------------------------------
+trn
+92053	replace hyd and trn wiggins fitting
+
+169777	trn lube temp error
+
+175068	trn ecm error
+
+239199	equipment_id investigate vim fault battery trn ctrl
+
+----------------------------------------------------------------------
+trns
+47639	drain trns oil
+
+47833	suspect hyd oil trnsfering to trns
+
+97123	wask out trns guard
+
+101261	replace trns by pass switch
+
+----------------------------------------------------------------------
+tronics
+3165	reweld tri tronics aerial
+
+10455	dangerous t tronics positioner
+
+26905	repair tri tronics gps
+
+43790	tri tronics not working a crew number
+
+----------------------------------------------------------------------
+tropos
+162940	install mems and tropos system
+
+162941	install mems and tropos system
+
+162944	install mems and tropos system
+
+163065	install mems and tropos system
+
+----------------------------------------------------------------------
+trunnion
+12848	refit trunnion caps
+
+40598	remove grease lines to engine trunnion
+
+41092	l and r engine trunnion not taking grease
+
+43339	blade lift cylinder trunnion bearings unservicable
+
+----------------------------------------------------------------------
+trw
+318654	trw number changeout steering brake pump
+
+385567	trw hire brake switch error
+
+387584	trw hire fit cutting edge
+
+388053	repair seat on trw hire
+
+----------------------------------------------------------------------
+tugger
+193818	fit modified frame tugger motor platform
+
+199027	check and adjust tugger winch brakes
+
+199171	fit hinge to tugger motor frame
+
+200087	cover gap near new tugger motor stand
+
+----------------------------------------------------------------------
+tynes
+46969	repair weld repair right-hand tynes block
+
+56038	replace missing ripper tynes
+
+57913	replace worn ripper tynes
+
+61969	repair ripper tynes mounts
+
+----------------------------------------------------------------------
+u_t
+458947	ndt u_t centre gudgeon u_t permit
+
+458949	ndt u_t front hoist inter shaft
+
+458950	ndt u_t rear hoist inter shaft
+
+458955	ndt u_t crowd motor base pins
+
+----------------------------------------------------------------------
+uhf
+40948	install uhf radio and aerial
+
+41556	no uhf radio aerial
+
+41602	repair uhf radio
+
+50035	uhf aerial missing
+
+----------------------------------------------------------------------
+un
+51844	fit new steer tyres job to stay open un
+
+59355	id number un readable
+
+59786	service hose un usable
+
+63532	un seize s cams
+
+----------------------------------------------------------------------
+unloader
+45090	replace main compressor unloader valve
+
+170338	unloader valve on grease system unservicable
+
+191009	replace air dump unloader valve
+
+288216	replace unloader valve on air compressor
+
+----------------------------------------------------------------------
+ute
+14763	lift toolbox inot ute
+
+63074	move gear to ute
+
+191829	shovel ute set up
+
+191996	modifications for shovel lube ute
+
+----------------------------------------------------------------------
+vee
+26528	replace vee belts
+
+43313	replace engine multi vee belt
+
+47776	replace alt_air cond vee belt
+
+88905	replace vee belt
+
+----------------------------------------------------------------------
+veh
+266307	fit a swivel to the light veh diesel gun
+
+271696	replenish non lease veh con stock
+
+272254	replenish non lease veh con stock
+
+272605	replenish non lease veh con stock
+
+----------------------------------------------------------------------
+vesda
+196737	reset pcr fire vesda system
+
+534342	fire system alarm vesda system
+
+534819	fire alarm sounding dusty vesda filter
+
+535240	fire alarm fault reset vesda
+
+----------------------------------------------------------------------
+vhms
+642899	reset vhms faults
+
+642902	reset vhms faults
+
+645204	download vhms
+
+648809	carry out monthly download vhms
+
+----------------------------------------------------------------------
+vids
+91801	checkout vids err
+
+93891	cannot read vids screen
+
+94107	vids fault
+
+95054	repair vids fault
+
+----------------------------------------------------------------------
+vimms
+55898	vimms download
+
+55899	vimms download
+
+114560	vimms error
+
+115099	vimms errors
+
+----------------------------------------------------------------------
+vims
+41911	repair vims lamp error
+
+50657	vims download
+
+53814	download vims
+
+55823	vims full
+
+----------------------------------------------------------------------
+vis
+42799	frcp no high vis numbers
+
+52126	replace hi vis numbers on tank
+
+52873	fit new hi vis numbers
+
+59387	high vis numbers need to be replaced wit
+
+----------------------------------------------------------------------
+vlc
+2766	changeout front vlc
+
+11956	vlc crane maintenance equipment_id
+
+11957	vlc crane maintenance NA
+
+11958	vlc crane maintenance NA
+
+----------------------------------------------------------------------
+wah
+237701	repair cracked broken wah rails
+
+289044	fit wah mounts to chassis
+
+290120	fit wah brackets to chassis
+
+345910	fit wah mounts to chassis
+
+----------------------------------------------------------------------
+wh
+46259	repair rusted panel in front of left-hand-front wh
+
+48732	repair rusted panel in front of left-hand-front wh
+
+132955	fuel spraying out of top of fuel tank wh
+
+143454	brake test after replacing both drive wh
+
+----------------------------------------------------------------------
+wrry
+227854	wrry kress_number_ oil leak on pump casing
+
+228158	high brass in transfer manufacturer number hour filter wrry
+
+229134	wrry kress_number_ equipment_id volt supply error
+
+240440	engine oil overfull wrry equipment_id
+
+----------------------------------------------------------------------
+xdc
+48354	send tyres for retread xdc
+
+178430	replace equipment_id with xdc and iglr
+
+178431	replace equipment_id with xdc and iglr
+
+178432	replace equipment_id with xdc and iglr
+
+----------------------------------------------------------------------
+xpc
+223143	replace operators cab to xpc type
+
+457643	off-site repair dip xpc equipment_id
+
+554835	number xpc tripropechangeout
+
+554836	number xpc dipperhardwarerep replace
+
+----------------------------------------------------------------------
+duratray

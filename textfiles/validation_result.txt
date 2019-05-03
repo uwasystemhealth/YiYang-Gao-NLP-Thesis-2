@@ -1,0 +1,3602 @@
+Record index  :  674
+
+Raw          : replace both propel motors leaking
+Processed    : replace= propel~motor leaking#
+Gold Standard: replace= propel~motor leaking#
+
+Gold Standard  :  ['replace=', 'propel~motor', 'leaking#']
+Process result :  ['replace=', 'propel~motor', 'leaking#']
+jaccard_index  :  1.0
+
+Record index  :  5660
+
+Raw          : replace grips in breakout tongs
+Processed    : replace= breakout~tongs
+Gold Standard: replace= grip~ breakout~tongs
+
+Gold Standard  :  ['replace=', 'grip~', 'breakout~tongs']
+Process result :  ['replace=', 'breakout~tongs']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  6146
+
+Raw          : remove lead rod
+Processed    : remove= lead~rod
+Gold Standard: remove= lead~rod
+
+Gold Standard  :  ['remove=', 'lead~rod']
+Process result :  ['remove=', 'lead~rod']
+jaccard_index  :  1.0
+
+Record index  :  8384
+
+Raw          : pipe support cups not gripping
+Processed    : pipe~support~cup not#gripping#
+Gold Standard: pipe~support~cup not#gripping#
+
+Gold Standard  :  ['pipe~support~cup', 'not#gripping#']
+Process result :  ['pipe~support~cup', 'not#gripping#']
+jaccard_index  :  1.0
+
+Record index  :  12522
+
+Raw          : engine front main seal leaking
+Processed    : engine~ main~seal leaking#
+Gold Standard: engine~ main~seal leaking#
+
+Gold Standard  :  ['engine~', 'main~seal', 'leaking#']
+Process result :  ['engine~', 'main~seal', 'leaking#']
+jaccard_index  :  1.0
+
+Record index  :  14346
+
+Raw          : c/o left rotary head motor
+Processed    : changeoutleft~ rotary~head~motor
+Gold Standard: changeout= rotary~head~motor
+
+Gold Standard  :  ['changeout=', 'rotary~head~motor']
+Process result :  ['changeoutleft~', 'rotary~head~motor']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  14447
+
+Raw          : wtr injection not working
+Processed    : water~injection not#working#
+Gold Standard: water~injection not#working#
+
+Gold Standard  :  ['water~injection', 'not#working#']
+Process result :  ['water~injection', 'not#working#']
+jaccard_index  :  1.0
+
+Record index  :  15624
+
+Raw          : replace chip deflector & deck seal l
+Processed    : replace= chip~deflector deck~seal l#
+Gold Standard: replace= chip~deflector deck~seal
+
+Gold Standard  :  ['replace=', 'chip~deflector', 'deck~seal']
+Process result :  ['replace=', 'chip~deflector', 'deck~seal', 'l#']
+jaccard_index  :  0.75
+
+Record index  :  20339
+
+Raw          : a/c stacker valve leaking
+Processed    : aircon~ stacker~valve leaking#
+Gold Standard: aircon~stacker~valve leaking#
+
+Gold Standard  :  ['aircon~stacker~valve', 'leaking#']
+Process result :  ['aircon~', 'stacker~valve', 'leaking#']
+jaccard_index  :  0.25
+
+Record index  :  21917
+
+Raw          : adjust top chains ????????
+Processed    : adjust= top~ chain~
+Gold Standard: adjust= top~chain
+
+Gold Standard  :  ['adjust=', 'top~chain']
+Process result :  ['adjust=', 'top~', 'chain~']
+jaccard_index  :  0.25
+
+Record index  :  22202
+
+Raw          : main pumps leaking oil
+Processed    : main~pump leaking# oil~
+Gold Standard: main~pump leaking#oil#
+
+Gold Standard  :  ['main~pump', 'leaking#oil#']
+Process result :  ['main~pump', 'leaking#', 'oil~']
+jaccard_index  :  0.25
+
+Record index  :  24693
+
+Raw          : replace dropped drill steel
+Processed    : replace= dropped# drill~steel
+Gold Standard: replace= dropped# drill~steel
+
+Gold Standard  :  ['replace=', 'dropped#', 'drill~steel']
+Process result :  ['replace=', 'dropped#', 'drill~steel']
+jaccard_index  :  1.0
+
+Record index  :  24778
+
+Raw          : 2-way no go
+Processed    : way~ go~
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['way~', 'go~']
+jaccard_index  :  0.0
+
+Record index  :  25063
+
+Raw          : slap wrench forks worn
+Processed    : slap~wrench~fork worn#
+Gold Standard: slap~wrench~fork worn#
+
+Gold Standard  :  ['slap~wrench~fork', 'worn#']
+Process result :  ['slap~wrench~fork', 'worn#']
+jaccard_index  :  1.0
+
+Record index  :  25101
+
+Raw          : oil leak on receivertank return hose
+Processed    : oil-leak# return~hose
+Gold Standard: oil-leak# receivertank~return~hose
+
+Gold Standard  :  ['oil-leak#', 'receivertank~return~hose']
+Process result :  ['oil-leak#', 'return~hose']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  28310
+
+Raw          : edd0042 air reciever 5yr stat insp
+Processed    : air~receiver stat~ inspect=
+Gold Standard: air~receiver
+
+Gold Standard  :  ['air~receiver']
+Process result :  ['air~receiver', 'stat~', 'inspect=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  30282
+
+Raw          : weekly inspection drill 64 completed
+Processed    : inspection= drill~
+Gold Standard: inspection= drill~
+
+Gold Standard  :  ['inspection=', 'drill~']
+Process result :  ['inspection=', 'drill~']
+jaccard_index  :  1.0
+
+Record index  :  32115
+
+Raw          : edd0059 mechanical inspection 4 weekly.
+Processed    : mechanical~ inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['mechanical~', 'inspection=']
+jaccard_index  :  0.5
+
+Record index  :  40310
+
+Raw          : replacement pin
+Processed    : replacement= pin~
+Gold Standard: replacement= pin~
+
+Gold Standard  :  ['replacement=', 'pin~']
+Process result :  ['replacement=', 'pin~']
+jaccard_index  :  1.0
+
+Record index  :  40331
+
+Raw          : hydraulic hose replacement
+Processed    : hydraulic-hose~ replacement=
+Gold Standard: hydraulic-hose~ replacement=
+
+Gold Standard  :  ['hydraulic-hose~', 'replacement=']
+Process result :  ['hydraulic-hose~', 'replacement=']
+jaccard_index  :  1.0
+
+Record index  :  40342
+
+Raw          : change wipers on cab window exdl01
+Processed    : change# wiper~ cab~window
+Gold Standard: change= wiper~ cab~window
+
+Gold Standard  :  ['change=', 'wiper~', 'cab~window']
+Process result :  ['change#', 'wiper~', 'cab~window']
+jaccard_index  :  0.5
+
+Record index  :  41402
+
+Raw          : lh track has come off front idler
+Processed    : track~ idler~
+Gold Standard: track~ come#off#front#idler
+
+Gold Standard  :  ['track~', 'come#off#front#idler']
+Process result :  ['track~', 'idler~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  43895
+
+Raw          : loose grease pump motor
+Processed    : loose# grease~pump~motor
+Gold Standard: loose# grease~pump~motor
+
+Gold Standard  :  ['loose#', 'grease~pump~motor']
+Process result :  ['loose#', 'grease~pump~motor']
+jaccard_index  :  1.0
+
+Record index  :  44193
+
+Raw          : adjust/cut back laterial link grease
+Processed    : adjust= cut# back# laterial~link grease~
+Gold Standard: adjust= laterial~link
+
+Gold Standard  :  ['adjust=', 'laterial~link']
+Process result :  ['adjust=', 'cut#', 'back#', 'laterial~link', 'grease~']
+jaccard_index  :  0.4
+
+Record index  :  44523
+
+Raw          : change out worn drive tyres
+Processed    : changeout= worn# drive~tyre
+Gold Standard: changeout= worn# driv~tyre
+
+Gold Standard  :  ['changeout=', 'worn#', 'driv~tyre']
+Process result :  ['changeout=', 'worn#', 'drive~tyre']
+jaccard_index  :  0.5
+
+Record index  :  48962
+
+Raw          : fit breather to hydraulic tank
+Processed    : fit= breather~ hydraulic~tank
+Gold Standard: fit= breather~ hydraulic~tank
+
+Gold Standard  :  ['fit=', 'breather~', 'hydraulic~tank']
+Process result :  ['fit=', 'breather~', 'hydraulic~tank']
+jaccard_index  :  1.0
+
+Record index  :  49170
+
+Raw          : remove gauge mounted l/h/f cab grabrail
+Processed    : remove= gauge~ mounted# cab~
+Gold Standard: remove= gauge~ mounted= cab~grabrail
+
+Gold Standard  :  ['remove=', 'gauge~', 'mounted=', 'cab~grabrail']
+Process result :  ['remove=', 'gauge~', 'mounted#', 'cab~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  51827
+
+Raw          : lh front mud gaurd chain broken
+Processed    : mudguard~ chain~ broken#
+Gold Standard: mud~guard~chain broken#
+
+Gold Standard  :  ['mud~guard~chain', 'broken#']
+Process result :  ['mudguard~', 'chain~', 'broken#']
+jaccard_index  :  0.25
+
+Record index  :  53207
+
+Raw          : replace l/h steer tyre
+Processed    : replace= steer~tyre
+Gold Standard: replace= steer~tyre
+
+Gold Standard  :  ['replace=', 'steer~tyre']
+Process result :  ['replace=', 'steer~tyre']
+jaccard_index  :  1.0
+
+Record index  :  53789
+
+Raw          : hi-beam lights u/s
+Processed    : hi~beam~light unservicable#
+Gold Standard: hi~beam~light unservicable#
+
+Gold Standard  :  ['hi~beam~light', 'unservicable#']
+Process result :  ['hi~beam~light', 'unservicable#']
+jaccard_index  :  1.0
+
+Record index  :  56581
+
+Raw          : jump start
+Processed    : jump-start~
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['jump-start~']
+jaccard_index  :  0.0
+
+Record index  :  67930
+
+Raw          : mechanical pm service
+Processed    : mechanical~pm service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~pm', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  73778
+
+Raw          : mandatory brake test monthly
+Processed    : mandatory~brake test=
+Gold Standard: brake~ test=
+
+Gold Standard  :  ['brake~', 'test=']
+Process result :  ['mandatory~brake', 'test=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  74115
+
+Raw          : tks6693 weekly inspections
+Processed    : inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['inspection=']
+jaccard_index  :  1.0
+
+Record index  :  82630
+
+Raw          : lost tooth
+Processed    : lost~tooth
+Gold Standard: lost# tooth~
+
+Gold Standard  :  ['lost#', 'tooth~']
+Process result :  ['lost~tooth']
+jaccard_index  :  0.0
+
+Record index  :  83518
+
+Raw          : cutting edge welds broken
+Processed    : cutting# edge~ weld= broken#
+Gold Standard: cutting~edge weld= broken#
+
+Gold Standard  :  ['cutting~edge', 'weld=', 'broken#']
+Process result :  ['cutting#', 'edge~', 'weld=', 'broken#']
+jaccard_index  :  0.4
+
+Record index  :  84418
+
+Raw          : 500 hour lube / mechanical service
+Processed    : lube~mechanical service=
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['lube~mechanical', 'service=']
+jaccard_index  :  0.0
+
+Record index  :  84707
+
+Raw          : no power to starters
+Processed    : power~ starter~
+Gold Standard: no#power# starter~
+
+Gold Standard  :  ['no#power#', 'starter~']
+Process result :  ['power~', 'starter~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  85769
+
+Raw          : daily inspections shd16
+Processed    : inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['inspection=']
+jaccard_index  :  1.0
+
+Record index  :  86045
+
+Raw          : daily inspections shd17
+Processed    : inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['inspection=']
+jaccard_index  :  1.0
+
+Record index  :  88270
+
+Raw          : shd0017 daily maintenance inspection
+Processed    : maintenance= inspection=
+Gold Standard: maintenance= inspection=
+
+Gold Standard  :  ['maintenance=', 'inspection=']
+Process result :  ['maintenance=', 'inspection=']
+jaccard_index  :  1.0
+
+Record index  :  95931
+
+Raw          : track needed to be pumped up
+Processed    : track~ needed#
+Gold Standard: track~ needed#to#be#pumped#up
+
+Gold Standard  :  ['track~', 'needed#to#be#pumped#up']
+Process result :  ['track~', 'needed#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  97045
+
+Raw          : repair hydraulic leak
+Processed    : repair= hydraulic~ leak#
+Gold Standard: repair= hydraulic~ leak#
+
+Gold Standard  :  ['repair=', 'hydraulic~', 'leak#']
+Process result :  ['repair=', 'hydraulic~', 'leak#']
+jaccard_index  :  1.0
+
+Record index  :  99351
+
+Raw          : check fuel gauge for correct operation
+Processed    : check= fuel~gauge correct~operation
+Gold Standard: check= fuel~gauge
+
+Gold Standard  :  ['check=', 'fuel~gauge']
+Process result :  ['check=', 'fuel~gauge', 'correct~operation']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  99892
+
+Raw          : fit cover to engine oil receiver
+Processed    : fit= cover~ engine~oil receiver~
+Gold Standard: fit= cover~ engine~oil~receiver
+
+Gold Standard  :  ['fit=', 'cover~', 'engine~oil~receiver']
+Process result :  ['fit=', 'cover~', 'engine~oil', 'receiver~']
+jaccard_index  :  0.4
+
+Record index  :  102618
+
+Raw          : fit lockout hasp and lanyard
+Processed    : fit= lockout~hasp
+Gold Standard: fit= lockout~hasp lanyard~
+
+Gold Standard  :  ['fit=', 'lockout~hasp', 'lanyard~']
+Process result :  ['fit=', 'lockout~hasp']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  103968
+
+Raw          : seat belt achor bolt loose
+Processed    : seat-belt~ bolt~ loose#
+Gold Standard: seat-belt~achor~bolt loose#
+
+Gold Standard  :  ['seat-belt~achor~bolt', 'loose#']
+Process result :  ['seat-belt~', 'bolt~', 'loose#']
+jaccard_index  :  0.25
+
+Record index  :  105590
+
+Raw          : fwd/rev lever tight
+Processed    : lever~ tight#
+Gold Standard: fwd_rev~lever tight#
+
+Gold Standard  :  ['fwd_rev~lever', 'tight#']
+Process result :  ['lever~', 'tight#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  112678
+
+Raw          : replace rear starter isolator switch
+Processed    : replace= starter~isolator~switch
+Gold Standard: replace= starter~isolator~switch
+
+Gold Standard  :  ['replace=', 'starter~isolator~switch']
+Process result :  ['replace=', 'starter~isolator~switch']
+jaccard_index  :  1.0
+
+Record index  :  113896
+
+Raw          : ripper boot missing
+Processed    : ripper~boot missing#
+Gold Standard: ripper~boot missing#
+
+Gold Standard  :  ['ripper~boot', 'missing#']
+Process result :  ['ripper~boot', 'missing#']
+jaccard_index  :  1.0
+
+Record index  :  116175
+
+Raw          : hydraulics slow lift and tilt
+Processed    : slow# lift~ tilt~
+Gold Standard: hydraulics~ slow#lift#and#tilt
+
+Gold Standard  :  ['hydraulics~', 'slow#lift#and#tilt']
+Process result :  ['slow#', 'lift~', 'tilt~']
+jaccard_index  :  0.0
+
+Record index  :  117959
+
+Raw          : battery isolator will not turn
+Processed    : battery~isolator cannot#turn#
+Gold Standard: battery~isolator cannot#turn#
+
+Gold Standard  :  ['battery~isolator', 'cannot#turn#']
+Process result :  ['battery~isolator', 'cannot#turn#']
+jaccard_index  :  1.0
+
+Record index  :  119791
+
+Raw          : ac not working
+Processed    : ac~ not#working#
+Gold Standard: not#working#
+
+Gold Standard  :  ['not#working#']
+Process result :  ['ac~', 'not#working#']
+jaccard_index  :  0.5
+
+Record index  :  119884
+
+Raw          : changed alternator
+Processed    : change= alternator~
+Gold Standard: changed= alternator~
+
+Gold Standard  :  ['changed=', 'alternator~']
+Process result :  ['change=', 'alternator~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  120585
+
+Raw          : heater control not working
+Processed    : heater~control not#working#
+Gold Standard: heater~control not#working#
+
+Gold Standard  :  ['heater~control', 'not#working#']
+Process result :  ['heater~control', 'not#working#']
+jaccard_index  :  1.0
+
+Record index  :  120708
+
+Raw          : replace missing grouser bolts
+Processed    : replace= missing# grouser~bolt
+Gold Standard: replace= missing# grouser~bolt
+
+Gold Standard  :  ['replace=', 'missing#', 'grouser~bolt']
+Process result :  ['replace=', 'missing#', 'grouser~bolt']
+jaccard_index  :  1.0
+
+Record index  :  123386
+
+Raw          : mechanical pm service prech
+Processed    : mechanical~pm service= pre-check=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~pm', 'service=', 'pre-check=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  125353
+
+Raw          : mechanical service - trd0334
+Processed    : mechanical~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  132037
+
+Raw          : change tranny tank sight glasses
+Processed    : change# transformer~tank~sight-glass
+Gold Standard: change= transformer~tank~sight-glass
+
+Gold Standard  :  ['change=', 'transformer~tank~sight-glass']
+Process result :  ['change#', 'transformer~tank~sight-glass']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  132144
+
+Raw          : component changeout as per list
+Processed    : changeout= per~list
+Gold Standard: changeout=
+
+Gold Standard  :  ['changeout=']
+Process result :  ['changeout=', 'per~list']
+jaccard_index  :  0.5
+
+Record index  :  134765
+
+Raw          : change out vims main module battery. has
+Processed    : changeout= vims~ main~ module~ battery~
+Gold Standard: changeout= vims~ module~battery
+
+Gold Standard  :  ['changeout=', 'vims~', 'module~battery']
+Process result :  ['changeout=', 'vims~', 'main~', 'module~', 'battery~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  138681
+
+Raw          : cover missing off host controller
+Processed    : cover~ missing#
+Gold Standard: missing# host~controller
+
+Gold Standard  :  ['missing#', 'host~controller']
+Process result :  ['cover~', 'missing#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  143256
+
+Raw          : maintenance service
+Processed    : maintenance= service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['maintenance=', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  143553
+
+Raw          : trailer hitch harness u/s
+Processed    : trailer~hitch harness~ unservicable#
+Gold Standard: trailer~hitch~harness unservicable#
+
+Gold Standard  :  ['trailer~hitch~harness', 'unservicable#']
+Process result :  ['trailer~hitch', 'harness~', 'unservicable#']
+jaccard_index  :  0.25
+
+Record index  :  144089
+
+Raw          : ran out of fuel
+Processed    : fuel~
+Gold Standard: ran#out#of#fuel#
+
+Gold Standard  :  ['ran#out#of#fuel#']
+Process result :  ['fuel~']
+jaccard_index  :  0.0
+
+Record index  :  146350
+
+Raw          : replace a/c belt
+Processed    : replace= aircon~belt
+Gold Standard: replace= aircon~belt
+
+Gold Standard  :  ['replace=', 'aircon~belt']
+Process result :  ['replace=', 'aircon~belt']
+jaccard_index  :  1.0
+
+Record index  :  147387
+
+Raw          : replaced broken lights in dash
+Processed    : replaced# broken# light~ dash~
+Gold Standard: replaced= broken# light~ dash~
+
+Gold Standard  :  ['replaced=', 'broken#', 'light~', 'dash~']
+Process result :  ['replaced#', 'broken#', 'light~', 'dash~']
+jaccard_index  :  0.6
+
+Record index  :  148538
+
+Raw          : lubrication service
+Processed    : lubrication~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['lubrication~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  148973
+
+Raw          : mechanical pm service precheck
+Processed    : mechanical~pm service= pre-check=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~pm', 'service=', 'pre-check=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  151424
+
+Raw          : lube service - 3 weekly - tkd5866
+Processed    : lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['lube~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  151492
+
+Raw          : mechanical pm service
+Processed    : mechanical~pm service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~pm', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  152827
+
+Raw          : repair material 60021499
+Processed    : repair=
+Gold Standard: repair= material~
+
+Gold Standard  :  ['repair=', 'material~']
+Process result :  ['repair=']
+jaccard_index  :  0.5
+
+Record index  :  154964
+
+Raw          : welding repairs to chassis crack
+Processed    : weld= repair= chassis~crack
+Gold Standard: welding= repair= chassis~ crack#
+
+Gold Standard  :  ['welding=', 'repair=', 'chassis~', 'crack#']
+Process result :  ['weld=', 'repair=', 'chassis~crack']
+jaccard_index  :  0.16666666666666666
+
+Record index  :  157009
+
+Raw          : auto level fault
+Processed    : auto~level fault#
+Gold Standard: auto~level fault#
+
+Gold Standard  :  ['auto~level', 'fault#']
+Process result :  ['auto~level', 'fault#']
+jaccard_index  :  1.0
+
+Record index  :  157102
+
+Raw          : v belt tensioner
+Processed    : belt~tensioner
+Gold Standard: v~belt~tensioner
+
+Gold Standard  :  ['v~belt~tensioner']
+Process result :  ['belt~tensioner']
+jaccard_index  :  0.0
+
+Record index  :  158393
+
+Raw          : repair engine bay lights
+Processed    : repair= engine~bay~light
+Gold Standard: repair= engine~bay~light
+
+Gold Standard  :  ['repair=', 'engine~bay~light']
+Process result :  ['repair=', 'engine~bay~light']
+jaccard_index  :  1.0
+
+Record index  :  163343
+
+Raw          : replace engine bonnet repeat order
+Processed    : replace= engine~bonnet order~
+Gold Standard: replace= engine~bonnet
+
+Gold Standard  :  ['replace=', 'engine~bonnet']
+Process result :  ['replace=', 'engine~bonnet', 'order~']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  163439
+
+Raw          : investigate arc error
+Processed    : investigate= arc~ error#
+Gold Standard: investigate= arc~ error#
+
+Gold Standard  :  ['investigate=', 'arc~', 'error#']
+Process result :  ['investigate=', 'arc~', 'error#']
+jaccard_index  :  1.0
+
+Record index  :  166819
+
+Raw          : disconnect fire system engine shutdown
+Processed    : disconnect~ fire~system~engine~shutdown
+Gold Standard: disconnect= fire~system~engine
+
+Gold Standard  :  ['disconnect=', 'fire~system~engine']
+Process result :  ['disconnect~', 'fire~system~engine~shutdown']
+jaccard_index  :  0.0
+
+Record index  :  167147
+
+Raw          : inspect engine covers for damage & fire
+Processed    : inspect= engine~cover damage# fire~
+Gold Standard: inspect= engine~cover
+
+Gold Standard  :  ['inspect=', 'engine~cover']
+Process result :  ['inspect=', 'engine~cover', 'damage#', 'fire~']
+jaccard_index  :  0.5
+
+Record index  :  170987
+
+Raw          : repaired coolant leak.
+Processed    : repaired# coolant~ leak#
+Gold Standard: repaired= coolant~ leak#
+
+Gold Standard  :  ['repaired=', 'coolant~', 'leak#']
+Process result :  ['repaired#', 'coolant~', 'leak#']
+jaccard_index  :  0.5
+
+Record index  :  175409
+
+Raw          : 6mthly fire suppression test - tkd6499
+Processed    : fire-suppression~ test=
+Gold Standard: test=
+
+Gold Standard  :  ['test=']
+Process result :  ['fire-suppression~', 'test=']
+jaccard_index  :  0.5
+
+Record index  :  175746
+
+Raw          : re-tension front struts & steer pins
+Processed    : retension~ strut~ steer~pin
+Gold Standard: retension= strut~ steer~pin
+
+Gold Standard  :  ['retension=', 'strut~', 'steer~pin']
+Process result :  ['retension~', 'strut~', 'steer~pin']
+jaccard_index  :  0.5
+
+Record index  :  177855
+
+Raw          : investigate high copper and lead in kowa
+Processed    : investigate= high# lead~
+Gold Standard: investigate=
+
+Gold Standard  :  ['investigate=']
+Process result :  ['investigate=', 'high#', 'lead~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  180968
+
+Raw          : maintenance precheck - tkd1908
+Processed    : maintenance= pre-check=
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['maintenance=', 'pre-check=']
+jaccard_index  :  0.0
+
+Record index  :  181050
+
+Raw          : r&i engine assy
+Processed    : engine~assembly
+Gold Standard: RI= engine~assembly
+
+Gold Standard  :  ['RI=', 'engine~assembly']
+Process result :  ['engine~assembly']
+jaccard_index  :  0.5
+
+Record index  :  181277
+
+Raw          : carry out machine exit inspection
+Processed    : carryout= machine~exit inspection=
+Gold Standard: carry=out= inspection=
+
+Gold Standard  :  ['carry=out=', 'inspection=']
+Process result :  ['carryout=', 'machine~exit', 'inspection=']
+jaccard_index  :  0.25
+
+Record index  :  181549
+
+Raw          : 3000hr pm clinic - hydraulic systems
+Processed    : pm~clinic~hydraulic~system
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['pm~clinic~hydraulic~system']
+jaccard_index  :  0.0
+
+Record index  :  181666
+
+Raw          : non-destructive testing - tkd6086
+Processed    : non# test=
+Gold Standard: testing=
+
+Gold Standard  :  ['testing=']
+Process result :  ['non#', 'test=']
+jaccard_index  :  0.0
+
+Record index  :  183800
+
+Raw          : exit inspections
+Processed    : exit~ inspection=
+Gold Standard: exit~ inspection=
+
+Gold Standard  :  ['exit~', 'inspection=']
+Process result :  ['exit~', 'inspection=']
+jaccard_index  :  1.0
+
+Record index  :  189267
+
+Raw          : broken breakout fork cylinder
+Processed    : broken# breakout~fork~cylinder
+Gold Standard: broken# breakout~fork~cylinder
+
+Gold Standard  :  ['broken#', 'breakout~fork~cylinder']
+Process result :  ['broken#', 'breakout~fork~cylinder']
+jaccard_index  :  1.0
+
+Record index  :  191857
+
+Raw          : repair roof light
+Processed    : repair= roof~light
+Gold Standard: repair= roof~light
+
+Gold Standard  :  ['repair=', 'roof~light']
+Process result :  ['repair=', 'roof~light']
+jaccard_index  :  1.0
+
+Record index  :  192148
+
+Raw          : weld brackets from trrop lube system
+Processed    : weld= bracket~ lube~system
+Gold Standard: weld= bracket~ trrop~lube~system
+
+Gold Standard  :  ['weld=', 'bracket~', 'trrop~lube~system']
+Process result :  ['weld=', 'bracket~', 'lube~system']
+jaccard_index  :  0.5
+
+Record index  :  192772
+
+Raw          : hydraulic hose defects
+Processed    : hydraulic-hose~ defect~
+Gold Standard: hydraulic-hose~ defect#
+
+Gold Standard  :  ['hydraulic-hose~', 'defect#']
+Process result :  ['hydraulic-hose~', 'defect~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  192963
+
+Raw          : adjust tracks
+Processed    : adjust= track~
+Gold Standard: adjust= track~
+
+Gold Standard  :  ['adjust=', 'track~']
+Process result :  ['adjust=', 'track~']
+jaccard_index  :  1.0
+
+Record index  :  193057
+
+Raw          : weld bar in manufacturer14 plate
+Processed    : weld= bar~ plate~
+Gold Standard: weld= bar~ plate~
+
+Gold Standard  :  ['weld=', 'bar~', 'plate~']
+Process result :  ['weld=', 'bar~', 'plate~']
+jaccard_index  :  1.0
+
+Record index  :  193709
+
+Raw          : replace breather
+Processed    : replace= breather~
+Gold Standard: replace= breather~
+
+Gold Standard  :  ['replace=', 'breather~']
+Process result :  ['replace=', 'breather~']
+jaccard_index  :  1.0
+
+Record index  :  194017
+
+Raw          : fy08 lighting upgrade external
+Processed    : lighting~ upgrade=
+Gold Standard: lighting~ upgrade=
+
+Gold Standard  :  ['lighting~', 'upgrade=']
+Process result :  ['lighting~', 'upgrade=']
+jaccard_index  :  1.0
+
+Record index  :  194835
+
+Raw          : [p] chanrger bits
+Processed    : bit~
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['bit~']
+jaccard_index  :  0.0
+
+Record index  :  197180
+
+Raw          : adjust l/h propel track
+Processed    : adjust= propel~track
+Gold Standard: adjust= propel~track
+
+Gold Standard  :  ['adjust=', 'propel~track']
+Process result :  ['adjust=', 'propel~track']
+jaccard_index  :  1.0
+
+Record index  :  197808
+
+Raw          : hoist brakes would not release
+Processed    : hoist~brake cannot#release#
+Gold Standard: hoist~brake cannot#release#
+
+Gold Standard  :  ['hoist~brake', 'cannot#release#']
+Process result :  ['hoist~brake', 'cannot#release#']
+jaccard_index  :  1.0
+
+Record index  :  198197
+
+Raw          : gui screen lost communications
+Processed    : gui~screen lost~
+Gold Standard: gui~screen lost#communication#
+
+Gold Standard  :  ['gui~screen', 'lost#communication#']
+Process result :  ['gui~screen', 'lost~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  202169
+
+Raw          : refit cover
+Processed    : refit= cover~
+Gold Standard: refit= cover~
+
+Gold Standard  :  ['refit=', 'cover~']
+Process result :  ['refit=', 'cover~']
+jaccard_index  :  1.0
+
+Record index  :  203625
+
+Raw          : modify engine stand for transport
+Processed    : modify= engine~stand transport~
+Gold Standard: modify= engine~stand
+
+Gold Standard  :  ['modify=', 'engine~stand']
+Process result :  ['modify=', 'engine~stand', 'transport~']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  206734
+
+Raw          : gear shift stiff to shift
+Processed    : gearshift~ stiff# shift~
+Gold Standard: gear~shift stiff#to#shift
+
+Gold Standard  :  ['gear~shift', 'stiff#to#shift']
+Process result :  ['gearshift~', 'stiff#', 'shift~']
+jaccard_index  :  0.0
+
+Record index  :  212362
+
+Raw          : remove#7roller/retension track
+Processed    : remove= roller~ retension~track
+Gold Standard: remove= roller~ retension=
+
+Gold Standard  :  ['remove=', 'roller~', 'retension=']
+Process result :  ['remove=', 'roller~', 'retension~track']
+jaccard_index  :  0.5
+
+Record index  :  217285
+
+Raw          : she0032 weekly servicing
+Processed    : service=
+Gold Standard: servicing=
+
+Gold Standard  :  ['servicing=']
+Process result :  ['service=']
+jaccard_index  :  0.0
+
+Record index  :  221594
+
+Raw          : she0032 daily maintenance inspection
+Processed    : maintenance= inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['maintenance=', 'inspection=']
+jaccard_index  :  0.5
+
+Record index  :  222251
+
+Raw          : wednesday:she32 performance meeting
+Processed    : performance~meeting
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['performance~meeting']
+jaccard_index  :  0.0
+
+Record index  :  222842
+
+Raw          : internal condition monitor 12m
+Processed    : condition~monitor
+Gold Standard: monitor~
+
+Gold Standard  :  ['monitor~']
+Process result :  ['condition~monitor']
+jaccard_index  :  0.0
+
+Record index  :  223485
+
+Raw          : dropped steel
+Processed    : dropped# steel~
+Gold Standard: dropped# steel~
+
+Gold Standard  :  ['dropped#', 'steel~']
+Process result :  ['dropped#', 'steel~']
+jaccard_index  :  1.0
+
+Record index  :  227591
+
+Raw          : trans filter plugged
+Processed    : trans~filter plugged#
+Gold Standard: trans~filter plugged#
+
+Gold Standard  :  ['trans~filter', 'plugged#']
+Process result :  ['trans~filter', 'plugged#']
+jaccard_index  :  1.0
+
+Record index  :  229227
+
+Raw          : reposition wisker switch
+Processed    : reposition= switch~
+Gold Standard: reposition= wisker~switch
+
+Gold Standard  :  ['reposition=', 'wisker~switch']
+Process result :  ['reposition=', 'switch~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  233131
+
+Raw          : replace batteries
+Processed    : replace= battery~
+Gold Standard: replace= battery~
+
+Gold Standard  :  ['replace=', 'battery~']
+Process result :  ['replace=', 'battery~']
+jaccard_index  :  1.0
+
+Record index  :  233576
+
+Raw          : air filters blocked / low boost pressure
+Processed    : air-filter~ blocked# low# boost~pressure
+Gold Standard: air-filter~ blocked# low#boost#pressure
+
+Gold Standard  :  ['air-filter~', 'blocked#', 'low#boost#pressure']
+Process result :  ['air-filter~', 'blocked#', 'low#', 'boost~pressure']
+jaccard_index  :  0.4
+
+Record index  :  235606
+
+Raw          : repair commercial radio
+Processed    : repair= commercial~radio
+Gold Standard: repair= commercial~radio
+
+Gold Standard  :  ['repair=', 'commercial~radio']
+Process result :  ['repair=', 'commercial~radio']
+jaccard_index  :  1.0
+
+Record index  :  244075
+
+Raw          : repair engine oil leak
+Processed    : repair= engine~ oil-leak#
+Gold Standard: repair= engine~
+
+Gold Standard  :  ['repair=', 'engine~']
+Process result :  ['repair=', 'engine~', 'oil-leak#']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  245198
+
+Raw          : rd24 top tank of radiator leaking
+Processed    : top~tank radiator~ leaking#
+Gold Standard: radiator~ leaking#
+
+Gold Standard  :  ['radiator~', 'leaking#']
+Process result :  ['top~tank', 'radiator~', 'leaking#']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  245301
+
+Raw          : temporary fence for construction
+Processed    : 
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  []
+jaccard_index  :  0
+
+Record index  :  246407
+
+Raw          : jump start.
+Processed    : jump-start~
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['jump-start~']
+jaccard_index  :  0.0
+
+Record index  :  246516
+
+Raw          : repair cracked hand rail near r/h mirror
+Processed    : repair= cracked# handrail~ mirror~
+Gold Standard: repair= cracked# hand~rail mirror~
+
+Gold Standard  :  ['repair=', 'cracked#', 'hand~rail', 'mirror~']
+Process result :  ['repair=', 'cracked#', 'handrail~', 'mirror~']
+jaccard_index  :  0.6
+
+Record index  :  251503
+
+Raw          : tkd6600 - mechanical pm 4000 hrs
+Processed    : mechanical~
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['mechanical~']
+jaccard_index  :  0.0
+
+Record index  :  252681
+
+Raw          : air conditioner & radio inspection
+Processed    : air-conditioner~ radio~ inspection=
+Gold Standard: air-conditioner~ radio~ inspection=
+
+Gold Standard  :  ['air-conditioner~', 'radio~', 'inspection=']
+Process result :  ['air-conditioner~', 'radio~', 'inspection=']
+jaccard_index  :  1.0
+
+Record index  :  254613
+
+Raw          : tkd6530 pm and lube services
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  256443
+
+Raw          : 793 radiator change out
+Processed    : radiator~ changeout=
+Gold Standard: changeout=
+
+Gold Standard  :  ['changeout=']
+Process result :  ['radiator~', 'changeout=']
+jaccard_index  :  0.5
+
+Record index  :  257060
+
+Raw          : tkd7009 pm and lube service
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  257987
+
+Raw          : weld cracks in main frame
+Processed    : weld= crack~ main~frame
+Gold Standard: weld= crack# main~frame
+
+Gold Standard  :  ['weld=', 'crack#', 'main~frame']
+Process result :  ['weld=', 'crack~', 'main~frame']
+jaccard_index  :  0.5
+
+Record index  :  258056
+
+Raw          : replace steering column uni-joints
+Processed    : replace= steering~column uni~joint
+Gold Standard: replace= steering~column~uni~joint
+
+Gold Standard  :  ['replace=', 'steering~column~uni~joint']
+Process result :  ['replace=', 'steering~column', 'uni~joint']
+jaccard_index  :  0.25
+
+Record index  :  262123
+
+Raw          : replace seat
+Processed    : replace= seat~
+Gold Standard: replace= seat~
+
+Gold Standard  :  ['replace=', 'seat~']
+Process result :  ['replace=', 'seat~']
+jaccard_index  :  1.0
+
+Record index  :  263642
+
+Raw          : replace centre bearing
+Processed    : replace= centre~bearing
+Gold Standard: replace= centre~bearing
+
+Gold Standard  :  ['replace=', 'centre~bearing']
+Process result :  ['replace=', 'centre~bearing']
+jaccard_index  :  1.0
+
+Record index  :  266021
+
+Raw          : replace faulty wheel cleats (too short)
+Processed    : replace= faulty# wheel~ short~
+Gold Standard: replace= faulty# wheel~cleats too#short#
+
+Gold Standard  :  ['replace=', 'faulty#', 'wheel~cleats', 'too#short#']
+Process result :  ['replace=', 'faulty#', 'wheel~', 'short~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  266332
+
+Raw          : rims-crack test x 1
+Processed    : rim~ crack~ test=
+Gold Standard: rim~ crack# test=
+
+Gold Standard  :  ['rim~', 'crack#', 'test=']
+Process result :  ['rim~', 'crack~', 'test=']
+jaccard_index  :  0.5
+
+Record index  :  269500
+
+Raw          : tks6650 - mechanical pm
+Processed    : mechanical~pm
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['mechanical~pm']
+jaccard_index  :  0.0
+
+Record index  :  269537
+
+Raw          : changeout ~ wheel bearing front left
+Processed    : changeout= wheel~bearing
+Gold Standard: changeout= wheel~bearing
+
+Gold Standard  :  ['changeout=', 'wheel~bearing']
+Process result :  ['changeout=', 'wheel~bearing']
+jaccard_index  :  1.0
+
+Record index  :  270634
+
+Raw          : tks6198 - weekly grease service
+Processed    : grease~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['grease~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  271348
+
+Raw          : mechanical lube service tks6198 grease no1
+Processed    : mechanical~lube service= grease~
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~lube', 'service=', 'grease~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  274221
+
+Raw          : rf - replace driers
+Processed    : replace=
+Gold Standard: replace= drier~
+
+Gold Standard  :  ['replace=', 'drier~']
+Process result :  ['replace=']
+jaccard_index  :  0.5
+
+Record index  :  282575
+
+Raw          : replace r/h door latch
+Processed    : replace= door~latch
+Gold Standard: replace= door~latch
+
+Gold Standard  :  ['replace=', 'door~latch']
+Process result :  ['replace=', 'door~latch']
+jaccard_index  :  1.0
+
+Record index  :  289946
+
+Raw          : hyd oil leak
+Processed    : hydraulic~ oil-leak#
+Gold Standard: hydraulic~ oil-leak#
+
+Gold Standard  :  ['hydraulic~', 'oil-leak#']
+Process result :  ['hydraulic~', 'oil-leak#']
+jaccard_index  :  1.0
+
+Record index  :  291915
+
+Raw          : exhaust clamps broken
+Processed    : exhaust~clamp broken#
+Gold Standard: exhaust~clamp broken#
+
+Gold Standard  :  ['exhaust~clamp', 'broken#']
+Process result :  ['exhaust~clamp', 'broken#']
+jaccard_index  :  1.0
+
+Record index  :  292684
+
+Raw          : diagnose and repair grease system leak
+Processed    : diagnose= repair= grease~system leak#
+Gold Standard: diagnose= repair= grease~system leak#
+
+Gold Standard  :  ['diagnose=', 'repair=', 'grease~system', 'leak#']
+Process result :  ['diagnose=', 'repair=', 'grease~system', 'leak#']
+jaccard_index  :  1.0
+
+Record index  :  292851
+
+Raw          : change out feed pump
+Processed    : changeout= feed~pump
+Gold Standard: changeout= feed~pump
+
+Gold Standard  :  ['changeout=', 'feed~pump']
+Process result :  ['changeout=', 'feed~pump']
+jaccard_index  :  1.0
+
+Record index  :  293406
+
+Raw          : trans not shifting
+Processed    : trans~ not#shifting#
+Gold Standard: trans~ not#shifting#
+
+Gold Standard  :  ['trans~', 'not#shifting#']
+Process result :  ['trans~', 'not#shifting#']
+jaccard_index  :  1.0
+
+Record index  :  294511
+
+Raw          : repair hyd. oil leak on rotary head hose
+Processed    : repair= hydraulic~ oil-leak# rotary~head~hose
+Gold Standard: repair= hydraulic~ oil-leak# rotary~head~hose
+
+Gold Standard  :  ['repair=', 'hydraulic~', 'oil-leak#', 'rotary~head~hose']
+Process result :  ['repair=', 'hydraulic~', 'oil-leak#', 'rotary~head~hose']
+jaccard_index  :  1.0
+
+Record index  :  294646
+
+Raw          : repair oil leak at engine oil filters
+Processed    : repair= oil-leak# engine~oil~filter
+Gold Standard: repair= oil-leak# engine~oil~filter
+
+Gold Standard  :  ['repair=', 'oil-leak#', 'engine~oil~filter']
+Process result :  ['repair=', 'oil-leak#', 'engine~oil~filter']
+jaccard_index  :  1.0
+
+Record index  :  295999
+
+Raw          : hire grader 4000 hour service
+Processed    : hire= service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['hire=', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  304449
+
+Raw          : clam cylinder pipe cracked
+Processed    : clam~cylinder~pipe cracked#
+Gold Standard: clam~cylinder~pipe cracked#
+
+Gold Standard  :  ['clam~cylinder~pipe', 'cracked#']
+Process result :  ['clam~cylinder~pipe', 'cracked#']
+jaccard_index  :  1.0
+
+Record index  :  306228
+
+Raw          : oil service no. 6 - r120
+Processed    : oil~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['oil~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  309512
+
+Raw          : tks6469 pm and lube service
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  310079
+
+Raw          : tks6659 14 day inspection
+Processed    : inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['inspection=']
+jaccard_index  :  1.0
+
+Record index  :  311278
+
+Raw          : edd0039 - lubrication service 1000 hr
+Processed    : lubrication~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['lubrication~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  314310
+
+Raw          : stat-6 monthly dynamic brake test
+Processed    : dynamic~brake test=
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['dynamic~brake', 'test=']
+jaccard_index  :  0.0
+
+Record index  :  314322
+
+Raw          : tks6474 pm and lube service
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  314469
+
+Raw          : tkw6588 1000 hr mechanical inspection
+Processed    : mechanical~ inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['mechanical~', 'inspection=']
+jaccard_index  :  0.5
+
+Record index  :  316955
+
+Raw          : repair us grease line on lhs ripper
+Processed    : repair= us# grease-line~ ripper~
+Gold Standard: repair= grease-line~ ripper~
+
+Gold Standard  :  ['repair=', 'grease-line~', 'ripper~']
+Process result :  ['repair=', 'us#', 'grease-line~', 'ripper~']
+jaccard_index  :  0.75
+
+Record index  :  324242
+
+Raw          : rf - replace de-ice t/stat
+Processed    : replace= DE# ice~thermostat
+Gold Standard: replace= thermostat~
+
+Gold Standard  :  ['replace=', 'thermostat~']
+Process result :  ['replace=', 'DE#', 'ice~thermostat']
+jaccard_index  :  0.25
+
+Record index  :  325108
+
+Raw          : replace missing hydraulic tank cap
+Processed    : replace= missing# hydraulic~tank~cap
+Gold Standard: replace= missing# hydraulic~tank~cap
+
+Gold Standard  :  ['replace=', 'missing#', 'hydraulic~tank~cap']
+Process result :  ['replace=', 'missing#', 'hydraulic~tank~cap']
+jaccard_index  :  1.0
+
+Record index  :  325195
+
+Raw          : replace battery
+Processed    : replace= battery~
+Gold Standard: replace= battery~
+
+Gold Standard  :  ['replace=', 'battery~']
+Process result :  ['replace=', 'battery~']
+jaccard_index  :  1.0
+
+Record index  :  327163
+
+Raw          : replace blown tilt cyl. hose
+Processed    : replace= blown# tilt~cylinder~hose
+Gold Standard: replace= blown# tilt~cylinder~hose
+
+Gold Standard  :  ['replace=', 'blown#', 'tilt~cylinder~hose']
+Process result :  ['replace=', 'blown#', 'tilt~cylinder~hose']
+jaccard_index  :  1.0
+
+Record index  :  327788
+
+Raw          : inspect tag ling hitting front grill
+Processed    : inspect=
+Gold Standard: inspect= tag~ling grill~
+
+Gold Standard  :  ['inspect=', 'tag~ling', 'grill~']
+Process result :  ['inspect=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  327837
+
+Raw          : retorque sprocket segment bolts
+Processed    : retorque= sprocket~segment~bolt
+Gold Standard: retorque= sprocket~segment~bolt
+
+Gold Standard  :  ['retorque=', 'sprocket~segment~bolt']
+Process result :  ['retorque=', 'sprocket~segment~bolt']
+jaccard_index  :  1.0
+
+Record index  :  330556
+
+Raw          : changeout implement pump
+Processed    : changeout= implement~pump
+Gold Standard: changeout= implement~pump
+
+Gold Standard  :  ['changeout=', 'implement~pump']
+Process result :  ['changeout=', 'implement~pump']
+jaccard_index  :  1.0
+
+Record index  :  330631
+
+Raw          : steering - blown o'ring replaced
+Processed    : steering~ blown# oring~ replaced#
+Gold Standard: steering~ blown# oring~ replaced=
+
+Gold Standard  :  ['steering~', 'blown#', 'oring~', 'replaced=']
+Process result :  ['steering~', 'blown#', 'oring~', 'replaced#']
+jaccard_index  :  0.6
+
+Record index  :  335778
+
+Raw          : repair charging system fault
+Processed    : repair= charge= system~ fault#
+Gold Standard: repair= charging~system fault#
+
+Gold Standard  :  ['repair=', 'charging~system', 'fault#']
+Process result :  ['repair=', 'charge=', 'system~', 'fault#']
+jaccard_index  :  0.4
+
+Record index  :  336076
+
+Raw          : replace hyd pump [reman]
+Processed    : replace= hydraulic~pump reman#
+Gold Standard: replace= hydraulic~pump
+
+Gold Standard  :  ['replace=', 'hydraulic~pump']
+Process result :  ['replace=', 'hydraulic~pump', 'reman#']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  337836
+
+Raw          : excessive black smoke
+Processed    : excessive~ smoke~
+Gold Standard: excessive#black#smoke
+
+Gold Standard  :  ['excessive#black#smoke']
+Process result :  ['excessive~', 'smoke~']
+jaccard_index  :  0.0
+
+Record index  :  342984
+
+Raw          : replace batteries x 2
+Processed    : replace= battery~
+Gold Standard: replace= battery~
+
+Gold Standard  :  ['replace=', 'battery~']
+Process result :  ['replace=', 'battery~']
+jaccard_index  :  1.0
+
+Record index  :  344422
+
+Raw          : replace rear wiper motor
+Processed    : replace= wiper~motor
+Gold Standard: replace= wiper~motor
+
+Gold Standard  :  ['replace=', 'wiper~motor']
+Process result :  ['replace=', 'wiper~motor']
+jaccard_index  :  1.0
+
+Record index  :  347787
+
+Raw          : change out a/c compressor
+Processed    : changeout= aircon~compressor
+Gold Standard: changeout= aircon~compressor
+
+Gold Standard  :  ['changeout=', 'aircon~compressor']
+Process result :  ['changeout=', 'aircon~compressor']
+jaccard_index  :  1.0
+
+Record index  :  354474
+
+Raw          : bulk grease not pumping
+Processed    : bulk~grease not#pumping#
+Gold Standard: bulk~grease not#pumping#
+
+Gold Standard  :  ['bulk~grease', 'not#pumping#']
+Process result :  ['bulk~grease', 'not#pumping#']
+jaccard_index  :  1.0
+
+Record index  :  355740
+
+Raw          : bulk fuel pump/motor realignment
+Processed    : bulk~fuel~pump~motor
+Gold Standard: bulk~fuel~pump~motor realignment=
+
+Gold Standard  :  ['bulk~fuel~pump~motor', 'realignment=']
+Process result :  ['bulk~fuel~pump~motor']
+jaccard_index  :  0.5
+
+Record index  :  364069
+
+Raw          : grd0101 pm & lube services
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  364143
+
+Raw          : repair of m/n 60051360
+Processed    : repair=
+Gold Standard: repair=
+
+Gold Standard  :  ['repair=']
+Process result :  ['repair=']
+jaccard_index  :  1.0
+
+Record index  :  366490
+
+Raw          : repair rim as required
+Processed    : repair= rim~ required#
+Gold Standard: repair= rim~
+
+Gold Standard  :  ['repair=', 'rim~']
+Process result :  ['repair=', 'rim~', 'required#']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  367552
+
+Raw          : engine will not go above idle
+Processed    : engine~ cannot#go# idle~
+Gold Standard: engine~ cannot#go#above#idle#
+
+Gold Standard  :  ['engine~', 'cannot#go#above#idle#']
+Process result :  ['engine~', 'cannot#go#', 'idle~']
+jaccard_index  :  0.25
+
+Record index  :  371858
+
+Raw          : trans pump leaking between sections
+Processed    : trans~pump leaking#
+Gold Standard: trans~pump leaking#
+
+Gold Standard  :  ['trans~pump', 'leaking#']
+Process result :  ['trans~pump', 'leaking#']
+jaccard_index  :  1.0
+
+Record index  :  372284
+
+Raw          : hyd oil leak at water pump
+Processed    : hydraulic~ oil-leak# water-pump~
+Gold Standard: hydraulic~ oil-leak# water-pump~
+
+Gold Standard  :  ['hydraulic~', 'oil-leak#', 'water-pump~']
+Process result :  ['hydraulic~', 'oil-leak#', 'water-pump~']
+jaccard_index  :  1.0
+
+Record index  :  372494
+
+Raw          : send rim 29h15 for scheduled testing
+Processed    : send~rim scheduled# test=
+Gold Standard: rim~ testing=
+
+Gold Standard  :  ['rim~', 'testing=']
+Process result :  ['send~rim', 'scheduled#', 'test=']
+jaccard_index  :  0.0
+
+Record index  :  375686
+
+Raw          : grd0099 - mechanical service
+Processed    : mechanical~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  376158
+
+Raw          : manufacturer3 776d mechanical service
+Processed    : mechanical~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  376433
+
+Raw          : tkw6588 500 hr lube service
+Processed    : lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['lube~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  381614
+
+Raw          : dust entry into cab
+Processed    : dust~entry cab~
+Gold Standard: dust#entry cab~
+
+Gold Standard  :  ['dust#entry', 'cab~']
+Process result :  ['dust~entry', 'cab~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  384821
+
+Raw          : engine shut down
+Processed    : engine~shutdown
+Gold Standard: engine~ shut#down#
+
+Gold Standard  :  ['engine~', 'shut#down#']
+Process result :  ['engine~shutdown']
+jaccard_index  :  0.0
+
+Record index  :  391353
+
+Raw          : engine overheating
+Processed    : engine~ overheating#
+Gold Standard: engine~ overheating#
+
+Gold Standard  :  ['engine~', 'overheating#']
+Process result :  ['engine~', 'overheating#']
+jaccard_index  :  1.0
+
+Record index  :  393678
+
+Raw          : jump start
+Processed    : jump-start~
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['jump-start~']
+jaccard_index  :  0.0
+
+Record index  :  396757
+
+Raw          : trd0341 l/h ripper tilt cylinder change
+Processed    : ripper~tilt~cylinder change#
+Gold Standard: ripper~tilt~cylinder change=
+
+Gold Standard  :  ['ripper~tilt~cylinder', 'change=']
+Process result :  ['ripper~tilt~cylinder', 'change#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  398291
+
+Raw          : a/con u/s
+Processed    : aircond~aircond
+Gold Standard: aircond~ aircond~
+
+Gold Standard  :  ['aircond~', 'aircond~']
+Process result :  ['aircond~aircond']
+jaccard_index  :  0.0
+
+Record index  :  398560
+
+Raw          : gear shift broken
+Processed    : gearshift~ broken#
+Gold Standard: gear~shift broken#
+
+Gold Standard  :  ['gear~shift', 'broken#']
+Process result :  ['gearshift~', 'broken#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  400476
+
+Raw          : replace door seals, leak & conduit holes
+Processed    : replace= door~seal leak# hole~
+Gold Standard: replace= door~seal leak# conduit~hole
+
+Gold Standard  :  ['replace=', 'door~seal', 'leak#', 'conduit~hole']
+Process result :  ['replace=', 'door~seal', 'leak#', 'hole~']
+jaccard_index  :  0.6
+
+Record index  :  400609
+
+Raw          : lights u/s
+Processed    : light~ unservicable#
+Gold Standard: light~ unservicable#
+
+Gold Standard  :  ['light~', 'unservicable#']
+Process result :  ['light~', 'unservicable#']
+jaccard_index  :  1.0
+
+Record index  :  401186
+
+Raw          : harsh gear change
+Processed    : harsh# gear~ change#
+Gold Standard: harsh#gear#change#
+
+Gold Standard  :  ['harsh#gear#change#']
+Process result :  ['harsh#', 'gear~', 'change#']
+jaccard_index  :  0.0
+
+Record index  :  401943
+
+Raw          : 300 hour service - parts only
+Processed    : service= part~
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['service=', 'part~']
+jaccard_index  :  0.5
+
+Record index  :  408919
+
+Raw          : replace arm rest r/h/s
+Processed    : replace= armrest~
+Gold Standard: replace= arm~rest
+
+Gold Standard  :  ['replace=', 'arm~rest']
+Process result :  ['replace=', 'armrest~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  410271
+
+Raw          : trd0352 - lubrication service
+Processed    : lubrication~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['lubrication~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  410421
+
+Raw          : trw0093 3 mth dynamic brake test
+Processed    : dynamic~brake test=
+Gold Standard: dynamic~brake test=
+
+Gold Standard  :  ['dynamic~brake', 'test=']
+Process result :  ['dynamic~brake', 'test=']
+jaccard_index  :  1.0
+
+Record index  :  415190
+
+Raw          : repair roof light
+Processed    : repair= roof~light
+Gold Standard: repair= roof~light
+
+Gold Standard  :  ['repair=', 'roof~light']
+Process result :  ['repair=', 'roof~light']
+jaccard_index  :  1.0
+
+Record index  :  416054
+
+Raw          : engine will not start
+Processed    : engine~ cannot#start#
+Gold Standard: engine~ cannot#start#
+
+Gold Standard  :  ['engine~', 'cannot#start#']
+Process result :  ['engine~', 'cannot#start#']
+jaccard_index  :  1.0
+
+Record index  :  416704
+
+Raw          : blown hose on cylinder
+Processed    : blown# hose~ cylinder~
+Gold Standard: blown# hose~ cylinder~
+
+Gold Standard  :  ['blown#', 'hose~', 'cylinder~']
+Process result :  ['blown#', 'hose~', 'cylinder~']
+jaccard_index  :  1.0
+
+Record index  :  423385
+
+Raw          : shut down high comp temp
+Processed    : shutdown~ high# comp~temp
+Gold Standard: high#comp#temp
+
+Gold Standard  :  ['high#comp#temp']
+Process result :  ['shutdown~', 'high#', 'comp~temp']
+jaccard_index  :  0.0
+
+Record index  :  425189
+
+Raw          : hyd leak in high pressure filter
+Processed    : hydraulic~ leak# high# pressure~filter
+Gold Standard: hydraulic~ leak# high~pressure~filter
+
+Gold Standard  :  ['hydraulic~', 'leak#', 'high~pressure~filter']
+Process result :  ['hydraulic~', 'leak#', 'high#', 'pressure~filter']
+jaccard_index  :  0.4
+
+Record index  :  426563
+
+Raw          : e oil leak on head
+Processed    : oil-leak# head~
+Gold Standard: oil-leak# head~
+
+Gold Standard  :  ['oil-leak#', 'head~']
+Process result :  ['oil-leak#', 'head~']
+jaccard_index  :  1.0
+
+Record index  :  426614
+
+Raw          : traming alarm
+Processed    : tramming# alarm~
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['tramming#', 'alarm~']
+jaccard_index  :  0.0
+
+Record index  :  427091
+
+Raw          : no propel, hyd hose
+Processed    : propel~hydraulic-hose
+Gold Standard: no#propel# hydraulic-hose~
+
+Gold Standard  :  ['no#propel#', 'hydraulic-hose~']
+Process result :  ['propel~hydraulic-hose']
+jaccard_index  :  0.0
+
+Record index  :  427744
+
+Raw          : pre shutdown jobs
+Processed    : pre~shutdown job~
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['pre~shutdown', 'job~']
+jaccard_index  :  0.0
+
+Record index  :  427919
+
+Raw          : m check for loss of hyd oil
+Processed    : check= hydraulic~oil
+Gold Standard: check= loss#of#hydraulic#oil
+
+Gold Standard  :  ['check=', 'loss#of#hydraulic#oil']
+Process result :  ['check=', 'hydraulic~oil']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  429607
+
+Raw          : repair butterfly valve
+Processed    : repair= butterfly~valve
+Gold Standard: repair= butterfly~valve
+
+Gold Standard  :  ['repair=', 'butterfly~valve']
+Process result :  ['repair=', 'butterfly~valve']
+jaccard_index  :  1.0
+
+Record index  :  430226
+
+Raw          : replace seals at ind plate on motor
+Processed    : replace= seal~ ind~ plate~ motor~
+Gold Standard: replace= seal~ plate~ motor~
+
+Gold Standard  :  ['replace=', 'seal~', 'plate~', 'motor~']
+Process result :  ['replace=', 'seal~', 'ind~', 'plate~', 'motor~']
+jaccard_index  :  0.8
+
+Record index  :  431326
+
+Raw          : rotation pump stroker - manufacturer8
+Processed    : rotation~pump~stroker
+Gold Standard: rotation~pump~stroker
+
+Gold Standard  :  ['rotation~pump~stroker']
+Process result :  ['rotation~pump~stroker']
+jaccard_index  :  1.0
+
+Record index  :  432266
+
+Raw          : adjust head slides
+Processed    : adjust= head-slide~
+Gold Standard: adjust=
+
+Gold Standard  :  ['adjust=']
+Process result :  ['adjust=', 'head-slide~']
+jaccard_index  :  0.5
+
+Record index  :  432534
+
+Raw          : regen valve leaking
+Processed    : regen~valve leaking#
+Gold Standard: regen~valve leaking#
+
+Gold Standard  :  ['regen~valve', 'leaking#']
+Process result :  ['regen~valve', 'leaking#']
+jaccard_index  :  1.0
+
+Record index  :  434285
+
+Raw          : NA pre service inspections
+Processed    : preservice~ inspection=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['preservice~', 'inspection=']
+jaccard_index  :  0.0
+
+Record index  :  435324
+
+Raw          : change bucket tips
+Processed    : change# bucket~tip
+Gold Standard: change= bucket~tip
+
+Gold Standard  :  ['change=', 'bucket~tip']
+Process result :  ['change#', 'bucket~tip']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  435956
+
+Raw          : terex labour costs ( inv.121908)
+Processed    : terex~labour~cost
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['terex~labour~cost']
+jaccard_index  :  0.0
+
+Record index  :  437020
+
+Raw          : cq field to perform bucket maint
+Processed    : cq~field perform~ bucket~ maintenance=
+Gold Standard: perform= bucket~ maintenance=
+
+Gold Standard  :  ['perform=', 'bucket~', 'maintenance=']
+Process result :  ['cq~field', 'perform~', 'bucket~', 'maintenance=']
+jaccard_index  :  0.4
+
+Record index  :  437158
+
+Raw          : undercarriage grease fault
+Processed    : undercarriage~grease fault#
+Gold Standard: undercarriage~grease fault#
+
+Gold Standard  :  ['undercarriage~grease', 'fault#']
+Process result :  ['undercarriage~grease', 'fault#']
+jaccard_index  :  1.0
+
+Record index  :  439976
+
+Raw          : bucket repairs
+Processed    : bucket~ repair=
+Gold Standard: bucket~ repair=
+
+Gold Standard  :  ['bucket~', 'repair=']
+Process result :  ['bucket~', 'repair=']
+jaccard_index  :  1.0
+
+Record index  :  441793
+
+Raw          : pull down chain missing
+Processed    : pull-down~chain missing#
+Gold Standard: pull-down~chain missing#
+
+Gold Standard  :  ['pull-down~chain', 'missing#']
+Process result :  ['pull-down~chain', 'missing#']
+jaccard_index  :  1.0
+
+Record index  :  443814
+
+Raw          : top up reciever tank with oil
+Processed    : top~ receiver~tank oil~
+Gold Standard: top=up= receiver~tank oil~
+
+Gold Standard  :  ['top=up=', 'receiver~tank', 'oil~']
+Process result :  ['top~', 'receiver~tank', 'oil~']
+jaccard_index  :  0.5
+
+Record index  :  446577
+
+Raw          : e lost power
+Processed    : lost~power
+Gold Standard: lost#power#
+
+Gold Standard  :  ['lost#power#']
+Process result :  ['lost~power']
+jaccard_index  :  0.0
+
+Record index  :  448336
+
+Raw          : repair light on top of cab edd54
+Processed    : repair= light~ top~ cab~
+Gold Standard: repair= light~ cab~
+
+Gold Standard  :  ['repair=', 'light~', 'cab~']
+Process result :  ['repair=', 'light~', 'top~', 'cab~']
+jaccard_index  :  0.75
+
+Record index  :  449197
+
+Raw          : reweld sub
+Processed    : reweld= sub~
+Gold Standard: reweld= sub~
+
+Gold Standard  :  ['reweld=', 'sub~']
+Process result :  ['reweld=', 'sub~']
+jaccard_index  :  1.0
+
+Record index  :  449602
+
+Raw          : def:r/h rear jack slow
+Processed    : def~ jack~ slow#
+Gold Standard: jack~ slow#
+
+Gold Standard  :  ['jack~', 'slow#']
+Process result :  ['def~', 'jack~', 'slow#']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  449797
+
+Raw          : check oil leaking from head
+Processed    : check= oil~ leaking# head~
+Gold Standard: check= oil~ leaking# head~
+
+Gold Standard  :  ['check=', 'oil~', 'leaking#', 'head~']
+Process result :  ['check=', 'oil~', 'leaking#', 'head~']
+jaccard_index  :  1.0
+
+Record index  :  449977
+
+Raw          : def:pipe support not holding rods
+Processed    : def~pipe~support not#holding# rod~
+Gold Standard: pipe~support not#holding# rod~
+
+Gold Standard  :  ['pipe~support', 'not#holding#', 'rod~']
+Process result :  ['def~pipe~support', 'not#holding#', 'rod~']
+jaccard_index  :  0.5
+
+Record index  :  453246
+
+Raw          : end for end top sub
+Processed    : end~ end~ top~sub
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['end~', 'end~', 'top~sub']
+jaccard_index  :  0.0
+
+Record index  :  454427
+
+Raw          : spare seat in cab has broken base edd54
+Processed    : spare~ seat~ cab~ broken# base~
+Gold Standard: spare~seat cab~ broken# base~
+
+Gold Standard  :  ['spare~seat', 'cab~', 'broken#', 'base~']
+Process result :  ['spare~', 'seat~', 'cab~', 'broken#', 'base~']
+jaccard_index  :  0.5
+
+Record index  :  455537
+
+Raw          : modify feed make up filter mounts
+Processed    : modify= feed~makeup~filter~mount
+Gold Standard: modify= make=up= filter~mount
+
+Gold Standard  :  ['modify=', 'make=up=', 'filter~mount']
+Process result :  ['modify=', 'feed~makeup~filter~mount']
+jaccard_index  :  0.25
+
+Record index  :  455970
+
+Raw          : oil leak behind compressor
+Processed    : oil-leak# compressor~
+Gold Standard: compressor~
+
+Gold Standard  :  ['compressor~']
+Process result :  ['oil-leak#', 'compressor~']
+jaccard_index  :  0.5
+
+Record index  :  456960
+
+Raw          : changeout breakout dies edd0059
+Processed    : changeout= breakout~dies
+Gold Standard: changeout= breakout~dies
+
+Gold Standard  :  ['changeout=', 'breakout~dies']
+Process result :  ['changeout=', 'breakout~dies']
+jaccard_index  :  1.0
+
+Record index  :  457229
+
+Raw          : rebuild feed cylinder ex edd0054 lhs
+Processed    : rebuild= feed~cylinder
+Gold Standard: rebuild= feed~cylinder
+
+Gold Standard  :  ['rebuild=', 'feed~cylinder']
+Process result :  ['rebuild=', 'feed~cylinder']
+jaccard_index  :  1.0
+
+Record index  :  461031
+
+Raw          : check low engine revs NA
+Processed    : check= low# engine~rev
+Gold Standard: check= low#engine#rev
+
+Gold Standard  :  ['check=', 'low#engine#rev']
+Process result :  ['check=', 'low#', 'engine~rev']
+jaccard_index  :  0.25
+
+Record index  :  462326
+
+Raw          : mem labour 2of fitter edd 97 23/04
+Processed    : mem~labour fitter~
+Gold Standard: fitter~
+
+Gold Standard  :  ['fitter~']
+Process result :  ['mem~labour', 'fitter~']
+jaccard_index  :  0.5
+
+Record index  :  463026
+
+Raw          : replace filter spring and plate
+Processed    : replace= filter~ spring~ plate~
+Gold Standard: replace= filter~spring plate~
+
+Gold Standard  :  ['replace=', 'filter~spring', 'plate~']
+Process result :  ['replace=', 'filter~', 'spring~', 'plate~']
+jaccard_index  :  0.4
+
+Record index  :  464853
+
+Raw          : fit up test hoses off pump
+Processed    : fit= test= hose~ pump~
+Gold Standard: fit=up= test= hose~ pump~
+
+Gold Standard  :  ['fit=up=', 'test=', 'hose~', 'pump~']
+Process result :  ['fit=', 'test=', 'hose~', 'pump~']
+jaccard_index  :  0.6
+
+Record index  :  470052
+
+Raw          : 50% of lighting u/s
+Processed    : lighting~ unservicable#
+Gold Standard: lighting~ unservicable#
+
+Gold Standard  :  ['lighting~', 'unservicable#']
+Process result :  ['lighting~', 'unservicable#']
+jaccard_index  :  1.0
+
+Record index  :  470499
+
+Raw          : repair damage to pipe positioner
+Processed    : repair= damage# pipe~positioner
+Gold Standard: repair= pipe~positioner
+
+Gold Standard  :  ['repair=', 'pipe~positioner']
+Process result :  ['repair=', 'damage#', 'pipe~positioner']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  473637
+
+Raw          : operator weekly inspection
+Processed    : operator~ inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['operator~', 'inspection=']
+jaccard_index  :  0.5
+
+Record index  :  473881
+
+Raw          : no propel
+Processed    : propel~
+Gold Standard: no#propel#
+
+Gold Standard  :  ['no#propel#']
+Process result :  ['propel~']
+jaccard_index  :  0.0
+
+Record index  :  474132
+
+Raw          : holding wrench coming on by itself
+Processed    : holding~wrench coming#
+Gold Standard: holding~wrench coming#on#by#itself
+
+Gold Standard  :  ['holding~wrench', 'coming#on#by#itself']
+Process result :  ['holding~wrench', 'coming#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  474590
+
+Raw          : replace sub saver
+Processed    : replace=
+Gold Standard: replace=
+
+Gold Standard  :  ['replace=']
+Process result :  ['replace=']
+jaccard_index  :  1.0
+
+Record index  :  479418
+
+Raw          : daily inspections edd54
+Processed    : inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['inspection=']
+jaccard_index  :  1.0
+
+Record index  :  483427
+
+Raw          : edd0054 mechanical inspection 8 wkly
+Processed    : mechanical~ inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['mechanical~', 'inspection=']
+jaccard_index  :  0.5
+
+Record index  :  486551
+
+Raw          : #2 air comp service she 36
+Processed    : air~comp service=
+Gold Standard: air~comp service=
+
+Gold Standard  :  ['air~comp', 'service=']
+Process result :  ['air~comp', 'service=']
+jaccard_index  :  1.0
+
+Record index  :  489110
+
+Raw          : change steer tyres
+Processed    : change# steer~tyre
+Gold Standard: change= steer~tyre
+
+Gold Standard  :  ['change=', 'steer~tyre']
+Process result :  ['change#', 'steer~tyre']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  489630
+
+Raw          : floor mat needs replacing
+Processed    : replace=
+Gold Standard: floor-mat~ replacing=
+
+Gold Standard  :  ['floor-mat~', 'replacing=']
+Process result :  ['replace=']
+jaccard_index  :  0.0
+
+Record index  :  490026
+
+Raw          : repair commercial radio
+Processed    : repair= commercial~radio
+Gold Standard: repair= commercial~radio
+
+Gold Standard  :  ['repair=', 'commercial~radio']
+Process result :  ['repair=', 'commercial~radio']
+jaccard_index  :  1.0
+
+Record index  :  491256
+
+Raw          : flip steer tyres on rims
+Processed    : flip~steer~tyre rim~
+Gold Standard: steer~tyre rim~
+
+Gold Standard  :  ['steer~tyre', 'rim~']
+Process result :  ['flip~steer~tyre', 'rim~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  494069
+
+Raw          : replace steering linkages
+Processed    : replace= steering~linkage
+Gold Standard: replace= steering~linkage
+
+Gold Standard  :  ['replace=', 'steering~linkage']
+Process result :  ['replace=', 'steering~linkage']
+jaccard_index  :  1.0
+
+Record index  :  495578
+
+Raw          : transport tray pd to dpsa mackay
+Processed    : transport~tray
+Gold Standard: transport~tray
+
+Gold Standard  :  ['transport~tray']
+Process result :  ['transport~tray']
+jaccard_index  :  1.0
+
+Record index  :  497501
+
+Raw          : reposition hitch junction box
+Processed    : reposition= hitch~ junction~box
+Gold Standard: reposition= hitch~junction~box
+
+Gold Standard  :  ['reposition=', 'hitch~junction~box']
+Process result :  ['reposition=', 'hitch~', 'junction~box']
+jaccard_index  :  0.25
+
+Record index  :  498961
+
+Raw          : coolant leak on engine cooler
+Processed    : coolant~ leak# engine~cooler
+Gold Standard: coolant~ leak# engine~cooler
+
+Gold Standard  :  ['coolant~', 'leak#', 'engine~cooler']
+Process result :  ['coolant~', 'leak#', 'engine~cooler']
+jaccard_index  :  1.0
+
+Record index  :  500093
+
+Raw          : replace door glass/ reseal door
+Processed    : replace= door~glass reseal= door~
+Gold Standard: replace= door~glass reseal= door~
+
+Gold Standard  :  ['replace=', 'door~glass', 'reseal=', 'door~']
+Process result :  ['replace=', 'door~glass', 'reseal=', 'door~']
+jaccard_index  :  1.0
+
+Record index  :  500721
+
+Raw          : a/c blowing hot air
+Processed    : aircon~ blowing# hot# air~
+Gold Standard: aircon~ blowing#hot#air#
+
+Gold Standard  :  ['aircon~', 'blowing#hot#air#']
+Process result :  ['aircon~', 'blowing#', 'hot#', 'air~']
+jaccard_index  :  0.2
+
+Record index  :  502376
+
+Raw          : replace light
+Processed    : replace= light~
+Gold Standard: replace= light~
+
+Gold Standard  :  ['replace=', 'light~']
+Process result :  ['replace=', 'light~']
+jaccard_index  :  1.0
+
+Record index  :  508589
+
+Raw          : [e]-change out commercial radio
+Processed    : changeout= commercial~radio
+Gold Standard: changeout= commercial~radio
+
+Gold Standard  :  ['changeout=', 'commercial~radio']
+Process result :  ['changeout=', 'commercial~radio']
+jaccard_index  :  1.0
+
+Record index  :  513072
+
+Raw          : replace missing r/h walkway mesh
+Processed    : replace= missing# walkway~mesh
+Gold Standard: replace= missing#
+
+Gold Standard  :  ['replace=', 'missing#']
+Process result :  ['replace=', 'missing#', 'walkway~mesh']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  519583
+
+Raw          : repair 2 way.
+Processed    : repair= way~
+Gold Standard: repair=
+
+Gold Standard  :  ['repair=']
+Process result :  ['repair=', 'way~']
+jaccard_index  :  0.5
+
+Record index  :  519889
+
+Raw          : repair rh door wiper not working
+Processed    : repair= door~wiper not#working#
+Gold Standard: repair= door~wiper not#working#
+
+Gold Standard  :  ['repair=', 'door~wiper', 'not#working#']
+Process result :  ['repair=', 'door~wiper', 'not#working#']
+jaccard_index  :  1.0
+
+Record index  :  520185
+
+Raw          : diagnose & repair low power problem.....
+Processed    : diagnose= repair= low# power~ problem#
+Gold Standard: diagnose= repair= low#power#problem#
+
+Gold Standard  :  ['diagnose=', 'repair=', 'low#power#problem#']
+Process result :  ['diagnose=', 'repair=', 'low#', 'power~', 'problem#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  521180
+
+Raw          : fabricate and refit rear camera mount
+Processed    : fabricate= refit= camera~mount
+Gold Standard: fabricate= refit= camera~mount
+
+Gold Standard  :  ['fabricate=', 'refit=', 'camera~mount']
+Process result :  ['fabricate=', 'refit=', 'camera~mount']
+jaccard_index  :  1.0
+
+Record index  :  522238
+
+Raw          : change ripper boot
+Processed    : change# ripper~boot
+Gold Standard: change= ripper~boot
+
+Gold Standard  :  ['change=', 'ripper~boot']
+Process result :  ['change#', 'ripper~boot']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  522479
+
+Raw          : install fms kit - southern cross
+Processed    : install= southern~cross
+Gold Standard: install=
+
+Gold Standard  :  ['install=']
+Process result :  ['install=', 'southern~cross']
+jaccard_index  :  0.5
+
+Record index  :  523411
+
+Raw          : rep. leak @ hose fitting on imp cont vlv
+Processed    : rep~ leak# hose~fitting imp~ cont~valve
+Gold Standard: leak# hose~fitting imp~cont~valve
+
+Gold Standard  :  ['leak#', 'hose~fitting', 'imp~cont~valve']
+Process result :  ['rep~', 'leak#', 'hose~fitting', 'imp~', 'cont~valve']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  524095
+
+Raw          : trd0288 500hr pm and lube service
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  525243
+
+Raw          : trwh046 250hr pm and lube services
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  526003
+
+Raw          : changeout lh turbo
+Processed    : changeout= turbo~
+Gold Standard: changeout= turbo~
+
+Gold Standard  :  ['changeout=', 'turbo~']
+Process result :  ['changeout=', 'turbo~']
+jaccard_index  :  1.0
+
+Record index  :  526912
+
+Raw          : book out con stock fitted 01-02-06
+Processed    : book= con~stock fitted#
+Gold Standard: fitted=
+
+Gold Standard  :  ['fitted=']
+Process result :  ['book=', 'con~stock', 'fitted#']
+jaccard_index  :  0.0
+
+Record index  :  528227
+
+Raw          : replace c6 meter pcb board (engine oil)
+Processed    : replace= pcb~board engine~oil
+Gold Standard: replace= meter~pcb~board~engine~oil
+
+Gold Standard  :  ['replace=', 'meter~pcb~board~engine~oil']
+Process result :  ['replace=', 'pcb~board', 'engine~oil']
+jaccard_index  :  0.25
+
+Record index  :  530327
+
+Raw          : hastings c/out labour tks6469
+Processed    : hastings~ changeout= labour~
+Gold Standard: changeout=
+
+Gold Standard  :  ['changeout=']
+Process result :  ['hastings~', 'changeout=', 'labour~']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  530406
+
+Raw          : two-way repairs
+Processed    : two-way~ repair=
+Gold Standard: two-way~ repair=
+
+Gold Standard  :  ['two-way~', 'repair=']
+Process result :  ['two-way~', 'repair=']
+jaccard_index  :  1.0
+
+Record index  :  530999
+
+Raw          : identification signs required on cab
+Processed    : identification~ required# cab~
+Gold Standard: identification~sign
+
+Gold Standard  :  ['identification~sign']
+Process result :  ['identification~', 'required#', 'cab~']
+jaccard_index  :  0.0
+
+Record index  :  533036
+
+Raw          : replace nylon couplings on circ pump
+Processed    : replace= coupling~ pump~
+Gold Standard: replace= nylon~coupling circ~pump
+
+Gold Standard  :  ['replace=', 'nylon~coupling', 'circ~pump']
+Process result :  ['replace=', 'coupling~', 'pump~']
+jaccard_index  :  0.2
+
+Record index  :  533925
+
+Raw          : + + + + + + + + + +
+Processed    : 
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  []
+jaccard_index  :  0
+
+Record index  :  535817
+
+Raw          : supply 1000litre pods of 85w/140
+Processed    : supply~ litre~pod
+Gold Standard: pod~
+
+Gold Standard  :  ['pod~']
+Process result :  ['supply~', 'litre~pod']
+jaccard_index  :  0.0
+
+Record index  :  541643
+
+Raw          : replace qttm overload resistor.
+Processed    : replace=
+Gold Standard: replace= qttm~overload~resistor
+
+Gold Standard  :  ['replace=', 'qttm~overload~resistor']
+Process result :  ['replace=']
+jaccard_index  :  0.5
+
+Record index  :  544617
+
+Raw          : camera repairs
+Processed    : camera~ repair=
+Gold Standard: camera~ repair=
+
+Gold Standard  :  ['camera~', 'repair=']
+Process result :  ['camera~', 'repair=']
+jaccard_index  :  1.0
+
+Record index  :  548867
+
+Raw          : replace broken tooth
+Processed    : replace= broken# tooth~
+Gold Standard: replace= broken# tooth~
+
+Gold Standard  :  ['replace=', 'broken#', 'tooth~']
+Process result :  ['replace=', 'broken#', 'tooth~']
+jaccard_index  :  1.0
+
+Record index  :  553925
+
+Raw          : + + + + + + + + + +
+Processed    : 
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  []
+jaccard_index  :  0
+
+Record index  :  554475
+
+Raw          : she23 weekly rope inspection
+Processed    : rope~ inspection=
+Gold Standard: rope~ inspection=
+
+Gold Standard  :  ['rope~', 'inspection=']
+Process result :  ['rope~', 'inspection=']
+jaccard_index  :  1.0
+
+Record index  :  554852
+
+Raw          : she 34 ndt inspections 2 to 16
+Processed    : ndt~ inspection=
+Gold Standard: inspection=
+
+Gold Standard  :  ['inspection=']
+Process result :  ['ndt~', 'inspection=']
+jaccard_index  :  0.5
+
+Record index  :  555509
+
+Raw          : 2800[3wk]elec pre start inspect
+Processed    : electrical~pre-start inspect=
+Gold Standard: inspect=
+
+Gold Standard  :  ['inspect=']
+Process result :  ['electrical~pre-start', 'inspect=']
+jaccard_index  :  0.5
+
+Record index  :  565034
+
+Raw          : repair cracks as per attached sheet
+Processed    : repair= crack~ per~ attach=
+Gold Standard: repair= crack#
+
+Gold Standard  :  ['repair=', 'crack#']
+Process result :  ['repair=', 'crack~', 'per~', 'attach=']
+jaccard_index  :  0.2
+
+Record index  :  565947
+
+Raw          : repair fire suppression system - rd7
+Processed    : repair= fire-suppression~system
+Gold Standard: repair= fire-suppression~system
+
+Gold Standard  :  ['repair=', 'fire-suppression~system']
+Process result :  ['repair=', 'fire-suppression~system']
+jaccard_index  :  1.0
+
+Record index  :  565968
+
+Raw          : replace mirror bracket & mirror
+Processed    : replace= mirror~bracket mirror~
+Gold Standard: replace= mirror~bracket mirror~
+
+Gold Standard  :  ['replace=', 'mirror~bracket', 'mirror~']
+Process result :  ['replace=', 'mirror~bracket', 'mirror~']
+jaccard_index  :  1.0
+
+Record index  :  567703
+
+Raw          : am/fm radio u/s
+Processed    : am-fm~radio~am-fm
+Gold Standard: am-fm~radio
+
+Gold Standard  :  ['am-fm~radio']
+Process result :  ['am-fm~radio~am-fm']
+jaccard_index  :  0.0
+
+Record index  :  569746
+
+Raw          : repair rear camera
+Processed    : repair= camera~
+Gold Standard: repair= camera~
+
+Gold Standard  :  ['repair=', 'camera~']
+Process result :  ['repair=', 'camera~']
+jaccard_index  :  1.0
+
+Record index  :  570766
+
+Raw          : replace rh hoist cylinder.
+Processed    : replace= hoist~cylinder
+Gold Standard: replace= hoist~cylinder
+
+Gold Standard  :  ['replace=', 'hoist~cylinder']
+Process result :  ['replace=', 'hoist~cylinder']
+jaccard_index  :  1.0
+
+Record index  :  573020
+
+Raw          : crack test tie rod ballstuds
+Processed    : crack~ test= tie-rod~ball-studs
+Gold Standard: crack# test= tie-rod~ball-studs
+
+Gold Standard  :  ['crack#', 'test=', 'tie-rod~ball-studs']
+Process result :  ['crack~', 'test=', 'tie-rod~ball-studs']
+jaccard_index  :  0.5
+
+Record index  :  573149
+
+Raw          : lubricate door striker / latch assy l.h.
+Processed    : lubricate= door~striker latch~assembly
+Gold Standard: lubricate= door~striker~latch~assembly
+
+Gold Standard  :  ['lubricate=', 'door~striker~latch~assembly']
+Process result :  ['lubricate=', 'door~striker', 'latch~assembly']
+jaccard_index  :  0.25
+
+Record index  :  573312
+
+Raw          : aerial holder- the t is loose, rattles
+Processed    : aerial~ is#loose#
+Gold Standard: aerial~holder is#loose#
+
+Gold Standard  :  ['aerial~holder', 'is#loose#']
+Process result :  ['aerial~', 'is#loose#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  577656
+
+Raw          : tkd5089 1000hr pm and lube services
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  578754
+
+Raw          : cat793 coal pos no2 new tyre change out
+Processed    : coal~position new# tyre~ changeout=
+Gold Standard: tyre~ changeout=
+
+Gold Standard  :  ['tyre~', 'changeout=']
+Process result :  ['coal~position', 'new#', 'tyre~', 'changeout=']
+jaccard_index  :  0.5
+
+Record index  :  580471
+
+Raw          : tkd6509 500hr pm & lube services
+Processed    : pm~ lube~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['pm~', 'lube~', 'service=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  585711
+
+Raw          : fire system inspection
+Processed    : fire~system inspection=
+Gold Standard: fire~system inspection=
+
+Gold Standard  :  ['fire~system', 'inspection=']
+Process result :  ['fire~system', 'inspection=']
+jaccard_index  :  1.0
+
+Record index  :  587455
+
+Raw          : lights under house falling apart
+Processed    : light~ house~ falling#
+Gold Standard: light~ falling#apart#
+
+Gold Standard  :  ['light~', 'falling#apart#']
+Process result :  ['light~', 'house~', 'falling#']
+jaccard_index  :  0.25
+
+Record index  :  588613
+
+Raw          : [ref] a/c not cooling
+Processed    : ref~aircon not#cooling#
+Gold Standard: aircon~ not#cooling#
+
+Gold Standard  :  ['aircon~', 'not#cooling#']
+Process result :  ['ref~aircon', 'not#cooling#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  589464
+
+Raw          : repair fire system alarm fault
+Processed    : repair= fire~system~alarm fault#
+Gold Standard: repair= fire~system~alarm fault#
+
+Gold Standard  :  ['repair=', 'fire~system~alarm', 'fault#']
+Process result :  ['repair=', 'fire~system~alarm', 'fault#']
+jaccard_index  :  1.0
+
+Record index  :  589595
+
+Raw          : [p&h]right hand propel box oil leak
+Processed    : propel~box oil-leak#
+Gold Standard: propel~box oil-leak#
+
+Gold Standard  :  ['propel~box', 'oil-leak#']
+Process result :  ['propel~box', 'oil-leak#']
+jaccard_index  :  1.0
+
+Record index  :  596849
+
+Raw          : repair floodlight near falling off
+Processed    : repair= falling#
+Gold Standard: repair= floodlight~ falling#off#
+
+Gold Standard  :  ['repair=', 'floodlight~', 'falling#off#']
+Process result :  ['repair=', 'falling#']
+jaccard_index  :  0.25
+
+Record index  :  597401
+
+Raw          : replace front control valve hose
+Processed    : replace= control~valve~hose
+Gold Standard: replace= control~valve~hose
+
+Gold Standard  :  ['replace=', 'control~valve~hose']
+Process result :  ['replace=', 'control~valve~hose']
+jaccard_index  :  1.0
+
+Record index  :  601214
+
+Raw          : replace deadman switch
+Processed    : replace= deadman~switch
+Gold Standard: replace= deadman~switch
+
+Gold Standard  :  ['replace=', 'deadman~switch']
+Process result :  ['replace=', 'deadman~switch']
+jaccard_index  :  1.0
+
+Record index  :  601693
+
+Raw          : two-way repairs
+Processed    : two-way~ repair=
+Gold Standard: two-way~ repair=
+
+Gold Standard  :  ['two-way~', 'repair=']
+Process result :  ['two-way~', 'repair=']
+jaccard_index  :  1.0
+
+Record index  :  602362
+
+Raw          : inspect cab bench top-she0030
+Processed    : inspect= cab~ top~
+Gold Standard: inspect= cab~bench
+
+Gold Standard  :  ['inspect=', 'cab~bench']
+Process result :  ['inspect=', 'cab~', 'top~']
+jaccard_index  :  0.25
+
+Record index  :  602837
+
+Raw          : changeout main driveshaft
+Processed    : changeout= main~driveshaft
+Gold Standard: changeout= driveshaft~
+
+Gold Standard  :  ['changeout=', 'driveshaft~']
+Process result :  ['changeout=', 'main~driveshaft']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  603469
+
+Raw          : srm she weekly fill rope skids
+Processed    : fill~rope~skid
+Gold Standard: fill~rope
+
+Gold Standard  :  ['fill~rope']
+Process result :  ['fill~rope~skid']
+jaccard_index  :  0.0
+
+Record index  :  604078
+
+Raw          : shock sub bolts loose
+Processed    : shock-sub~bolt loose#
+Gold Standard: shock-sub~bolt loose#
+
+Gold Standard  :  ['shock-sub~bolt', 'loose#']
+Process result :  ['shock-sub~bolt', 'loose#']
+jaccard_index  :  1.0
+
+Record index  :  607557
+
+Raw          : a/c hyd leaking badly
+Processed    : aircon~hydraulic leaking# badly#
+Gold Standard: aircon~hydraulic leaking#
+
+Gold Standard  :  ['aircon~hydraulic', 'leaking#']
+Process result :  ['aircon~hydraulic', 'leaking#', 'badly#']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  608650
+
+Raw          : p&h labour for maint day 26/02/03
+Processed    : labour~ maintenance=
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['labour~', 'maintenance=']
+jaccard_index  :  0.0
+
+Record index  :  610644
+
+Raw          : + + + + + + + + + +
+Processed    : 
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  []
+jaccard_index  :  0
+
+Record index  :  610899
+
+Raw          : repair stinger
+Processed    : repair=
+Gold Standard: repair= stinger~
+
+Gold Standard  :  ['repair=', 'stinger~']
+Process result :  ['repair=']
+jaccard_index  :  0.5
+
+Record index  :  612012
+
+Raw          : replace front engine seal
+Processed    : replace= engine~seal
+Gold Standard: replace= engine~seal
+
+Gold Standard  :  ['replace=', 'engine~seal']
+Process result :  ['replace=', 'engine~seal']
+jaccard_index  :  1.0
+
+Record index  :  615707
+
+Raw          : + + + + + + + + + +
+Processed    : 
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  []
+jaccard_index  :  0
+
+Record index  :  615777
+
+Raw          : + + + + + + + + + +
+Processed    : 
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  []
+jaccard_index  :  0
+
+Record index  :  616963
+
+Raw          : [m]load/unload for maintenance[28/01]
+Processed    : load~unload maintenance=
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['load~unload', 'maintenance=']
+jaccard_index  :  0.0
+
+Record index  :  617007
+
+Raw          : [nqis]machine clean[06/02]
+Processed    : nqis~machine clean#
+Gold Standard: nqis~machine
+
+Gold Standard  :  ['nqis~machine']
+Process result :  ['nqis~machine', 'clean#']
+jaccard_index  :  0.5
+
+Record index  :  617289
+
+Raw          : [m] changeout breakout fork
+Processed    : changeout= breakout~fork
+Gold Standard: changeout= breakout~fork
+
+Gold Standard  :  ['changeout=', 'breakout~fork']
+Process result :  ['changeout=', 'breakout~fork']
+jaccard_index  :  1.0
+
+Record index  :  618563
+
+Raw          : edd36[03wk]load & unload for maintenance
+Processed    : load~ maintenance=
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['load~', 'maintenance=']
+jaccard_index  :  0.0
+
+Record index  :  619244
+
+Raw          : she23[04wk] mechanical service
+Processed    : mechanical~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  619994
+
+Raw          : 2800[3wk]elec pre start inspect
+Processed    : electrical~pre-start inspect=
+Gold Standard: inspect=
+
+Gold Standard  :  ['inspect=']
+Process result :  ['electrical~pre-start', 'inspect=']
+jaccard_index  :  0.5
+
+Record index  :  620437
+
+Raw          : she23 weekly rope inspection
+Processed    : rope~ inspection=
+Gold Standard: rope~ inspection=
+
+Gold Standard  :  ['rope~', 'inspection=']
+Process result :  ['rope~', 'inspection=']
+jaccard_index  :  1.0
+
+Record index  :  624640
+
+Raw          : NA weekly lube & mechanical insp
+Processed    : lube~ mechanical~ inspect=
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  ['lube~', 'mechanical~', 'inspect=']
+jaccard_index  :  0.0
+
+Record index  :  627613
+
+Raw          : she0023 cable work week 13
+Processed    : cable~ work#
+Gold Standard: cable~
+
+Gold Standard  :  ['cable~']
+Process result :  ['cable~', 'work#']
+jaccard_index  :  0.5
+
+Record index  :  628585
+
+Raw          : + + + + + + + + + +
+Processed    : 
+Gold Standard: 
+
+Gold Standard  :  []
+Process result :  []
+jaccard_index  :  0
+
+Record index  :  629551
+
+Raw          : 4100[3wk]lube insp&repairs
+Processed    : lube~ inspect= repair=
+Gold Standard: repair=
+
+Gold Standard  :  ['repair=']
+Process result :  ['lube~', 'inspect=', 'repair=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  633419
+
+Raw          : replace coolant lines (parts only)
+Processed    : replace= coolant~line part~
+Gold Standard: replace= coolant~line
+
+Gold Standard  :  ['replace=', 'coolant~line']
+Process result :  ['replace=', 'coolant~line', 'part~']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  634223
+
+Raw          : replace seat belt
+Processed    : replace= seat-belt~
+Gold Standard: replace= seat-belt~
+
+Gold Standard  :  ['replace=', 'seat-belt~']
+Process result :  ['replace=', 'seat-belt~']
+jaccard_index  :  1.0
+
+Record index  :  637201
+
+Raw          : replace cutting edges
+Processed    : replace= cutting# edge~
+Gold Standard: replace= cutting~edge
+
+Gold Standard  :  ['replace=', 'cutting~edge']
+Process result :  ['replace=', 'cutting#', 'edge~']
+jaccard_index  :  0.25
+
+Record index  :  637524
+
+Raw          : replace steering column spring
+Processed    : replace= steering~column spring~
+Gold Standard: replace= steering~column~spring
+
+Gold Standard  :  ['replace=', 'steering~column~spring']
+Process result :  ['replace=', 'steering~column', 'spring~']
+jaccard_index  :  0.25
+
+Record index  :  641540
+
+Raw          : lube fault
+Processed    : lube~ fault#
+Gold Standard: lube~ fault#
+
+Gold Standard  :  ['lube~', 'fault#']
+Process result :  ['lube~', 'fault#']
+jaccard_index  :  1.0
+
+Record index  :  641559
+
+Raw          : repair drifting lift cylinders
+Processed    : repair= lift~cylinder
+Gold Standard: repair= drifting# lift~cylinder
+
+Gold Standard  :  ['repair=', 'drifting#', 'lift~cylinder']
+Process result :  ['repair=', 'lift~cylinder']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  641692
+
+Raw          : replace # 1 injector
+Processed    : replace= injector~
+Gold Standard: replace= injector~
+
+Gold Standard  :  ['replace=', 'injector~']
+Process result :  ['replace=', 'injector~']
+jaccard_index  :  1.0
+
+Record index  :  642133
+
+Raw          : supply spares for quick coupler
+Processed    : supply~spare quick~
+Gold Standard: supply= spare~ quick~coupler
+
+Gold Standard  :  ['supply=', 'spare~', 'quick~coupler']
+Process result :  ['supply~spare', 'quick~']
+jaccard_index  :  0.0
+
+Record index  :  644855
+
+Raw          : replace seat cushion & arm rests
+Processed    : replace= seat~cushion armrest~
+Gold Standard: replace= seat~cushion arm~rest
+
+Gold Standard  :  ['replace=', 'seat~cushion', 'arm~rest']
+Process result :  ['replace=', 'seat~cushion', 'armrest~']
+jaccard_index  :  0.5
+
+Record index  :  646617
+
+Raw          : tramming with heat gun
+Processed    : tramming# heat~
+Gold Standard: heat~gun
+
+Gold Standard  :  ['heat~gun']
+Process result :  ['tramming#', 'heat~']
+jaccard_index  :  0.0
+
+Record index  :  647171
+
+Raw          : repair crack in l/h/boom arm
+Processed    : repair= crack~ boom~ arm~
+Gold Standard: repair= crack# boom~arm
+
+Gold Standard  :  ['repair=', 'crack#', 'boom~arm']
+Process result :  ['repair=', 'crack~', 'boom~', 'arm~']
+jaccard_index  :  0.16666666666666666
+
+Record index  :  649318
+
+Raw          : replace pump drive
+Processed    : replace= pump-drive~
+Gold Standard: replace= pump-drive~
+
+Gold Standard  :  ['replace=', 'pump-drive~']
+Process result :  ['replace=', 'pump-drive~']
+jaccard_index  :  1.0
+
+Record index  :  653783
+
+Raw          : labour hire (hooper back pay)
+Processed    : labour~ hire= hopper~ back#
+Gold Standard: hire= hopper~back~pay
+
+Gold Standard  :  ['hire=', 'hopper~back~pay']
+Process result :  ['labour~', 'hire=', 'hopper~', 'back#']
+jaccard_index  :  0.2
+
+Record index  :  653832
+
+Raw          : 2 way radio u/s
+Processed    : way~radio unservicable#
+Gold Standard: way~radio unservicable#
+
+Gold Standard  :  ['way~radio', 'unservicable#']
+Process result :  ['way~radio', 'unservicable#']
+jaccard_index  :  1.0
+
+Record index  :  655083
+
+Raw          : model18 mechanical pm service
+Processed    : mechanical~pm service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['mechanical~pm', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  657511
+
+Raw          : model18 lubrication services - 333 hrs
+Processed    : lubrication~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['lubrication~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  657913
+
+Raw          : model18 lubrication services - 333 hrs
+Processed    : lubrication~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['lubrication~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  659897
+
+Raw          : model18 lubrication services - 1000 hrs
+Processed    : lubrication~ service=
+Gold Standard: service=
+
+Gold Standard  :  ['service=']
+Process result :  ['lubrication~', 'service=']
+jaccard_index  :  0.5
+
+Record index  :  664145
+
+Raw          : ldw0202 - weekly engine oil sample
+Processed    : engine~oil~sample
+Gold Standard: engine~oil sample=
+
+Gold Standard  :  ['engine~oil', 'sample=']
+Process result :  ['engine~oil~sample']
+jaccard_index  :  0.0
+
+Record index  :  668038
+
+Raw          : air conditioner repairs
+Processed    : air-conditioner~ repair=
+Gold Standard: air-conditioner~ repair=
+
+Gold Standard  :  ['air-conditioner~', 'repair=']
+Process result :  ['air-conditioner~', 'repair=']
+jaccard_index  :  1.0
+
+Record index  :  669763
+
+Raw          : side light out
+Processed    : side~light
+Gold Standard: side~light out#
+
+Gold Standard  :  ['side~light', 'out#']
+Process result :  ['side~light']
+jaccard_index  :  0.5
+
+Record index  :  674548
+
+Raw          : replace t/convertor pump
+Processed    : replace= converter~pump
+Gold Standard: replace= t~converter~pump
+
+Gold Standard  :  ['replace=', 't~converter~pump']
+Process result :  ['replace=', 'converter~pump']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  674987
+
+Raw          : replace pto
+Processed    : replace= pto~
+Gold Standard: replace= pto~
+
+Gold Standard  :  ['replace=', 'pto~']
+Process result :  ['replace=', 'pto~']
+jaccard_index  :  1.0
+
+Record index  :  676407
+
+Raw          : repair mat.# 60014109 calipiers
+Processed    : repair= caliper~
+Gold Standard: repair=
+
+Gold Standard  :  ['repair=']
+Process result :  ['repair=', 'caliper~']
+jaccard_index  :  0.5
+
+Record index  :  677907
+
+Raw          : replace pos 2
+Processed    : replace=
+Gold Standard: replace=
+
+Gold Standard  :  ['replace=']
+Process result :  ['replace=']
+jaccard_index  :  1.0
+
+Record index  :  679445
+
+Raw          : rim inspection 784np78
+Processed    : rim~ inspection=
+Gold Standard: rim~ inspection=
+
+Gold Standard  :  ['rim~', 'inspection=']
+Process result :  ['rim~', 'inspection=']
+jaccard_index  :  1.0
+
+Record index  :  680129
+
+Raw          : fit s/hand tyre pos 7
+Processed    : fit= second-hand~tyre
+Gold Standard: fit= tyre~
+
+Gold Standard  :  ['fit=', 'tyre~']
+Process result :  ['fit=', 'second-hand~tyre']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  682050
+
+Raw          : change out drivers mirror
+Processed    : changeout= driver~mirror
+Gold Standard: changeout= driver~mirror
+
+Gold Standard  :  ['changeout=', 'driver~mirror']
+Process result :  ['changeout=', 'driver~mirror']
+jaccard_index  :  1.0
+
+Record index  :  682255
+
+Raw          : troubleshoot oil in radiator
+Processed    : troubleshoot= oil~ radiator~
+Gold Standard: troubleshoot= oil~ radiator~
+
+Gold Standard  :  ['troubleshoot=', 'oil~', 'radiator~']
+Process result :  ['troubleshoot=', 'oil~', 'radiator~']
+jaccard_index  :  1.0
+
+Record index  :  682838
+
+Raw          : l/h air box bolts broken.
+Processed    : bolt~ broken#
+Gold Standard: air-box~bolt broken#
+
+Gold Standard  :  ['air-box~bolt', 'broken#']
+Process result :  ['bolt~', 'broken#']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  684915
+
+Raw          : air duct missing on front panel
+Processed    : air~ missing# panel~
+Gold Standard: air~duct missing# panel~
+
+Gold Standard  :  ['air~duct', 'missing#', 'panel~']
+Process result :  ['air~', 'missing#', 'panel~']
+jaccard_index  :  0.5
+
+Record index  :  689683
+
+Raw          : repair engine oil leak - around filters
+Processed    : repair= engine~ oil-leak# around# filter~
+Gold Standard: repair= engine~ oil-leak# filter~
+
+Gold Standard  :  ['repair=', 'engine~', 'oil-leak#', 'filter~']
+Process result :  ['repair=', 'engine~', 'oil-leak#', 'around#', 'filter~']
+jaccard_index  :  0.8
+
+Record index  :  692057
+
+Raw          : [r&r] rim no.sj601
+Processed    : rim~
+Gold Standard: RR= rim~
+
+Gold Standard  :  ['RR=', 'rim~']
+Process result :  ['rim~']
+jaccard_index  :  0.5
+
+Record index  :  693635
+
+Raw          : engine midlife changeout
+Processed    : engine~midlife changeout=
+Gold Standard: engine~ changeout=
+
+Gold Standard  :  ['engine~', 'changeout=']
+Process result :  ['engine~midlife', 'changeout=']
+jaccard_index  :  0.3333333333333333
+
+Record index  :  694256
+
+Raw          : tkd hr service inspection
+Processed    : tkd~ service= inspection=
+Gold Standard: service= inspection=
+
+Gold Standard  :  ['service=', 'inspection=']
+Process result :  ['tkd~', 'service=', 'inspection=']
+jaccard_index  :  0.6666666666666666
+
+Record index  :  696123
+
+Raw          : o/seas air freight rd7 housing
+Processed    : air~ housing~
+Gold Standard: air~freight housing~
+
+Gold Standard  :  ['air~freight', 'housing~']
+Process result :  ['air~', 'housing~']
+jaccard_index  :  0.3333333333333333
+
+Igonored records  :  27
+Average Jaccard Index is:  0.6141641641641643
